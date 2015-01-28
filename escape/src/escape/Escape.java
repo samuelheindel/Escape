@@ -5,6 +5,7 @@
  */
 package escape;
 
+import byui.cit260.escape.model.Game;
 import byui.cit260.escape.model.Player;
 
 /**
@@ -25,6 +26,17 @@ public class Escape {
            
            String playerInfo = playerOne.toString();
            System.out.println(playerInfo);
+           
+           Game gameDay = new Game();
+           
+           gameDay.setDay(13);
+           gameDay.setNoPeople(1);
+           
+           String gameInfo = gameDay.toString();
+           System.out.println(gameInfo);
+           
+           
+           
            
     }
     
