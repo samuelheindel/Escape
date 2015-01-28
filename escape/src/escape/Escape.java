@@ -7,6 +7,7 @@ package escape;
 
 import byui.cit260.escape.model.Game;
 import byui.cit260.escape.model.Player;
+import byui.cit260.escape.model.Raft;
 
 /**
  *
@@ -26,6 +27,18 @@ public class Escape {
            
            String playerInfo = playerOne.toString();
            System.out.println(playerInfo);
+     
+           Raft raftdes = new Raft();
+           
+           raftdes.setDescription("its gonna be big");
+           raftdes.setLoglength(20);
+           raftdes.setLogwidth(10);
+           raftdes.setStoragespace(50);
+           raftdes.setPlayerspace(10);
+           raftdes.setMaxweight(10);
+           
+           String RaftInfo = raftdes.toString();
+           System.out.println(RaftInfo);
            
            Game gameDay = new Game();
            
@@ -34,10 +47,6 @@ public class Escape {
            
            String gameInfo = gameDay.toString();
            System.out.println(gameInfo);
-           
-           
-           
-           
     }
     
 }
