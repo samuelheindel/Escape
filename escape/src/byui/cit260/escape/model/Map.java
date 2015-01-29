@@ -13,27 +13,25 @@ import java.io.Serializable;
  */
 public class Map implements Serializable {
     
-       private double rowCount;
-       private double colCount;
+       private int rowCount;
+       private int colCount;
 
     public Map() {
     }
-       
-       
 
-    public double getRowCount() {
+    public int getRowCount() {
         return rowCount;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
-    public double getColCount() {
+    public int getColCount() {
         return colCount;
     }
 
-    public void setColCount(double colCount) {
+    public void setColCount(int colCount) {
         this.colCount = colCount;
     }
 
@@ -44,9 +42,9 @@ public class Map implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.colCount) ^ (Double.doubleToLongBits(this.colCount) >>> 32));
+        int hash = 3;
+        hash = 47 * hash + this.rowCount;
+        hash = 47 * hash + this.colCount;
         return hash;
     }
 
@@ -59,11 +57,11 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
+        if (this.rowCount != other.rowCount) {
             return false;
         }
-        return Double.doubleToLongBits(this.colCount) == Double.doubleToLongBits(other.colCount);
+        return this.colCount == other.colCount;
     }
-       
+    
        
 }
