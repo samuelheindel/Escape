@@ -5,8 +5,14 @@
  */
 package escape;
 
+import byui.cit260.escape.model.Bag;
+import byui.cit260.escape.model.Game;
+import byui.cit260.escape.model.Inventory;
 import byui.cit260.escape.model.Player;
 import byui.cit260.escape.model.Raft;
+import byui.cit260.escape.model.Tools;
+import byui.cit260.escape.model.Workbench;
+import javax.tools.Tool;
 
 /**
  *
@@ -38,6 +44,45 @@ public class Escape {
            
            String RaftInfo = raftdes.toString();
            System.out.println(RaftInfo);
+           
+           Game gameDay = new Game();
+           
+           gameDay.setDay(13);
+           gameDay.setNoPeople(1);
+           
+           String gameInfo = gameDay.toString();
+           System.out.println(gameInfo);
+           
+           Inventory invquantities = new Inventory();
+           
+           invquantities.setInventorytype("logs");
+           invquantities.setQuantity(15);
+           invquantities.setQuantityneeded(12);
+           
+           String inventoryinfo = invquantities.toString();
+           System.out.println(inventoryinfo);
+           
+           Bag bagitems = new Bag();
+           
+           bagitems.setItemtype("hammer");
+           bagitems.setQuantity(15);
+           
+           String searchbag = bagitems.toString();
+           System.out.println(searchbag);
+           
+           Tools tooltime = new Tools();
+           
+           tooltime.setTool("hatchet");
+           
+           String obtaintool = tooltime.toString();
+           System.out.println(obtaintool);
+           
+           Workbench build = new Workbench();
+           
+           build.setDiscription("you can make tools with me");
+           
+           String craft = build.toString();
+           System.out.println(craft);
     }
     
 }
