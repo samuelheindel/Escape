@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     
-    private double day;
+    private double turn;
     private int noPeople;
 
     public Game() {
@@ -21,12 +21,12 @@ public class Game implements Serializable{
     
     
 
-    public double getDay() {
-        return day;
+    public double getTurn() {
+        return turn;
     }
 
-    public void setDay(double day) {
-        this.day = day;
+    public void setTurn(double turn) {
+        this.turn = turn;
     }
 
     public int getNoPeople() {
@@ -39,13 +39,13 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "day=" + day + ", noPeople=" + noPeople + '}';
+        return "Game{" + "turn=" + turn + ", noPeople=" + noPeople + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.day) ^ (Double.doubleToLongBits(this.day) >>> 32));
+        hash = 83 * hash + (int) (Double.doubleToLongBits(this.turn) ^ (Double.doubleToLongBits(this.turn) >>> 32));
         hash = 83 * hash + this.noPeople;
         return hash;
     }
@@ -59,7 +59,7 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.day) != Double.doubleToLongBits(other.day)) {
+        if (Double.doubleToLongBits(this.turn) != Double.doubleToLongBits(other.turn)) {
             return false;
         }
         if (this.noPeople != other.noPeople) {

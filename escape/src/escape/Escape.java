@@ -45,10 +45,10 @@ public class Escape {
            String RaftInfo = raftdes.toString();
            System.out.println(RaftInfo);
            
-           Game gameDay = new Game();
-           gameDay.setDay(13);
-           gameDay.setNoPeople(1);
-           String gameInfo = gameDay.toString();
+           Game gameturn = new Game();
+           gameturn.setTurn(13);
+           gameturn.setNoPeople(1);
+           String gameInfo = gameturn.toString();
            System.out.println(gameInfo);
            
            Inventory invquantities = new Inventory();
