@@ -37,36 +37,16 @@ public class InventoryControl {
 		
             return -1;
         }
-        /*if (logsneeded != int){
-        return -1;
-        }
-        if (logsininventory != int){
-        return -1;
-        }
-        if(ropeneeded != int){
-        return -1;
-        }
-        if (ropeininventory != int){
-        return -1;
-        }
-        if (storageneeded != int){
-        return -1;
-        }
-        if (storageininventory != int){
-        return -1;
-        }
-        if (storageininventory!= int){
-        return -1;
-        }
-         */
+        
+         
         int needforcom = logsneeded + ropeneeded + storageneeded;
 
         int raftcom = needforcom - (needforcom - (logsininventory + ropeininventory + storageininventory));
         int persentcom = (raftcom / needforcom) * 100;
 	return persentcom;
     }
-
-    public int calRaftSize(int people, int crates) {
+    
+      public int calRaftSize(int people, int crates) {
 
         if (people < 1 || people > 9) {
             return -1;
@@ -80,7 +60,4 @@ public class InventoryControl {
         return raftsize;
     }
 
-
-    
 }
-
