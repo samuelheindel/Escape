@@ -37,28 +37,8 @@ public class InventoryControl {
 		
             return -1;
         }
-        /*if (logsneeded != int){
-        return -1;
-        }
-        if (logsininventory != int){
-        return -1;
-        }
-        if(ropeneeded != int){
-        return -1;
-        }
-        if (ropeininventory != int){
-        return -1;
-        }
-        if (storageneeded != int){
-        return -1;
-        }
-        if (storageininventory != int){
-        return -1;
-        }
-        if (storageininventory!= int){
-        return -1;
-        }
-         */
+        
+         
         int needforcom = logsneeded + ropeneeded + storageneeded;
 
         int raftcom = needforcom - (needforcom - (logsininventory + ropeininventory + storageininventory));
