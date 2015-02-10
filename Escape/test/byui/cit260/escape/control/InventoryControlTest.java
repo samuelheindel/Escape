@@ -303,7 +303,108 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 100.0);
        
     }
+
+    /**
+     * Test of calRaftSize method, of class InventoryControl.
+     */
+    @Test
+    public void testCalRaftSize() {
+        System.out.println("calRaftSize");
+        int people = 1;
+        int crates = 4;
+        InventoryControl instance = new InventoryControl();
+        int expResult = 68;
+        int result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result);
+
+    }
+      /**
+     * Test of calRaftSize method, of class InventoryControl.
+     */
+    @Test
+    public void test2CalRaftSize() {
+        System.out.println("calRaftSize");
+        int people = -1;
+        int crates = 4;
+        InventoryControl instance = new InventoryControl();
+        int expResult = -1;
+        int result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result);
+
+    }
     
+      /**
+     * Test of calRaftSize method, of class InventoryControl.
+     */
+    @Test
+    public void test3CalRaftSize() {
+        System.out.println("calRaftSize");
+        int people = 10;
+        int crates = 1;
+        InventoryControl instance = new InventoryControl();
+        int expResult = -1;
+        int result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result);
+
+    }
+      /**
+     * Test of calRaftSize method, of class InventoryControl.
+     */
+    @Test
+    public void test4CalRaftSize() {
+        System.out.println("calRaftSize");
+        int people = 9;
+        int crates = 0;
+        InventoryControl instance = new InventoryControl();
+        int expResult = -1;
+        int result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result);
+
+    }
     
+      /**
+     * Test of calRaftSize method, of class InventoryControl.
+     */
+    @Test
+    public void test5CalRaftSize() {
+        System.out.println("calRaftSize");
+        int people = 1;
+        int crates = 30;
+        InventoryControl instance = new InventoryControl();
+        int expResult = -1;
+        int result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result);
+
+    }
+    
+      /**
+     * Test of calRaftSize method, of class InventoryControl.
+     */
+    @Test
+    public void test6CalRaftSize() {
+        System.out.println("calRaftSize");
+        int people = 1;
+        int crates = 1;
+        InventoryControl instance = new InventoryControl();
+        int expResult = 62;
+        int result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result);
+
+    }
+    
+      /**
+     * Test of calRaftSize method, of class InventoryControl.
+     */
+    @Test
+    public void test7CalRaftSize() {
+        System.out.println("calRaftSize");
+        int people = 9;
+        int crates = 29;
+        InventoryControl instance = new InventoryControl();
+        int expResult = 598;
+        int result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result);
+
+    }
     
 }

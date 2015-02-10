@@ -46,5 +46,18 @@ public class InventoryControl {
 	return persentcom;
     }
     
-    
+      public int calRaftSize(int people, int crates) {
+
+        if (people < 1 || people > 9) {
+            return -1;
+        }
+        if (crates < 1 || crates > 29) {
+            return -1;
+        }
+
+        int pspace = (6 * 10) * people;
+        int raftsize = pspace + (crates * 2);
+        return raftsize;
+    }
+
 }
