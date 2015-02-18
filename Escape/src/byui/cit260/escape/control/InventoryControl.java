@@ -46,7 +46,7 @@ public class InventoryControl {
 	return persentcom;
     }
     
-      public int calRaftSize(int people, int crates) {
+      public int calcRaftSize(int people, int crates) {
 
         if (people < 1 || people > 9) {
             return -1;
