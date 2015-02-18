@@ -10,5 +10,20 @@ package byui.cit260.escape.control;
  * @author Kale
  */
 public class VolcanoControl {
+    public double VolcanoControl(int countDown, int turn ){
+    if (countDown > 240){ 
+	return -1;  
+    }
+    if (countDown < 0){
+	return -1;
+    }
+    if (turn <= 0){
+	return -1;
+    }
     
+    double currentCountDown=countDown-turn;
+	
+    return currentCountDown;
+
+}
 }
