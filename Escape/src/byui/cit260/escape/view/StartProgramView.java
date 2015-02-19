@@ -34,7 +34,12 @@ public class StartProgramView {
         String playersName = this.getPlayersName();
         // creat and save the player object
         Player player = ProgramControl.createPlayer(playersName);
-//                
+        // Display welcome message
+        this.displayWelcomeMessage(player);
+        //Disolay main menu
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
+        
     }
 
     private void displayBanner() {
@@ -86,5 +91,12 @@ public class StartProgramView {
         }
                 
         return playersName; // return the name
+    }
+
+    private void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n================================================");
+        System.out.println("\tWelcome to Jaba Island Captain " + player.getName());
+        System.out.println("\tWe hope you can survive!");
+        System.out.println("\n\n================================================");
     }
 }

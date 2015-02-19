@@ -6,14 +6,24 @@
 package byui.cit260.escape.control;
 
 import byui.cit260.escape.model.Player;
+import escape.Escape;
 
 /**
  *
  * @author samuel
  */
 public class ProgramControl {
-    public static Player createPlayer(String playersName){
-        System.out.println("\n**** creatPlayer function called ****");
-        return null;
+    public static Player createPlayer(String name){
+        if (name == null){
+            return null;
+            
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        Escape.setPlayer(player); // save the player
+        
+        return player;
     }
 }
