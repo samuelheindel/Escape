@@ -99,4 +99,32 @@ public class StartProgramView {
         System.out.println("\tWe hope you can survive!");
         System.out.println("\n\n================================================");
     }
+   private String getInput() {
+        boolean valid = false; // indicates if the name has been retrieved
+        String input = null;
+        Scanner keyboard = new Scanner(System.in); // Keyboard input stream
+      
+        while (!valid) { // while a valid name has not been retrieved
+            //Prompt o players name
+            System.out.println("Enter your selection below");
+            
+            // get the name from the key and trim off the blanks
+            input = keyboard.nextLine();
+            input = input.trim();
+            
+               // if the name is invalid (less than two characters in length)
+            if (input.length() > 1) {
+                System.out.println("Invalid name - input must be one letter");
+                continue; // and repeat again
+                
+            }
+            break; // out of the (exit) the repetition
+            
+        }
+                
+        return input; // return the name
+    }
+
+
+
 }

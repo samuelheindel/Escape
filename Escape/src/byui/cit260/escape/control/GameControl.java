@@ -5,10 +5,14 @@
  */
 package byui.cit260.escape.control;
 
+import byui.cit260.escape.model.Player;
+
 /**
  *
  * @author Kale
  */
 public class GameControl {
-    
+    public static void createNewGame(Player player) {
+        System.out.println("\n**** creatNewGame stub funtion called ***");
+    }
 }
