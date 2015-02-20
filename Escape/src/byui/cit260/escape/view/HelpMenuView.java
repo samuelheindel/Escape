@@ -4,11 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.escape.view;
-
-import byui.cit260.escape.control.GameControl;
-import byui.cit260.escape.model.GameMenuView;
-import escape.Escape;
 import java.util.Scanner;
+
 
 /**
  *
@@ -28,7 +25,7 @@ public class HelpMenuView {
             +"\nO -  Observe surroundings                                                     "
             +"\nQ - Quit or Go Back to Main Menu                                              "
             +"\n------------------------------------------------------------------------------";
-    public void displayMenu(){
+    public void displayHelpMenu(){
         char selection = ' ';
         do{
             System.out.println(MENU);// display the main menu
@@ -96,25 +93,26 @@ public class HelpMenuView {
     
        }
     private void displayGameGoal(){
-        System.out.println("*** startExistingGame ***");
+        System.out.println("*** displayGameGoal ***");
     }
     private void displayHowToMove(){
-        System.out.println("*** startExistingGame ***");
+        System.out.println("*** displayHowToMove ***");
     }
     private void displayBag(){
-        System.out.println("*** saveGame funtion called ***");
+        System.out.println("*** displayBag funtion called ***");
     }
     private void displayInteract(){
-        System.out.println("*** displayHelpMenu funtion called ***");
+        System.out.println("*** displayInteract funtion called ***");
     }
     private void displayViewLocation(){
-        System.out.println("*** startExistingGame ***");
+        System.out.println("*** displayViewLocation ***");
     }
     private void displayObserveSurroundings(){
-        System.out.println("*** saveGame funtion called ***");
+        System.out.println("*** displayObserveSurroundings funtion called ***");
     }
     private void goBackToMenu(){
-        System.out.println("*** displayHelpMenu funtion called ***");
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
     }
 
 }

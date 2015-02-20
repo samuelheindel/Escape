@@ -6,7 +6,8 @@
 package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.GameControl;
-import byui.cit260.escape.model.GameMenuView;
+import byui.cit260.escape.view.GameMenuView;
+import byui.cit260.escape.view.HelpMenuView;
 import escape.Escape;
 import java.util.Scanner;
 import static jdk.nashorn.internal.runtime.GlobalFunctions.escape;
@@ -22,7 +23,7 @@ public class MainMenuView {
             +"\n|Main Menu                                  "
             +"\n--------------------------------------------"
             +"\nG - Start Game                              "
-            +"\nH - Get help on how to play the game         "
+            +"\nH - Get help on how to play the game        "
             +"\nS - Save game                               "
             +"\nE - Exit                                    "
             +"\n--------------------------------------------";
@@ -99,7 +100,8 @@ public class MainMenuView {
         System.out.println("*** saveGame funtion called ***");
     }
     private void displayHelpMenu(){
-        System.out.println("*** displayHelpMenu funtion called ***");
+        HelpMenuView HelpMenu = new HelpMenuView();
+        HelpMenu.displayHelpMenu();
     }
 
 }
