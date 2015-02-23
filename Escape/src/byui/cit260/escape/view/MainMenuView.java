@@ -32,7 +32,7 @@ public class MainMenuView {
         do{
             System.out.println(MENU);// display the main menu
             
-            String input = this.getInput(); // ge user selection
+            String input = this.getInput(); // get user selection
             selection = input.charAt(0); // get first character of string
             
             this.doAction(selection);// do action based on selection
