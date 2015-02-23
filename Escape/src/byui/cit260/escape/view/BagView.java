@@ -75,6 +75,9 @@ public class BagView {
             case 'B':
                 this.displayBow();
                 break;
+            case 'Q':
+                this.goBackToMenu();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
@@ -100,6 +103,9 @@ public class BagView {
                 + "Use the EQUIP command plus the letter B to equip the bow         *"
                 + "Use the UNEQUIP command to plus the letter B to equip the bow*   *");
     }
-
+    private void goBackToMenu(){
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
+    }
 }
 

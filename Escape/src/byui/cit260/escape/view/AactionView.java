@@ -17,10 +17,11 @@ public class AactionView {
             +"\n------------------------------------------------------------------------------"
             +"\n|Action Menu                                                                  "
             +"\n------------------------------------------------------------------------------"
-            +"\nE - What is the goal of the game?                                             "
-            +"\nG - How to move                                                               "
-            +"\nA - View Bag/View Status of Raft/Resources needed                             "
-            + "                             " 
+            +"\nE - Equip tool                                                                "
+            +"\nG - Gather an item                                                            "
+            +"\nA - Attack a person                                                           "
+            +"\ns - Slay beast                                                          " 
+            +"\nQ - Quit Action menu                                                          " 
             +"\n------------------------------------------------------------------------------";
     public void displayActionMenu(){
         char selection = ' ';
@@ -63,23 +64,17 @@ public class AactionView {
 
     private void doAction(char choice) {
         switch (choice){
+            case 'E':
+                this.displayEquipMenu();
+                break;
             case 'G':
-                this.displayGameGoal();
-                break;
-            case 'M':
-                this.displayHowToMove();
-                break;
-            case 'B':
-                this.displayBag();
+                this.displayGatherItems();
                 break;
             case 'A':
-                this.displayInteract();
+                this.displayAttack();
                 break;
-            case 'L':
-                this.displayViewLocation();
-                break;
-            case 'O':
-                this.displayObserveSurroundings();
+            case 'S':
+                this.displaySlay();
                 break;
             case 'Q':
                 this.goBackToMenu();
@@ -89,7 +84,7 @@ public class AactionView {
         }
     
        }
-    private void displayGameGoal(){
+    private void displayEquipMenu(){
         System.out.println("*                                                                                      *"
             + "\n* The goal of this game is to gather resources such as,               *"
             + "\n* food, and plant material. You are to build a raft and stock it      *"
@@ -97,18 +92,18 @@ public class AactionView {
             + "\n* On the island there is a volcano about to erupt, you must escape    *"
             + "\n* before time runs out, or GAME OVER!.                                *");
     }
-    private void displayHowToMove(){
+    private void displayGatherItems(){
         System.out.println("*"
                 + "\n*Use the MOVE command followed by a direction and distance.       *"
                 + "\n*EXAMPLE: MOVE NORTH 3                                            *");
     }
-    private void displayBag(){
+    private void displayAttack(){
         System.out.println("*"
                 + "\n*To display your bag items use the OPEN BAG command.              *"
                 + "\n*Only tools are stored in the bag.                                *"
                 + "\n*Tools are used for gathering, hunting, crafting, and fighting.   *");
     }
-    private void displayInteract(){
+    private void displaySlay(){
         System.out.println("*"
                 + "\n*Once a tool is equiped you can interact with an item.            *"
                 + "\n*Depending on the item and tool                                   *"
@@ -116,20 +111,9 @@ public class AactionView {
                 + "\n*followed by the name of the object                               *"
                 + "\n*EXAMPLE: GATHER FRUIT                                            *");
     }
-    private void displayViewLocation(){
-        System.out.println("*"
-                + "\n*Use the DISPLAY LOCATION command to show your position           *"
-                + "\n*on the map                                                       *");
-    }
-    private void displayObserveSurroundings(){
-        System.out.println("*"
-                + "\n*Use the OBSERVE SURROUNDINGS command to reveal the               *"
-                + "\n*objects in your location                                         *");
-    }
     private void goBackToMenu(){
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.displayMenu();
     }
 
-}
 }
