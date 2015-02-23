@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author samuel
  */
-public class AactionView {
+public class ActionView {
 
     private final String MENU = "\n"
             +"\n------------------------------------------------------------------------------"
