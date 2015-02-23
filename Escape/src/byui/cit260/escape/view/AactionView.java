@@ -4,28 +4,25 @@
  * and open the template in the editor.
  */
 package byui.cit260.escape.view;
-import java.util.Scanner;
 
+import java.util.Scanner;
 
 /**
  *
  * @author samuel
  */
-public class HelpMenuView {
+public class AactionView {
 
     private final String MENU = "\n"
             +"\n------------------------------------------------------------------------------"
-            +"\n|Help Menu                                                                    "
+            +"\n|Action Menu                                                                  "
             +"\n------------------------------------------------------------------------------"
-            +"\nG - What is the goal of the game?                                             "
-            +"\nM - How to move                                                               "
-            +"\nB - View Bag/View Status of Raft/Resources needed                             "
-            +"\nA -  Interact (Harvest certain resources, use items, etc.)                    "
-            +"\nL - View your location.                                                       "
-            +"\nO -  Observe surroundings                                                     "
-            +"\nQ - Quit or Go Back to Main Menu                                              "
+            +"\nE - What is the goal of the game?                                             "
+            +"\nG - How to move                                                               "
+            +"\nA - View Bag/View Status of Raft/Resources needed                             "
+            + "                             " 
             +"\n------------------------------------------------------------------------------";
-    public void displayHelpMenu(){
+    public void displayActionMenu(){
         char selection = ' ';
         do{
             System.out.println(MENU);// display the main menu
@@ -115,7 +112,7 @@ public class HelpMenuView {
         System.out.println("*"
                 + "\n*Once a tool is equiped you can interact with an item.            *"
                 + "\n*Depending on the item and tool                                   *"
-                + "\n*you can use the EQUIP GATHER, ATACK, SLAY, or CRAFT commands           *"
+                + "\n*you can use the GATHER, ATACK, SLAY, or CRAFT commands           *"
                 + "\n*followed by the name of the object                               *"
                 + "\n*EXAMPLE: GATHER FRUIT                                            *");
     }
@@ -135,4 +132,4 @@ public class HelpMenuView {
     }
 
 }
-
+}
