@@ -85,35 +85,25 @@ public class ActionView {
     
        }
     private void displayEquipMenu(){
-        System.out.println("*                                                                                      *"
-            + "\n* The goal of this game is to gather resources such as,               *"
-            + "\n* food, and plant material. You are to build a raft and stock it      *"
-            + "\n* with everything necisatry to survive at sea.                        *"
-            + "\n* On the island there is a volcano about to erupt, you must escape    *"
-            + "\n* before time runs out, or GAME OVER!.                                *");
+                BagView bagMenu = new BagView();
+                bagMenu.displayMenu();
     }
     private void displayGatherItems(){
-        System.out.println("*"
-                + "\n*Use the MOVE command followed by a direction and distance.       *"
-                + "\n*EXAMPLE: MOVE NORTH 3                                            *");
+                GatherView gatherMenu = new GatherView();
+                gatherMenu.displayMenu();
+        
     }
     private void displayAttack(){
-        System.out.println("*"
-                + "\n*To display your bag items use the OPEN BAG command.              *"
-                + "\n*Only tools are stored in the bag.                                *"
-                + "\n*Tools are used for gathering, hunting, crafting, and fighting.   *");
+                AttackView attackMenu = new AttackView();
+                attackMenu.displayMenu();
     }
     private void displaySlay(){
-        System.out.println("*"
-                + "\n*Once a tool is equiped you can interact with an item.            *"
-                + "\n*Depending on the item and tool                                   *"
-                + "\n*you can use the GATHER, ATACK, SLAY, or CRAFT commands           *"
-                + "\n*followed by the name of the object                               *"
-                + "\n*EXAMPLE: GATHER FRUIT                                            *");
+                SlayView slayMenu = new SlayView();
+                slayMenu.displayMenu();
     }
     private void goBackToMenu(){
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
 }

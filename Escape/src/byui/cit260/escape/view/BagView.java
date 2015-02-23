@@ -15,14 +15,13 @@ public class BagView {
     private final String MENU = "\n"
             +"\n------------------------------------------------------------------------------"
             +"\n|Bag Menu                                                                     "
-            +"\nUse the 'EQUIP' command followed by a selection bellow                       "
             +"\n------------------------------------------------------------------------------"
             +"\nH - How to equip Hammer                                                       "
             +"\nT - How to equip Hatchet                                                      "
             +"\nK - How to equip Knife                                                        "
             +"\nB - How to equip Bow                                                          "                                             
             +"\n------------------------------------------------------------------------------";
-    public void displayBagMenu(){
+    public void displayMenu(){
         char selection = ' ';
         do{
             System.out.println(MENU);// display the main menu
@@ -85,23 +84,19 @@ public class BagView {
        }
     private void displayHammer(){
         System.out.println("*"
-                + "Use the EQUIP command plus the letter H to equip the hammer      *"
-                + "Use the UNEQUIP command to plus the letter H to equip the hammer *");
+                + "Use the EQUIP command plus the letter H to equip the hammer      *");
     }
     private void displayHatchet(){
         System.out.println("*"
-                + "Use the EQUIP command plus the letter T to equip the hatchet     *"
-                + "Use the UNEQUIP command to plus the letter T to equip the hatchet*");
+                + "Use the EQUIP command plus the letter T to equip the hatchet     *");
     }
     private void displayKnife(){
         System.out.println("*"
-                + "Use the EQUIP command plus the letter K to equip the knife       *"
-                + "Use the UNEQUIP command to plus the letter K to equip the knife  *");
+                + "Use the EQUIP command plus the letter K to equip the knife       *");
     }
     private void displayBow(){
         System.out.println("*"
-                + "Use the EQUIP command plus the letter B to equip the bow         *"
-                + "Use the UNEQUIP command to plus the letter B to equip the bow*   *");
+                + "Use the EQUIP command plus the letter B to equip the bow         *");
     }
     private void goBackToMenu(){
         MainMenuView mainMenu = new MainMenuView();
