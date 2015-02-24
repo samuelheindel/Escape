@@ -19,7 +19,8 @@ public class BagView {
             +"\nH - How to equip Hammer                                                       "
             +"\nT - How to equip Hatchet                                                      "
             +"\nK - How to equip Knife                                                        "
-            +"\nB - How to equip Bow                                                          "                                             
+            +"\nB - How to equip Bow                                                          "
+            +"\nQ - Quit Action menu                                                          " 
             +"\n------------------------------------------------------------------------------";
     public void displayMenu(){
         char selection = ' ';
@@ -84,23 +85,23 @@ public class BagView {
        }
     private void displayHammer(){
         System.out.println("*"
-                + "Use the EQUIP command plus the letter H to equip the hammer      *");
+                + "Use the letter H to equip the hammer      *");
     }
     private void displayHatchet(){
         System.out.println("*"
-                + "Use the EQUIP command plus the letter T to equip the hatchet     *");
+                + "Use the letter T to equip the hatchet     *");
     }
     private void displayKnife(){
         System.out.println("*"
-                + "Use the EQUIP command plus the letter K to equip the knife       *");
+                + "Use the letter K to equip the knife       *");
     }
     private void displayBow(){
         System.out.println("*"
-                + "Use the EQUIP command plus the letter B to equip the bow         *");
+                + "Use the letter B to equip the bow         *");
     }
     private void goBackToMenu(){
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 }
 
