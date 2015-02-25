@@ -55,7 +55,7 @@ public class GameMenuView {
 
             // if the name is invalid (less than two characters in length)
             if (input.length() > 1) {
-                System.out.println("Invalid name - input must be one letter");
+                System.out.println("Invalid input - input must be one letter");
                 continue; // and repeat again
 
             }
@@ -75,7 +75,7 @@ public class GameMenuView {
                 this.displayMap();
                 break;
             case 'M':
-                this.displayMove();
+                this.displayMoveView();
                 break;
             case 'S':
                 this.saveGame();
@@ -107,8 +107,9 @@ public class GameMenuView {
         HelpMenu.displayHelpMenu();
     }
 
-    private void displayMove() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void displayMoveView() {
+        MoveView MoveMenu = new MoveView();
+        MoveMenu.displayMoveMenu();
     }
 
 }
