@@ -14,23 +14,23 @@ import java.util.Scanner;
  */
 public class CalcRaftCompletionView {
     public void displayCalcRaftCompletion() {
-        int input = this.getInput(); // get user selection
+        double input = this.getInput(); // get user selection
         System.out.println("Raft " + input + "% completed");
     }
-    private static int getInput() {
+    private static double getInput() {
         boolean valid = false; // indicates if the if valid
-        int people = -1;
-        int logsneeded = -1;
-        int logsininventory = -1;
-        int ropeneeded = 0;
-        int ropeininventory = -1; // variables
-        int storageneeded = -1;
-        int storageininventory = -1;
-        int raftcom = -1;
+        double people = -1;
+        double logsneeded = -1;
+        double logsininventory = -1;
+        double ropeneeded = 0;
+        double ropeininventory = -1; // variables
+        double storageneeded = -1;
+        double storageininventory = -1;
+        double raftcom = -1;
         Scanner input = new Scanner(System.in);// to get input from user
         while (!valid) { // start while loop
             System.out.println("How many people will be on yoour raft?");
-            people = input.nextInt(); // people variable
+            people = input.nextDouble(); // people variable
             if (people > 9) {
                 System.out.println("invalid number of people");
                 continue;
@@ -41,11 +41,11 @@ public class CalcRaftCompletionView {
                 System.out.println("Valid number of people.");
             }
             logsneeded = people * 10;
-            ropeneeded = people * 100;
+            ropeneeded = people * 60;
             storageneeded = people * 2;
 
             System.out.println("How many logs do you have in your inventory?");
-            logsininventory = input.nextInt(); // logs variable
+            logsininventory = input.nextDouble(); // logs variable
             if (logsininventory > 100) {
                 System.out.println("invalid number of logs.");
                 continue;
@@ -56,7 +56,7 @@ public class CalcRaftCompletionView {
                 System.out.println("Valid number of logs.");
             }
             System.out.println("How much rope do you have in your inventory?");
-            ropeininventory = input.nextInt(); // rope variable
+            ropeininventory = input.nextDouble(); // rope variable
             if (ropeininventory > 600) {
                 System.out.println("invalid amount of rope.");
                 continue;
@@ -67,7 +67,7 @@ public class CalcRaftCompletionView {
                 System.out.println("Valid amount of rope.");
             }
             System.out.println("How many storage crates do you have in your inventory?");
-            storageininventory = input.nextInt(); // storage variable
+            storageininventory = input.nextDouble(); // storage variable
             if (storageininventory > 29) {
                 System.out.println("invalid number of srorage crates.");
                 continue;
