@@ -24,6 +24,7 @@ public class GameMenuView {
             + "\nM - Move                                    "
             + "\nS - Save Game                               "
             + "\nC - Check Game Status                       "
+            + "\nR - Check raft completion                       "
             + "\nE - Exit                                    "
             + "\n--------------------------------------------";
 
@@ -82,6 +83,8 @@ public class GameMenuView {
                 break;
             case 'C':
                 this.checkGameStatus();
+            case 'R':
+                this.checkRaftStatus();
             case 'E':
                 return;
             default:
@@ -105,6 +108,11 @@ public class GameMenuView {
     private void checkGameStatus() {
         HelpMenuView HelpMenu = new HelpMenuView();
         HelpMenu.displayHelpMenu();
+    }
+    
+    private void checkRaftStatus() {
+        CalcRaftCompletionView CalcRaftCompletion = new CalcRaftCompletionView();
+        CalcRaftCompletion.displayCalcRaftCompletion();
     }
 
     private void displayMove() {

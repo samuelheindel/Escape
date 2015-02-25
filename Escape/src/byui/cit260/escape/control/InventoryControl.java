@@ -11,7 +11,7 @@ package byui.cit260.escape.control;
  */
 public class InventoryControl {
     
-    public double calcRaftCompletion(int logsneeded, int logsininventory, int ropeneeded, int ropeininventory, int storageneeded, int storageininventory){
+    public static int calcRaftCompletion(int logsneeded, int logsininventory, int ropeneeded, int ropeininventory, int storageneeded, int storageininventory){
         
         if (logsneeded < 10 || logsneeded > 100){
 		 

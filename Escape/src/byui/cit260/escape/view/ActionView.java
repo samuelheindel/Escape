@@ -20,7 +20,7 @@ public class ActionView {
             +"\nE - Equip tool                                                                "
             +"\nG - Gather an item                                                            "
             +"\nA - Attack a person                                                           "
-            +"\ns - Slay beast                                                          " 
+            +"\ns - Slay beast                                                                " 
             +"\nQ - Quit Action menu                                                          " 
             +"\n------------------------------------------------------------------------------";
     public void displayActionMenu(){

@@ -30,9 +30,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = 100.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, 100.0);
+        int expResult = 100;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, 100);
        
     }
     
@@ -51,9 +51,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -70,9 +70,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -89,9 +89,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -108,9 +108,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -127,9 +127,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -146,9 +146,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -165,9 +165,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -184,9 +184,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -203,9 +203,9 @@ public class InventoryControlTest {
         int storageneeded = 1;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -222,9 +222,9 @@ public class InventoryControlTest {
         int storageneeded = 30;
         int storageininventory = 2;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -241,9 +241,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = -1;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -260,9 +260,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 30;
         InventoryControl instance = new InventoryControl();
-        double expResult = -1.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, -1.0);
+        int expResult = -1;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, -1);
        
     }
     
@@ -279,9 +279,9 @@ public class InventoryControlTest {
         int storageneeded = 2;
         int storageininventory = 0;
         InventoryControl instance = new InventoryControl();
-        double expResult = 0.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, 0.0);
+        int expResult = 0;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, 0);
        
     }
     
@@ -298,9 +298,9 @@ public class InventoryControlTest {
         int storageneeded = 29;
         int storageininventory = 29;
         InventoryControl instance = new InventoryControl();
-        double expResult = 100.0;
-        double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
-        assertEquals(expResult, result, 100.0);
+        int expResult = 100;
+        int result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
+        assertEquals(expResult, result, 100);
        
     }
 
