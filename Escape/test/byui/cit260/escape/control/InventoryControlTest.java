@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author samuel
  */
 public class InventoryControlTest {
-    
+
     public InventoryControlTest() {
     }
 
@@ -33,11 +33,9 @@ public class InventoryControlTest {
         double expResult = 100;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, 100);
-       
+
     }
-    
-    
-    
+
     /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
@@ -54,10 +52,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-      /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -73,10 +71,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-         /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -92,10 +90,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-           /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -111,10 +109,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-               /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -130,10 +128,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-                /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -149,10 +147,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-                    /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -168,10 +166,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-                      /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -187,10 +185,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-                          /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -206,10 +204,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-                          /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -225,10 +223,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-                              /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -244,10 +242,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-                                  /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -263,10 +261,10 @@ public class InventoryControlTest {
         double expResult = -1;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, -1);
-       
+
     }
-    
-                                      /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -282,10 +280,10 @@ public class InventoryControlTest {
         double expResult = 0;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, 0);
-       
+
     }
-    
-                                          /**
+
+    /**
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
@@ -301,7 +299,7 @@ public class InventoryControlTest {
         double expResult = 100;
         double result = instance.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory);
         assertEquals(expResult, result, 100);
-       
+
     }
 
     /**
@@ -310,101 +308,103 @@ public class InventoryControlTest {
     @Test
     public void testCalRaftSize() {
         System.out.println("calRaftSize");
-        int people = 1;
-        int crates = 4;
+        double people = 1;
+        double crates = 4;
         InventoryControl instance = new InventoryControl();
-        int expResult = 68;
-        int result = instance.calRaftSize(people, crates);
-        assertEquals(expResult, result);
+        double expResult = 68;
+        double result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result, 68);
 
     }
-      /**
+
+    /**
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
     public void test2CalRaftSize() {
         System.out.println("calRaftSize");
-        int people = -1;
-        int crates = 4;
+        double people = -1;
+        double crates = 4;
         InventoryControl instance = new InventoryControl();
-        int expResult = -1;
-        int result = instance.calRaftSize(people, crates);
-        assertEquals(expResult, result);
+        double expResult = -1;
+        double result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result, -1);
 
     }
-    
-      /**
+
+    /**
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
     public void test3CalRaftSize() {
         System.out.println("calRaftSize");
-        int people = 10;
-        int crates = 1;
+        double people = 10;
+        double crates = 1;
         InventoryControl instance = new InventoryControl();
-        int expResult = -1;
-        int result = instance.calRaftSize(people, crates);
-        assertEquals(expResult, result);
+        double expResult = -1;
+        double result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result, -1);
 
     }
-      /**
+
+    /**
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
     public void test4CalRaftSize() {
         System.out.println("calRaftSize");
-        int people = 9;
-        int crates = 0;
+        double people = 9;
+        double crates = 0;
         InventoryControl instance = new InventoryControl();
-        int expResult = -1;
-        int result = instance.calRaftSize(people, crates);
-        assertEquals(expResult, result);
+        double expResult = -1;
+        double result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result, -1);
 
     }
-    
-      /**
+
+    /**
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
     public void test5CalRaftSize() {
         System.out.println("calRaftSize");
-        int people = 1;
-        int crates = 30;
+        double people = 1;
+        double crates = 30;
         InventoryControl instance = new InventoryControl();
-        int expResult = -1;
-        int result = instance.calRaftSize(people, crates);
-        assertEquals(expResult, result);
+        double expResult = -1;
+        double result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result, -1);
 
     }
-    
-      /**
+
+    /**
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
     public void test6CalRaftSize() {
         System.out.println("calRaftSize");
-        int people = 1;
-        int crates = 1;
+        double people = 1;
+        double crates = 1;
         InventoryControl instance = new InventoryControl();
-        int expResult = 62;
-        int result = instance.calRaftSize(people, crates);
-        assertEquals(expResult, result);
+        double expResult = 62;
+        double result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result, 62);
 
     }
-    
-      /**
+
+    /**
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
     public void test7CalRaftSize() {
         System.out.println("calRaftSize");
-        int people = 9;
-        int crates = 29;
+        double people = 9.0;
+        double crates = 29.0;
         InventoryControl instance = new InventoryControl();
-        int expResult = 598;
-        int result = instance.calRaftSize(people, crates);
-        assertEquals(expResult, result);
+        double expResult = 598.0;
+        double result = instance.calRaftSize(people, crates);
+        assertEquals(expResult, result, 598.0);
 
     }
-    
+
 }

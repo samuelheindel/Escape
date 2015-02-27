@@ -22,7 +22,7 @@ public class CalcRaftCompletionView {
         double people = -1;
         double logsneeded = -1;
         double logsininventory = -1;
-        double ropeneeded = 0;
+        double ropeneeded = -1;
         double ropeininventory = -1; // variables
         double storageneeded = -1;
         double storageininventory = -1;
