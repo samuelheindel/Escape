@@ -94,7 +94,7 @@ public class GameMenuView {
 
     private void actionView() {
         ActionView ActionMenu = new ActionView();
-        ActionMenu.displayActionMenu();
+        ActionMenu.displayMenu();
     }
 
     private void displayMap() {

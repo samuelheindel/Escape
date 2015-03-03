@@ -23,7 +23,7 @@ public class ActionView {
             +"\ns - Slay beast                                                                " 
             +"\nQ - Quit Action menu                                                          " 
             +"\n------------------------------------------------------------------------------";
-    public void displayActionMenu(){
+    public void displayMenu(){
         char selection = ' ';
         do{
             System.out.println(MENU);// display the main menu
