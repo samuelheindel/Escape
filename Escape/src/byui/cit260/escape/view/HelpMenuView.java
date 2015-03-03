@@ -131,7 +131,7 @@ public class HelpMenuView {
     }
     private void goBackToMenu(){
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        mainMenu.display();
     }
 
 }

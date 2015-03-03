@@ -38,7 +38,7 @@ public class StartProgramView {
         this.displayWelcomeMessage(player);
         //Disolay main menu
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        mainMenu.display();
         
     }
 

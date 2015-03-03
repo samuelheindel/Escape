@@ -20,7 +20,7 @@ public class MoveNorthView {
       
     }
     private int getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
+        boolean valid = false; // indicates if the number has been retrieved
         int input = 0;
         Scanner keyboard = new Scanner(System.in); // Keyboard input stream
 
