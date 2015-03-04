@@ -34,7 +34,8 @@ public class MainMenuView extends View {
 
     @Override
     public void doAction(Object value) {
-        char choice = (Character) value;
+        String action = (String)value;
+        char choice = action.charAt(0);
         switch (choice){
             case 'N':
                 this.startNewGame();
