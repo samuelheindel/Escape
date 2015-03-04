@@ -78,7 +78,7 @@ public class ActionView extends View {
 
     private void goBackToMenu() {
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
 }

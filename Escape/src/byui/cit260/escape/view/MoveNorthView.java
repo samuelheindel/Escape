@@ -11,37 +11,36 @@ import java.util.Scanner;
  *
  * @author Kale
  */
-public class MoveNorthView {
+public class MoveNorthView extends View{
     
-    public int displayMoveNorthView(){
-       
-    
-        return this.getInput();
-      
+    public MoveNorthView(){
+        super("\n"
+            +"\n--------------------------------------------"
+            +"\n   |Move North|                             "
+            +"\n--------------------------------------------"
+            +"\nS - Spaces                                  "
+            +"\nE - Exit                                    "
+            +"\n--------------------------------------------");
     }
-    private int getInput() {
-        boolean valid = false; // indicates if the number has been retrieved
-        int input = 0;
-        Scanner keyboard = new Scanner(System.in); // Keyboard input stream
-
-        while (!valid) { // while a valid name has not been retrieved
-            //Prompt o players name
-            System.out.println("Enter your desired spaces to move.");
-
-            // get number from user
-            input = keyboard.nextInt();
-
-            // If value is equal or greater than 0
-            if (input ==  0 || input > 0) {
-                System.out.println("Invalid input - Input must be a number");
-                continue; // and repeat again
-
-            }
-            break; // out of the (exit) the repetition
-
+    
+    @Override
+    public void doAction(Object value) {
+        String action = (String)value;
+        char choice = action.charAt(0);
+        switch (choice){
+            case 'S':
+                this.Spaces();
+                break;
+            case 'E':
+                return;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
         }
+    
+}
 
-        return input; // return value of spaces 
+    private void Spaces() {
+            System.out.println("You have called spaces function");
     }
-
+    
 }

@@ -67,7 +67,7 @@ public class BagView extends View {
     }
     private void goBackToMenu(){
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 }
 
