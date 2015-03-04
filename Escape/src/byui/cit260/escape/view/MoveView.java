@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author Kale
  */
-public class MoveView {
+public class MoveView extends View{
 
-    private final String MENU = "\n"
+    public MoveView() {
+        super("\n"
             +"\n--------------------------------------------"
             +"\n    Move Menu                               "
             +"\n--------------------------------------------"
@@ -22,51 +23,15 @@ public class MoveView {
             +"\nS - Move South                              "
             +"\nW - Move West                               "
             +"\nX - Exit                                    "
-            +"\n--------------------------------------------";
-    public void displayMoveMenu(){
-        char selection = ' ';
-        do{
-            System.out.println(MENU);// display the main menu
-            
-            String input = this.getInput(); // get user selection
-            selection = input.charAt(0); // get first character of string
-           
-            
-            this.doAction(selection);// do action based on selection
-            
-        }while (selection != 'E'); // an selection is not "exit"
+            +"\n--------------------------------------------");
     }
+   
 
-    private String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in); // Keyboard input stream
-      
-        while (!valid) { // while a valid name has not been retrieved
-            //Prompt o players name
-            System.out.println("Enter your selection below");
-            
-            // get the name from the key and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-               // if the name is invalid (less than two characters in length)
-            if (input.length() > 1) {
-                System.out.println("Invalid input - input must be one letter");
-                continue; // and repeat again
-                
-            }
-            break; // out of the (exit) the repetition
-            
-        }
-                
-        return input; // return the Dicection 
-       
-        
-    }
-
-    private void doAction(char choice) {
-        switch (choice){
+    @Override
+    public void doAction(Object value) {
+        String action = (String) value;
+        char choice = action.charAt(0);
+        switch (choice) {
             case 'N':
                 this.moveNorth();
                 break;

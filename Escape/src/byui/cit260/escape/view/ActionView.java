@@ -31,7 +31,8 @@ public class ActionView extends View {
   
     @Override
     public void doAction(Object value) {
-        char choice = (Character) value;
+        String action = (String)value;
+        char choice = action.charAt(0);
         switch (choice) {
             case 'E':
                 this.displayEquipMenu();
@@ -56,7 +57,7 @@ public class ActionView extends View {
 
     private void displayEquipMenu() {
         BagView bagMenu = new BagView();
-        bagMenu.displayMenu();
+        bagMenu.display();
     }
 
     private void displayGatherItems() {

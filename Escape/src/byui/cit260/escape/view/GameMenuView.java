@@ -74,7 +74,7 @@ public class GameMenuView extends View {
 
     private void checkGameStatus() {
         HelpMenuView HelpMenu = new HelpMenuView();
-        HelpMenu.displayHelpMenu();
+        HelpMenu.display();
     }
     
     private void checkRaftStatus() {
@@ -84,7 +84,7 @@ public class GameMenuView extends View {
 
     private void displayMoveView() {
         MoveView MoveMenu = new MoveView();
-        MoveMenu.displayMoveMenu();
+        MoveMenu.display();
     }
 
 }
