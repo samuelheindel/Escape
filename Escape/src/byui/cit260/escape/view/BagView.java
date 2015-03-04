@@ -101,7 +101,7 @@ public class BagView {
     }
     private void goBackToMenu(){
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 }
 

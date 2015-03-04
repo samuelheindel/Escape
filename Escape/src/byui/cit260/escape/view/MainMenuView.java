@@ -21,10 +21,10 @@ public class MainMenuView extends View {
     public MainMenuView() {
         super("\n"
             +"\n--------------------------------------------"
-            +"\n|Main Menu                                  "
+            +"\n   |Main Menu|                             "
             +"\n--------------------------------------------"
             +"\nN - Start Game                              "
-            +"\nG - Start Game                              "
+            +"\nL - Load Game                               "
             +"\nH - Get help on how to play the game        "
             +"\nS - Save game                               "
             +"\nE - Exit                                    "
@@ -40,7 +40,7 @@ public class MainMenuView extends View {
             case 'N':
                 this.startNewGame();
                 break;
-            case 'G':
+            case 'L':
                 this.startExistingGame();
                 break;
             case 'H':
@@ -60,7 +60,7 @@ public class MainMenuView extends View {
         GameControl.createNewGame(Escape.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
     private void startExistingGame(){
         System.out.println("*** startExistingGame ***");

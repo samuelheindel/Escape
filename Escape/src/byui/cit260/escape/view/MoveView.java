@@ -88,8 +88,7 @@ public class MoveView {
        }
     private void moveNorth(){
         MoveNorthView NorthView = new MoveNorthView();
-        int displayMoveNorthView;
-        displayMoveNorthView = NorthView.displayMoveNorthView();
+        NorthView.display();
        
     }
     private void moveEast(){
