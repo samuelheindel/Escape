@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author samuel
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
 
-    private final String MENU = "\n"
+    public HelpMenuView() {
+        super("\n"
             +"\n------------------------------------------------------------------------------"
             +"\n|Help Menu                                                                    "
             +"\n------------------------------------------------------------------------------"
@@ -24,48 +25,15 @@ public class HelpMenuView {
             +"\nL - View your location.                                                       "
             +"\nO -  Observe surroundings                                                     "
             +"\nQ - Quit or Go Back to Main Menu                                              "
-            +"\n------------------------------------------------------------------------------";
-    public void displayHelpMenu(){
-        char selection = ' ';
-        do{
-            System.out.println(MENU);// display the main menu
-            
-            String input = this.getInput(); // ge user selection
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection);// do action based on selection
-            
-        }while (selection != 'Q'); // an selection is not "exit"
+            +"\n------------------------------------------------------------------------------");
     }
+  
 
-    private String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in); // Keyboard input stream
-      
-        while (!valid) { // while a valid name has not been retrieved
-            //Prompt o players name
-            System.out.println("Enter your selection below");
-            
-            // get the name from the key and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-               // if the name is invalid (less than two characters in length)
-            if (input.length() > 1) {
-                System.out.println("Invalid name - input must be one letter");
-                continue; // and repeat again
-                
-            }
-            break; // out of the (exit) the repetition
-            
-        }
-                
-        return input; // return the name 
-    }
-
-    private void doAction(char choice) {
-        switch (choice){
+    @Override
+    public void doAction(Object value) {
+        String action = (String) value;
+        char choice = action.charAt(0);
+        switch (choice) {
             case 'G':
                 this.displayGameGoal();
                 break;

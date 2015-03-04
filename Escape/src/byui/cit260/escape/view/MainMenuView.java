@@ -20,23 +20,22 @@ public class MainMenuView extends View {
 
     public MainMenuView() {
         super("\n"
-            +"\n--------------------------------------------"
-            +"\n|Main Menu                                  "
-            +"\n--------------------------------------------"
-            +"\nN - Start Game                              "
-            +"\nG - Start Game                              "
-            +"\nH - Get help on how to play the game        "
-            +"\nS - Save game                               "
-            +"\nE - Exit                                    "
-            +"\n--------------------------------------------");
+                + "\n--------------------------------------------"
+                + "\n|Main Menu                                  "
+                + "\n--------------------------------------------"
+                + "\nN - Start Game                              "
+                + "\nG - Start Game                              "
+                + "\nH - Get help on how to play the game        "
+                + "\nS - Save game                               "
+                + "\nE - Exit                                    "
+                + "\n--------------------------------------------");
     }
-
 
     @Override
     public void doAction(Object value) {
-        String action = (String)value;
+        String action = (String) value;
         char choice = action.charAt(0);
-        switch (choice){
+        switch (choice) {
             case 'N':
                 this.startNewGame();
                 break;
@@ -54,26 +53,27 @@ public class MainMenuView extends View {
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
-    
-       }
-    private void startNewGame(){
+
+    }
+
+    private void startNewGame() {
         GameControl.createNewGame(Escape.getPlayer());
-        
+
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
     }
-    private void startExistingGame(){
+
+    private void startExistingGame() {
         System.out.println("*** startExistingGame ***");
     }
-    private void saveGame(){
+
+    private void saveGame() {
         System.out.println("*** saveGame funtion called ***");
     }
-    private void displayHelpMenu(){
+
+    private void displayHelpMenu() {
         HelpMenuView HelpMenu = new HelpMenuView();
-        HelpMenu.displayHelpMenu();
+        HelpMenu.display();
     }
-
-
-
 
 }

@@ -107,7 +107,7 @@ public class GameMenuView {
 
     private void checkGameStatus() {
         HelpMenuView HelpMenu = new HelpMenuView();
-        HelpMenu.displayHelpMenu();
+        HelpMenu.display();
     }
     
     private void checkRaftStatus() {
@@ -117,7 +117,7 @@ public class GameMenuView {
 
     private void displayMoveView() {
         MoveView MoveMenu = new MoveView();
-        MoveMenu.displayMoveMenu();
+        MoveMenu.display();
     }
 
 }
