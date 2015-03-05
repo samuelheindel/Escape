@@ -53,7 +53,6 @@ public class MainMenuView extends View {
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
-
     }
 
     private void startNewGame() {
@@ -75,5 +74,4 @@ public class MainMenuView extends View {
         HelpMenuView HelpMenu = new HelpMenuView();
         HelpMenu.display();
     }
-
 }

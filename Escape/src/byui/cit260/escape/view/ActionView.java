@@ -18,7 +18,6 @@ public class ActionView extends View {
                 + "\n------------------------------------------------------------------------------"
                 + "\n|Action Menu                                                                  "
                 + "\n------------------------------------------------------------------------------"
-                + "\nE - Equip tool                                                                "
                 + "\nG - Gather an item                                                            "
                 + "\nA - Attack a person                                                           "
                 + "\ns - Slay beast                                                                "
@@ -26,17 +25,11 @@ public class ActionView extends View {
                 + "\n------------------------------------------------------------------------------");
     }
 
-
-
-  
     @Override
     public void doAction(Object value) {
-        String action = (String)value;
+        String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
-            case 'E':
-                this.displayEquipMenu();
-                break;
             case 'G':
                 this.displayGatherItems();
                 break;
@@ -46,18 +39,13 @@ public class ActionView extends View {
             case 'S':
                 this.displaySlay();
                 break;
-            case 'Q':
+            case 'E':
                 this.goBackToMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
 
-    }
-
-    private void displayEquipMenu() {
-        BagView bagMenu = new BagView();
-        bagMenu.display();
     }
 
     private void displayGatherItems() {
@@ -68,7 +56,7 @@ public class ActionView extends View {
 
     private void displayAttack() {
         AttackView attackMenu = new AttackView();
-        attackMenu.displayMenu();
+        attackMenu.display();
     }
 
     private void displaySlay() {
