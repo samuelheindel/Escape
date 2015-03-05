@@ -20,7 +20,7 @@ public class ActionView extends View {
                 + "\n------------------------------------------------------------------------------"
                 + "\nG - Gather an item                                                            "
                 + "\nA - Attack a person                                                           "
-                + "\ns - Slay beast                                                                "
+                + "\nS - Slay beast                                                                "
                 + "\nE - Exit                                                                      "
                 + "\n------------------------------------------------------------------------------");
     }
