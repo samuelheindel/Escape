@@ -20,7 +20,7 @@ public class GameMenuView extends View {
             + "\n--------------------------------------------"
             + "\n    Game Menu                               "
             + "\n--------------------------------------------"
-            + "\nA - Action                                  "
+            + "\nA - Equip tool from bag                                  "
             + "\nV - View Map                                "
             + "\nM - Move                                    "
             + "\nS - Save Game                               "
@@ -37,7 +37,7 @@ public class GameMenuView extends View {
         char choice = action.charAt(0);
         switch (choice){
             case 'A':
-                this.actionView();
+                this.bagView();
                 break;
             case 'V':
                 this.displayMap();
@@ -59,9 +59,9 @@ public class GameMenuView extends View {
         }
     }      
 
-    private void actionView() {
-        ActionView ActionMenu = new ActionView();
-        ActionMenu.display();
+    private void bagView() {
+        BagView BagMenu = new BagView();
+        BagMenu.display();
     }
 
     private void displayMap() {

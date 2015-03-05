@@ -12,6 +12,7 @@ package byui.cit260.escape.view;
 class GatherView {
 
     public void displayMenu() {
-        System.out.println("this is the gather view*");}
-    
+        System.out.println("this is the gather view*");
+    }
+
 }
