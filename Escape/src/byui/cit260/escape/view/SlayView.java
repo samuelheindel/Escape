@@ -5,6 +5,7 @@
  */
 package byui.cit260.escape.view;
 
+import byui.cit260.escape.control.ActionControl;
 import byui.cit260.escape.control.GameControl;
 import escape.Escape;
 
@@ -42,7 +43,7 @@ public class SlayView extends View {
     }
 
     private void slayBeast() {
-        ActionControl.slayBeast();//calls function
+        ActionControl.SlayBeast();//calls function
     }
     
     

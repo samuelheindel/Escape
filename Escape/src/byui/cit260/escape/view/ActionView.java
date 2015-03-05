@@ -50,7 +50,7 @@ public class ActionView extends View {
 
     private void displayGatherItems() {
         GatherView gatherMenu = new GatherView();
-        gatherMenu.displayMenu();
+        gatherMenu.display();
 
     }
 
@@ -61,7 +61,7 @@ public class ActionView extends View {
 
     private void displaySlay() {
         SlayView slayMenu = new SlayView();
-        slayMenu.displayMenu();
+        slayMenu.display();
     }
 
     private void goBackToMenu() {

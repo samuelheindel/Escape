@@ -5,6 +5,8 @@
  */
 package byui.cit260.escape.view;
 
+import byui.cit260.escape.control.ActionControl;
+
 /**
  *
  * @author samuel
@@ -40,7 +42,7 @@ public class GatherView extends View {
     }
 
     private void gatherResource() {
-        ActionControl.gatherResource();//calls function
+        ActionControl.GatherResource();//calls function
     }
     
     
