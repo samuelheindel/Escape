@@ -18,11 +18,11 @@ public class BagView extends View {
                 + "\n------------------------------------------------------------------------------"
                 + "\n|Bag Menu                                                                     "
                 + "\n------------------------------------------------------------------------------"
-                + "\nH - How to equip Hammer                                                       "
-                + "\nT - How to equip Hatchet                                                      "
-                + "\nK - How to equip Knife                                                        "
-                + "\nB - How to equip Bow                                                          "
-                + "\nQ - Quit Action menu                                                          "
+                + "\nH - To equip Hammer                                                       "
+                + "\nT - To equip Hatchet                                                      "
+                + "\nK - To equip Knife                                                        "
+                + "\nB - To equip Bow                                                          "
+                + "\nE - Exit Action menu                                                          "
                 + "\n------------------------------------------------------------------------------");
     }
 
@@ -43,7 +43,7 @@ public class BagView extends View {
             case 'B':
                 this.displayBow();
                 break;
-            case 'Q':
+            case 'E':
                 this.goBackToMenu();
                 break;
             default:
