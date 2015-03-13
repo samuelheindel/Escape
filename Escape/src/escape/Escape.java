@@ -6,15 +6,13 @@
 package escape;
 
 import byui.cit260.escape.model.Actor;
-import byui.cit260.escape.model.Bag;
 import byui.cit260.escape.model.Game;
 import byui.cit260.escape.model.Inventory;
 import byui.cit260.escape.model.Location;
 import byui.cit260.escape.model.Map;
 import byui.cit260.escape.model.Player;
 import byui.cit260.escape.model.Raft;
-import byui.cit260.escape.model.Scene;
-import byui.cit260.escape.model.Tools;
+import byui.cit260.escape.model.Scenes;
 import byui.cit260.escape.model.Volcano;
 import byui.cit260.escape.model.Workbench;
 import byui.cit260.escape.view.StartProgramView;

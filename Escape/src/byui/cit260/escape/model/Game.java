@@ -15,27 +15,73 @@ public class Game implements Serializable{
     
     private double turn;
     private int noPeople;
+    private Inventory[] inventory;
+    private Player player;
+    private Volcano volcano;
+    private Raft raft;
+    private Map map;
+    
 
     public Game() {
     }
-    
-    
 
-    public double getTurn() {
+        public double getTurn() {
         return turn;
     }
 
     public void setTurn(double turn) {
         this.turn = turn;
     }
-
-    public int getNoPeople() {
+    
+     public int getNoPeople() {
         return noPeople;
     }
 
     public void setNoPeople(int noPeople) {
         this.noPeople = noPeople;
     }
+    
+    public Volcano getVolcano() {
+        return volcano;
+    }
+
+    public void setVolcano(Volcano volcano) {
+        this.volcano = volcano;
+    }
+    
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Raft getRaft() {
+        return raft;
+    }
+
+    public void setRaft(Raft raft) {
+        this.raft = raft;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+   
 
     @Override
     public String toString() {

@@ -6,6 +6,7 @@
 package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.GameControl;
+import byui.cit260.escape.model.Inventory;
 import escape.Escape;
 import java.util.Scanner;
 
@@ -37,7 +38,7 @@ public class GameMenuView extends View {
         char choice = action.charAt(0);
         switch (choice){
             case 'A':
-                this.bagView();
+                this.viewInventory();
                 break;
             case 'V':
                 this.displayMap();
@@ -59,13 +60,28 @@ public class GameMenuView extends View {
         }
     }      
 
-    private void bagView() {
-        BagView BagMenu = new BagView();
-        BagMenu.display();
+     private void viewInventory() {
+        //get a sorted list of inventory items for the current game
+        Inventory[] inventory = GameControl.getSortedInventoryList();
+        
+        System.out.println("\nList of Inventory Items");
+        System.out.println("Description" + "\t" + 
+                           "Required" + "\t" + 
+                           "In Stock");
+        
+        //for each inventory item
+        for (Inventory inventoryItem : inventory){
+            //Display the description,the required amount and amount in stock
+            System.out.println(inventoryItem.getDescription() + "\t   " +
+                               inventoryItem.getQuantityneeded() + "\t   " +
+                               inventoryItem.getQuantity());
+            
+        }
     }
 
     private void displayMap() {
-        System.out.println("*** startExistingGame ***");
+        MapView Map = new MapView();
+        Map.displayMap();
     }
 
     private void saveGame() {

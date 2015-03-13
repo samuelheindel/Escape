@@ -15,7 +15,8 @@ import java.util.Objects;
 public class Workbench implements Serializable{
     
     private String discription;
-
+    private Inventory inventory;
+    
     public Workbench() {
     }
 

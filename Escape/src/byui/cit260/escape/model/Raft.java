@@ -12,19 +12,22 @@ import java.util.Objects;
  *
  * @author samuel
  */
-public class Raft implements Serializable{
+public class Raft implements Serializable {
+
     private String description;
-    private int loglength;
-    private int logwidth;
-    private int storagespce;
-    private int playerspace;
-    private int maxweight;
+    private double loglength;
+    private double logwidth;
+    private double storagespace;
+    private double players;
 
     public Raft() {
+        this.description = "\n This is the raft that can get you off hte island";
+        this.loglength = 10;
+        this.logwidth = 1;
+        this.storagespace = 0;
+        this.players = 1;
     }
 
-    
-    
     public String getDescription() {
         return description;
     }
@@ -33,7 +36,7 @@ public class Raft implements Serializable{
         this.description = discription;
     }
 
-    public int getLoglength() {
+    public double getLoglength() {
         return loglength;
     }
 
@@ -41,7 +44,7 @@ public class Raft implements Serializable{
         this.loglength = loglength;
     }
 
-    public int getLogwidth() {
+    public double getLogwidth() {
         return logwidth;
     }
 
@@ -49,44 +52,35 @@ public class Raft implements Serializable{
         this.logwidth = logwidth;
     }
 
-    public int getStoragespce() {
-        return storagespce;
+    public double getStoragespce() {
+        return storagespace;
     }
 
     public void setStoragespace(int storagespace) {
-        this.storagespce = storagespace;
+        this.storagespace = storagespace;
     }
 
-    public int getPlayerspace() {
-        return playerspace;
+    public double getPlayers() {
+        return players;
     }
 
-    public void setPlayerspace(int playerspace) {
-        this.playerspace = playerspace;
-    }
-
-    public int getMaxweight() {
-        return maxweight;
-    }
-
-    public void setMaxweight(int maxweight) {
-        this.maxweight = maxweight;
+    public void setPlayers(int playerspace) {
+        this.players = players;
     }
 
     @Override
     public String toString() {
-        return "Raft{" + "discription=" + description + ", loglength=" + loglength + ", logwidth=" + logwidth + ", storagespce=" + storagespce + ", playerspace=" + playerspace + ", maxweight=" + maxweight + '}';
+        return "Raft{" + "discription=" + description + ", loglength=" + loglength + ", logwidth=" + logwidth + ", storagespce=" + ", playerspace=" + players + ", maxweight=" + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 79 * hash + Objects.hashCode(this.description);
-        hash = 79 * hash + this.loglength;
-        hash = 79 * hash + this.logwidth;
-        hash = 79 * hash + this.storagespce;
-        hash = 79 * hash + this.playerspace;
-        hash = 79 * hash + this.maxweight;
+        hash = (int) (79 * hash + this.loglength);
+        hash = (int) (79 * hash + this.logwidth);
+        hash = (int) (79 * hash + this.storagespace);
+        hash = (int) (79 * hash + this.players);
         return hash;
     }
 
@@ -108,18 +102,13 @@ public class Raft implements Serializable{
         if (this.logwidth != other.logwidth) {
             return false;
         }
-        if (this.storagespce != other.storagespce) {
+        if (this.storagespace != other.storagespace) {
             return false;
         }
-        if (this.playerspace != other.playerspace) {
-            return false;
-        }
-        if (this.maxweight != other.maxweight) {
+        if (this.players != other.players) {
             return false;
         }
         return true;
     }
-
-    
 
 }

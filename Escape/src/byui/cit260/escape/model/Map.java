@@ -12,11 +12,37 @@ import java.io.Serializable;
  * @author Kale
  */
 public class Map implements Serializable {
-    
-       private int rowCount;
-       private int colCount;
+
+    private int rowCount;
+    private int colCount;
+    private Location[][] locations;
 
     public Map() {
+    }
+
+    public Map(int rowCount, int colCount) {
+        if (rowCount < 1 || colCount < 1) {
+            System.out.println("The number of rows and columns must be greater than zero");
+            return;
+        }
+        this.rowCount = rowCount;
+        this.colCount = colCount;
+
+        //creat 2-d array for location objects
+        this.locations = new Location[rowCount][colCount];
+
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < colCount; column++) {
+                //creat and initialize new location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+
+                //assign the location object to a current location in  array
+                locations[row][column] = location;
+            }
+        }
     }
 
     public int getRowCount() {
@@ -62,6 +88,9 @@ public class Map implements Serializable {
         }
         return this.colCount == other.colCount;
     }
-    
-       
+
+    public Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

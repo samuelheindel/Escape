@@ -12,16 +12,16 @@ import java.util.Objects;
  *
  * @author samuel
  */
-public class Inventory implements Serializable{
+public class Inventory implements Serializable {
+
     private String inventorytype;
     private int quantity;
     private int quantityneeded;
+    private String description;
 
     public Inventory() {
     }
 
-    
-    
     public String getInventorytype() {
         return inventorytype;
     }
@@ -46,17 +46,26 @@ public class Inventory implements Serializable{
         this.quantityneeded = quantityneeded;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
-        return "Inventory{" + "inventorytype=" + inventorytype + ", quantity=" + quantity + ", quantityneeded=" + quantityneeded + '}';
+        return "Inventory{" + "inventorytype=" + inventorytype + ", quantity=" + quantity + ", quantityneeded=" + quantityneeded + ", description=" + description + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.inventorytype);
-        hash = 41 * hash + this.quantity;
-        hash = 41 * hash + this.quantityneeded;
+        hash = 97 * hash + Objects.hashCode(this.inventorytype);
+        hash = 97 * hash + this.quantity;
+        hash = 97 * hash + this.quantityneeded;
+        hash = 97 * hash + Objects.hashCode(this.description);
         return hash;
     }
 
@@ -78,11 +87,10 @@ public class Inventory implements Serializable{
         if (this.quantityneeded != other.quantityneeded) {
             return false;
         }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
         return true;
     }
 
-   
-    
-    
-    
 }

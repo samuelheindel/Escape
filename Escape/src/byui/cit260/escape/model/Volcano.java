@@ -14,13 +14,14 @@ import java.io.Serializable;
 public class Volcano implements Serializable{
         
     
-        private int countDown;
+        private double countDown;
 
     public Volcano() {
+    this.countDown = 240;
     }
        
 
-    public int getCountDown() {
+    public double getCountDown() {
         return countDown;
     }
 
@@ -36,7 +37,7 @@ public class Volcano implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + this.countDown;
+        hash = (int) (59 * hash + this.countDown);
         return hash;
     }
 
