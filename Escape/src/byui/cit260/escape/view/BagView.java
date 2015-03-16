@@ -5,6 +5,9 @@
  */
 package byui.cit260.escape.view;
 
+import byui.cit260.escape.control.GameControl;
+import byui.cit260.escape.control.ToolsControl;
+import byui.cit260.escape.model.Tools;
 import java.util.Scanner;
 
 /**
@@ -18,10 +21,11 @@ public class BagView extends View {
                 + "\n------------------------------------------------------------------------------"
                 + "\n|Bag Menu                                                                     "
                 + "\n------------------------------------------------------------------------------"
-                + "\nH - To equip Hammer                                                       "
-                + "\nT - To equip Hatchet                                                      "
-                + "\nK - To equip Knife                                                        "
-                + "\nB - To equip Bow                                                          "
+                + "\nS - See tool specs                                                            "
+                + "\nH - To equip Hammer                                                           "
+                + "\nT - To equip Hatchet                                                          "
+                + "\nK - To equip Knife                                                            "
+                + "\nB - To equip Bow                                                              "
                 + "\nE - Exit Action menu                                                          "
                 + "\n------------------------------------------------------------------------------");
     }
@@ -31,6 +35,9 @@ public class BagView extends View {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
+            case 'S':
+                this.toolSpecs();
+                break;
             case 'H':
                 this.displayHammer();
                 break;
@@ -50,6 +57,25 @@ public class BagView extends View {
                 System.out.println("\n*** Invalid selection *** Try again");
         }
 
+    }
+
+    private void toolSpecs() {
+        //get a sorted list of inventory items for the current game
+        Tools[] tools = ToolsControl.getSortedToolsList();
+
+        System.out.println("\n         Tool Specs");
+        System.out.println("\t" + "           Description" + "\t"
+                + "Damage" + "\t"
+                + "Gather");
+
+        //for each inventory item
+        for (Tools Tool : tools) {
+            //Display the description,the required amount and amount in stock
+            System.out.println(Tool.getDescription() + "\t" + "\t" + "\t"
+                    + Tool.getDamage() + "\t   "
+                    + Tool.getGather());
+
+        }
     }
 
     private void displayHammer() {
@@ -76,4 +102,5 @@ public class BagView extends View {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
+
 }

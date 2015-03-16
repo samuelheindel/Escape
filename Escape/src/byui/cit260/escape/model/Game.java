@@ -20,9 +20,18 @@ public class Game implements Serializable{
     private Volcano volcano;
     private Raft raft;
     private Map map;
+    private Tools tools;
     
 
     public Game() {
+    }
+
+    public Tools getTools() {
+        return tools;
+    }
+
+    public void setTools(Tools tools) {
+        this.tools = tools;
     }
 
         public double getTurn() {

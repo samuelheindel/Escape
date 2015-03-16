@@ -52,7 +52,7 @@ public class GameControl {
 
     private static Inventory[] createInventoryList() {
         Inventory[] inventory
-                = new Inventory[9];
+                = new Inventory[6];
 
         Inventory logs = new Inventory();
         logs.setDescription("Logs");
@@ -67,7 +67,7 @@ public class GameControl {
         inventory[Item.rope.ordinal()] = rope;
 
         Inventory storage = new Inventory();
-        storage.setDescription("Strorage crates");
+        storage.setDescription("Storage crates");
         storage.setQuantity(0);
         storage.setQuantityneeded(0);
         inventory[Item.storage.ordinal()] = storage;
@@ -84,30 +84,11 @@ public class GameControl {
         fruit.setQuantityneeded(0);
         inventory[Item.fruit.ordinal()] = fruit;
 
-        Inventory hammer = new Inventory();
-        hammer.setDescription("Hammer");
-        hammer.setQuantity(0);
-        hammer.setQuantityneeded(0);
-        inventory[Item.hammer.ordinal()] = hammer;
-
-        Inventory bow = new Inventory();
-        bow.setDescription("Bow");
-        bow.setQuantity(0);
-        bow.setQuantityneeded(0);
-        inventory[Item.bow.ordinal()] = bow;
-
-        Inventory knife = new Inventory();
-        knife.setDescription("Knife");
-        knife.setQuantity(0);
-        knife.setQuantityneeded(0);
-        inventory[Item.knife.ordinal()] = knife;
-
-        Inventory hatchet = new Inventory();
-        hatchet.setDescription("Hatchet");
-        hatchet.setQuantity(0);
-        hatchet.setQuantityneeded(0);
-        inventory[Item.hatchet.ordinal()] = hatchet;
-
+        Inventory bag = new Inventory();
+        bag.setDescription("bag");
+        bag.setQuantity(1);
+        bag.setQuantityneeded(1);
+        inventory[Item.bag.ordinal()] = bag;
         return inventory;
 
     }

@@ -9,11 +9,10 @@ package byui.cit260.escape.model;
  *
  * @author samuel
  */
-public enum Item {
-    logs,
-    rope,
-    storage,
-    meat,
-    fruit,
-    bag,
+public enum Toollist {
+
+    hammer,
+    bow,
+    knife,
+    hatchet,;
 }

@@ -16,29 +16,32 @@ import java.util.Scanner;
  */
 public class GameMenuView extends View {
 
-   public GameMenuView() {
+    public GameMenuView() {
         super("\n"
-            + "\n--------------------------------------------"
-            + "\n    Game Menu                               "
-            + "\n--------------------------------------------"
-            + "\nA - Equip tool from bag                                  "
-            + "\nV - View Map                                "
-            + "\nM - Move                                    "
-            + "\nS - Save Game                               "
-            + "\nC - Check Game Status                       "
-            + "\nR - Check raft completion                   "
-            + "\nE - Exit                                    "
-            + "\n--------------------------------------------");
-   }
-   
+                + "\n--------------------------------------------"
+                + "\n    Game Menu                               "
+                + "\n--------------------------------------------"
+                + "\nI - See inventory                           "
+                + "\nA - Equip tool from bag                     "
+                + "\nV - View Map                                "
+                + "\nM - Move                                    "
+                + "\nS - Save Game                               "
+                + "\nC - Check Game Status                       "
+                + "\nR - Check raft completion                   "
+                + "\nE - Exit                                    "
+                + "\n--------------------------------------------");
+    }
 
-     @Override
+    @Override
     public void doAction(Object value) {
-        String action = (String)value;
+        String action = (String) value;
         char choice = action.charAt(0);
-        switch (choice){
-            case 'A':
+        switch (choice) {
+            case 'I':
                 this.viewInventory();
+                break;
+            case 'A':
+                this.Bag();
                 break;
             case 'V':
                 this.displayMap();
@@ -58,25 +61,30 @@ public class GameMenuView extends View {
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
-    }      
+    }
 
-     private void viewInventory() {
+    private void viewInventory() {
         //get a sorted list of inventory items for the current game
         Inventory[] inventory = GameControl.getSortedInventoryList();
-        
-        System.out.println("\nList of Inventory Items");
-        System.out.println("Description" + "\t" + 
-                           "Required" + "\t" + 
-                           "In Stock");
-        
+
+        System.out.println("\n         List of Inventory Items");
+        System.out.println("\t" + "           Description" + "\t"
+                + "Required" + "\t"
+                + "In Stock");
+
         //for each inventory item
-        for (Inventory inventoryItem : inventory){
+        for (Inventory inventoryItem : inventory) {
             //Display the description,the required amount and amount in stock
-            System.out.println(inventoryItem.getDescription() + "\t   " +
-                               inventoryItem.getQuantityneeded() + "\t   " +
-                               inventoryItem.getQuantity());
-            
+            System.out.println(inventoryItem.getDescription() + "\t" + "\t" + "\t"
+                    + inventoryItem.getQuantityneeded() + "\t   "
+                    + inventoryItem.getQuantity());
+
         }
+    }
+
+    private void Bag() {
+        BagView Bag = new BagView();
+        Bag.display();
     }
 
     private void displayMap() {
@@ -92,7 +100,7 @@ public class GameMenuView extends View {
         HelpMenuView HelpMenu = new HelpMenuView();
         HelpMenu.display();
     }
-    
+
     private void checkRaftStatus() {
         CalcRaftCompletionView CalcRaftCompletion = new CalcRaftCompletionView();
         CalcRaftCompletion.displayCalcRaftCompletion();
