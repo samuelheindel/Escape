@@ -19,16 +19,16 @@ public class MapView {
         Map map = Escape.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
         System.out.println("Jaba Island Map");
-        System.out.println("  1  ,  2  ,  3  ,  4  ,  5  ,  6  ,  7  ,  8  ,  9  ,  10  ,  11  ,  12  ,  13  ,  14  ,  15  ,  16  ,  17  ,  18  ,  19  ,  20  ");
-        System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("\n     1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ,  8 ,  9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 "
+                + "\n--------------------------------------------------------------------------------------------------");
         for (int i = 0; i < map.getRowCount(); i++) {
-            System.out.println("\t" + i + " | ");
+            System.out.print(i + " | ");
             for (int j = 0; j < map.getColCount(); j++) {
                 Location location = locations[i][j];
                 String symbol = location.getScene().getSymbol();
-                System.out.println(symbol + " | ");
+                System.out.print(symbol + " | ");
             }
-            System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("\n--------------------------------------------------------------------------------------------------");
         }
         return locations;
     }
