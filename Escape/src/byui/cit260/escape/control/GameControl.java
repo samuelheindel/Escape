@@ -43,7 +43,7 @@ public class GameControl {
         Raft raft = new Raft(); // creates Raft
         game.setRaft(raft); // saves Raft in game
 
-        Map map = MapControl.createMap();// create and initialize new map
+        Map map = GameControl.createMap();// create and initialize new map
         game.setMap(map);//save map in game
 
         //move actors to starting position in the map
@@ -116,52 +116,16 @@ public class GameControl {
         // creat map 
         Map map = new Map(20, 20);
 
-//        // create the scenes for the game
-//        Scenes[] scenes = createScenes();
-//
-//        // asign scenes to locations
-//        GameControl.assignScenesToLocation(map, scenes);
-        
+        // asign scenes to locations
+        GameControl.assignScenesToLocation(map);
+
         return map;
     }
 
-//    private static Scenes[] createScenes(){
-//        BufferedImage image = null;
-//
-//        Game game = Escape.getCurrentGame();
-//
-//        Scenes[] scenes = new Scenes[Scenes.values().length];
-//
-//        Scenes startingScene = new Scene();
-//        startingScene.setDescription(
-//                "\nYou awake on the beach of an island, In the distance"
-//                + "you hear the rumbling of a volcano. You look"
-//                + "up to see somke rising from on, and you are sure"
-//                + "it will explode any day!");
-//        startingScene.setMapSymbol(" ST ");
-//        startingScene.setBlocked(false);
-//        startingScene.setTravelTime(240);
-//        ImageIcon startingSceneImage = MapControl.getImage(startingScene,
-//                "C:/Users/samuel/Desktop/winter 2015/cit 260/Escape/Escape/src/escape/images/startingPoint.jpg");
-//        startingScene.setIcon(startingSceneImage);
-//        scenes[SceneType.start.ordinal()] = startingScene;
-//
-//        Scene finishScene = new Scene();
-//        finishScene.setDescription(
-//                "Congradulations you have completed your raft and escaped the island."
-//                + "Have fun stranded at sea.");
-//        finishScene.setMapSymobol(" FN ");
-//        finishScene.setBlocked(false);
-//        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-//        ImageIcon finishSceneImage = MapControl.getImage(finishScene,
-//                "C:/Users/samuel/Desktop/winter 2015/cit 260/Escape/Escape/src/escape/images/finish.jpg");
-//        finishScene.setIcon(startingSceneImage);
-//        return null;
-//    }
-
-    private static void assignScenesToLocation(Map map, Scenes[] scenes) {
+    private static void assignScenesToLocation(Map map) {
         Location[][] locations = map.getLocations();
 
+        locations[0][0].setScene(Scenes.ocean);
         locations[0][1].setScene(Scenes.ocean);
         locations[0][2].setScene(Scenes.ocean);
         locations[0][3].setScene(Scenes.ocean);
@@ -181,8 +145,8 @@ public class GameControl {
         locations[0][17].setScene(Scenes.ocean);
         locations[0][18].setScene(Scenes.ocean);
         locations[0][19].setScene(Scenes.ocean);
-        locations[0][20].setScene(Scenes.ocean);
 
+        locations[1][0].setScene(Scenes.ocean);
         locations[1][1].setScene(Scenes.ocean);
         locations[1][2].setScene(Scenes.ocean);
         locations[1][3].setScene(Scenes.ocean);
@@ -202,8 +166,8 @@ public class GameControl {
         locations[1][17].setScene(Scenes.ocean);
         locations[1][18].setScene(Scenes.ocean);
         locations[1][19].setScene(Scenes.ocean);
-        locations[1][20].setScene(Scenes.ocean);
 
+        locations[2][0].setScene(Scenes.ocean);
         locations[2][1].setScene(Scenes.ocean);
         locations[2][2].setScene(Scenes.ocean);
         locations[2][3].setScene(Scenes.ocean);
@@ -223,8 +187,8 @@ public class GameControl {
         locations[2][17].setScene(Scenes.ocean);
         locations[2][18].setScene(Scenes.ocean);
         locations[2][19].setScene(Scenes.ocean);
-        locations[2][20].setScene(Scenes.ocean);
 
+        locations[3][0].setScene(Scenes.ocean);
         locations[3][1].setScene(Scenes.ocean);
         locations[3][2].setScene(Scenes.ocean);
         locations[3][3].setScene(Scenes.ocean);
@@ -244,8 +208,8 @@ public class GameControl {
         locations[3][17].setScene(Scenes.ocean);
         locations[3][18].setScene(Scenes.ocean);
         locations[3][19].setScene(Scenes.ocean);
-        locations[3][20].setScene(Scenes.ocean);
 
+        locations[4][0].setScene(Scenes.ocean);
         locations[4][1].setScene(Scenes.ocean);
         locations[4][2].setScene(Scenes.ocean);
         locations[4][3].setScene(Scenes.ocean);
@@ -265,8 +229,8 @@ public class GameControl {
         locations[4][17].setScene(Scenes.ocean);
         locations[4][18].setScene(Scenes.ocean);
         locations[4][19].setScene(Scenes.ocean);
-        locations[4][20].setScene(Scenes.ocean);
 
+        locations[5][0].setScene(Scenes.ocean);
         locations[5][1].setScene(Scenes.ocean);
         locations[5][2].setScene(Scenes.ocean);
         locations[5][3].setScene(Scenes.ocean);
@@ -286,8 +250,8 @@ public class GameControl {
         locations[5][17].setScene(Scenes.ocean);
         locations[5][18].setScene(Scenes.ocean);
         locations[5][19].setScene(Scenes.ocean);
-        locations[5][20].setScene(Scenes.ocean);
-        
+
+        locations[6][0].setScene(Scenes.ocean);
         locations[6][1].setScene(Scenes.ocean);
         locations[6][2].setScene(Scenes.ocean);
         locations[6][3].setScene(Scenes.ocean);
@@ -307,8 +271,8 @@ public class GameControl {
         locations[6][17].setScene(Scenes.ocean);
         locations[6][18].setScene(Scenes.ocean);
         locations[6][19].setScene(Scenes.ocean);
-        locations[6][20].setScene(Scenes.ocean);
 
+        locations[7][0].setScene(Scenes.ocean);
         locations[7][1].setScene(Scenes.ocean);
         locations[7][2].setScene(Scenes.ocean);
         locations[7][3].setScene(Scenes.ocean);
@@ -328,8 +292,8 @@ public class GameControl {
         locations[7][17].setScene(Scenes.ocean);
         locations[7][18].setScene(Scenes.ocean);
         locations[7][19].setScene(Scenes.ocean);
-        locations[7][20].setScene(Scenes.ocean);
 
+        locations[8][0].setScene(Scenes.ocean);
         locations[8][1].setScene(Scenes.ocean);
         locations[8][2].setScene(Scenes.ocean);
         locations[8][3].setScene(Scenes.ocean);
@@ -349,8 +313,8 @@ public class GameControl {
         locations[8][17].setScene(Scenes.ocean);
         locations[8][18].setScene(Scenes.ocean);
         locations[8][19].setScene(Scenes.ocean);
-        locations[8][20].setScene(Scenes.ocean);
 
+        locations[9][0].setScene(Scenes.ocean);
         locations[9][1].setScene(Scenes.ocean);
         locations[9][2].setScene(Scenes.ocean);
         locations[9][3].setScene(Scenes.ocean);
@@ -370,9 +334,9 @@ public class GameControl {
         locations[9][17].setScene(Scenes.ocean);
         locations[9][18].setScene(Scenes.ocean);
         locations[9][19].setScene(Scenes.ocean);
-        locations[9][20].setScene(Scenes.ocean);
 
-                locations[0][1].setScene(Scenes.ocean);
+        locations[10][0].setScene(Scenes.ocean);
+        locations[10][1].setScene(Scenes.ocean);
         locations[10][2].setScene(Scenes.ocean);
         locations[10][3].setScene(Scenes.ocean);
         locations[10][4].setScene(Scenes.ocean);
@@ -391,8 +355,8 @@ public class GameControl {
         locations[10][17].setScene(Scenes.ocean);
         locations[10][18].setScene(Scenes.ocean);
         locations[10][19].setScene(Scenes.ocean);
-        locations[10][20].setScene(Scenes.ocean);
 
+        locations[11][0].setScene(Scenes.ocean);
         locations[11][1].setScene(Scenes.ocean);
         locations[11][2].setScene(Scenes.ocean);
         locations[11][3].setScene(Scenes.ocean);
@@ -412,8 +376,8 @@ public class GameControl {
         locations[11][17].setScene(Scenes.ocean);
         locations[11][18].setScene(Scenes.ocean);
         locations[11][19].setScene(Scenes.ocean);
-        locations[11][20].setScene(Scenes.ocean);
 
+        locations[12][0].setScene(Scenes.ocean);
         locations[12][1].setScene(Scenes.ocean);
         locations[12][2].setScene(Scenes.ocean);
         locations[12][3].setScene(Scenes.ocean);
@@ -433,8 +397,8 @@ public class GameControl {
         locations[12][17].setScene(Scenes.ocean);
         locations[12][18].setScene(Scenes.ocean);
         locations[12][19].setScene(Scenes.ocean);
-        locations[12][20].setScene(Scenes.ocean);
 
+        locations[13][0].setScene(Scenes.ocean);
         locations[13][1].setScene(Scenes.ocean);
         locations[13][2].setScene(Scenes.ocean);
         locations[13][3].setScene(Scenes.ocean);
@@ -454,8 +418,8 @@ public class GameControl {
         locations[13][17].setScene(Scenes.ocean);
         locations[13][18].setScene(Scenes.ocean);
         locations[13][19].setScene(Scenes.ocean);
-        locations[13][20].setScene(Scenes.ocean);
 
+        locations[14][0].setScene(Scenes.ocean);
         locations[14][1].setScene(Scenes.ocean);
         locations[14][2].setScene(Scenes.ocean);
         locations[14][3].setScene(Scenes.ocean);
@@ -475,8 +439,8 @@ public class GameControl {
         locations[14][17].setScene(Scenes.ocean);
         locations[14][18].setScene(Scenes.ocean);
         locations[14][19].setScene(Scenes.ocean);
-        locations[14][20].setScene(Scenes.ocean);
 
+        locations[15][0].setScene(Scenes.ocean);
         locations[15][1].setScene(Scenes.ocean);
         locations[15][2].setScene(Scenes.ocean);
         locations[15][3].setScene(Scenes.ocean);
@@ -496,8 +460,8 @@ public class GameControl {
         locations[15][17].setScene(Scenes.ocean);
         locations[15][18].setScene(Scenes.ocean);
         locations[15][19].setScene(Scenes.ocean);
-        locations[15][20].setScene(Scenes.ocean);
-        
+
+        locations[16][0].setScene(Scenes.ocean);
         locations[16][1].setScene(Scenes.ocean);
         locations[16][2].setScene(Scenes.ocean);
         locations[16][3].setScene(Scenes.ocean);
@@ -517,8 +481,8 @@ public class GameControl {
         locations[16][17].setScene(Scenes.ocean);
         locations[16][18].setScene(Scenes.ocean);
         locations[16][19].setScene(Scenes.ocean);
-        locations[16][20].setScene(Scenes.ocean);
 
+        locations[17][0].setScene(Scenes.ocean);
         locations[17][1].setScene(Scenes.ocean);
         locations[17][2].setScene(Scenes.ocean);
         locations[17][3].setScene(Scenes.ocean);
@@ -538,8 +502,8 @@ public class GameControl {
         locations[17][17].setScene(Scenes.ocean);
         locations[17][18].setScene(Scenes.ocean);
         locations[17][19].setScene(Scenes.ocean);
-        locations[17][20].setScene(Scenes.ocean);
 
+        locations[18][0].setScene(Scenes.ocean);
         locations[18][1].setScene(Scenes.ocean);
         locations[18][2].setScene(Scenes.ocean);
         locations[18][3].setScene(Scenes.ocean);
@@ -559,8 +523,8 @@ public class GameControl {
         locations[18][17].setScene(Scenes.ocean);
         locations[18][18].setScene(Scenes.ocean);
         locations[18][19].setScene(Scenes.ocean);
-        locations[18][20].setScene(Scenes.ocean);
 
+        locations[19][0].setScene(Scenes.ocean);
         locations[19][1].setScene(Scenes.ocean);
         locations[19][2].setScene(Scenes.ocean);
         locations[19][3].setScene(Scenes.ocean);
@@ -580,28 +544,6 @@ public class GameControl {
         locations[19][17].setScene(Scenes.ocean);
         locations[19][18].setScene(Scenes.ocean);
         locations[19][19].setScene(Scenes.ocean);
-        locations[19][20].setScene(Scenes.ocean);
-
-        locations[20][1].setScene(Scenes.ocean);
-        locations[20][2].setScene(Scenes.ocean);
-        locations[20][3].setScene(Scenes.ocean);
-        locations[20][4].setScene(Scenes.ocean);
-        locations[20][5].setScene(Scenes.ocean);
-        locations[20][6].setScene(Scenes.ocean);
-        locations[20][7].setScene(Scenes.ocean);
-        locations[20][8].setScene(Scenes.ocean);
-        locations[20][9].setScene(Scenes.ocean);
-        locations[20][10].setScene(Scenes.ocean);
-        locations[20][11].setScene(Scenes.ocean);
-        locations[20][12].setScene(Scenes.ocean);
-        locations[20][13].setScene(Scenes.ocean);
-        locations[20][14].setScene(Scenes.ocean);
-        locations[20][15].setScene(Scenes.ocean);
-        locations[20][16].setScene(Scenes.ocean);
-        locations[20][17].setScene(Scenes.ocean);
-        locations[20][18].setScene(Scenes.ocean);
-        locations[20][19].setScene(Scenes.ocean);
-        locations[20][20].setScene(Scenes.ocean);
     }
 
     public static Inventory[] getSortedInventoryList() {

@@ -45,6 +45,14 @@ public class Map implements Serializable {
         }
     }
 
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
     public int getRowCount() {
         return rowCount;
     }
@@ -89,8 +97,5 @@ public class Map implements Serializable {
         return this.colCount == other.colCount;
     }
 
-    public Location[][] getLocations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }
