@@ -64,14 +64,13 @@ public class BagView extends View {
         Tools[] tools = ToolsControl.getSortedToolsList();
 
         System.out.println("\n         Tool Specs");
-        System.out.println("\t" + "           Description" + "\t"
-                + "Damage" + "\t"
+        System.out.println("\t"+"\t"+"Damage" + "\t"
                 + "Gather");
 
         //for each inventory item
         for (Tools Tool : tools) {
             //Display the description,the required amount and amount in stock
-            System.out.println(Tool.getDescription() + "\t" + "\t" + "\t"
+            System.out.println(Tool.getDescription() + "\t" + "\t"
                     + Tool.getDamage() + "\t   "
                     + Tool.getGather());
 

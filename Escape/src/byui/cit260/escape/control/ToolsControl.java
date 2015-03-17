@@ -47,7 +47,7 @@ public class ToolsControl {
     }
 
     public static Tools[] getSortedToolsList() {
-        Tools[] tools = Escape.getCurrentGame().getTools();
+        Tools[] tools = ToolsControl.createToolsList();
         Tools tempTools;
         for (int i = 0; i < tools.length - 1; i++) {
             for (int j = 0; j < tools.length - 1 - i; j++) {
@@ -56,7 +56,6 @@ public class ToolsControl {
                     tools[j] = tools[j + 1];
                     tools[j + 1] = tempTools;
                 }
-
             }
         }
         return tools;
