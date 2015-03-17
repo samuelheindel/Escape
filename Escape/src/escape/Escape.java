@@ -54,5 +54,10 @@ public class Escape {
         Escape.player = player;
     }
 
+    
+    
+    
+    
+    
   
 }
