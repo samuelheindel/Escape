@@ -11,27 +11,15 @@ import java.io.Serializable;
  *
  * @author Kale
  */
-public class Game implements Serializable {
-
+public class Game implements Serializable{
+    
     private double turn;
     private int noPeople;
-    private Inventory[] inventory;
-    private Player player;
-    private Volcano volcano;
-    private Raft raft;
-    private Map map;
-    private Tools[] tools;
 
     public Game() {
     }
-
-    public Tools[] getTools() {
-        return tools;
-    }
-
-    public void setTools(Tools[] tools) {
-        this.tools = tools;
-    }
+    
+    
 
     public double getTurn() {
         return turn;
@@ -47,46 +35,6 @@ public class Game implements Serializable {
 
     public void setNoPeople(int noPeople) {
         this.noPeople = noPeople;
-    }
-
-    public Volcano getVolcano() {
-        return volcano;
-    }
-
-    public void setVolcano(Volcano volcano) {
-        this.volcano = volcano;
-    }
-
-    public Inventory[] getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(Inventory[] inventory) {
-        this.inventory = inventory;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public Raft getRaft() {
-        return raft;
-    }
-
-    public void setRaft(Raft raft) {
-        this.raft = raft;
-    }
-
-    public Map getMap() {
-        return map;
-    }
-
-    public void setMap(Map map) {
-        this.map = map;
     }
 
     @Override
@@ -119,5 +67,7 @@ public class Game implements Serializable {
         }
         return true;
     }
-
+    
+    
+    
 }
