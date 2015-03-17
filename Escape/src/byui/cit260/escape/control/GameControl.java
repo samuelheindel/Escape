@@ -13,12 +13,8 @@ import byui.cit260.escape.model.Map;
 import byui.cit260.escape.model.Player;
 import byui.cit260.escape.model.Raft;
 import byui.cit260.escape.model.Scenes;
-import byui.cit260.escape.model.SceneType;
-import byui.cit260.escape.model.Scenes;
 import byui.cit260.escape.model.Volcano;
 import escape.Escape;
-import java.awt.image.BufferedImage;
-import javax.swing.ImageIcon;
 
 /**
  *
