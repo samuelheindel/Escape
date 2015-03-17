@@ -11,8 +11,8 @@ import java.io.Serializable;
  *
  * @author Kale
  */
-public class Game implements Serializable{
-    
+public class Game implements Serializable {
+
     private Game game;
     private Player player;
     private double turn;
@@ -41,8 +41,6 @@ public class Game implements Serializable{
     public void setTools(Tools[] tools) {
         this.tools = tools;
     }
-    
-    
 
     public double getTurn() {
         return turn;
@@ -130,7 +128,5 @@ public class Game implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }
