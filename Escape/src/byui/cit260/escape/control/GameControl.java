@@ -15,6 +15,7 @@ import byui.cit260.escape.model.Raft;
 import byui.cit260.escape.model.Scenes;
 import byui.cit260.escape.model.Volcano;
 import escape.Escape;
+import exceptions.MapControlExceptions;
 
 /**
  *
@@ -22,7 +23,7 @@ import escape.Escape;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlExceptions {
 
         Game game = new Game(); // creates ne game
         Escape.setCurrentGame(game);// save in esacpe
@@ -125,8 +126,8 @@ public class GameControl {
 
         locations[1][0].setScene(Scenes.ocean);
         locations[1][1].setScene(Scenes.ocean);
-        locations[1][2].setScene(Scenes.ocean);
-        locations[1][3].setScene(Scenes.ocean);
+        locations[1][2].setScene(Scenes.beach);
+        locations[1][3].setScene(Scenes.beach);
         locations[1][4].setScene(Scenes.ocean);
         locations[1][5].setScene(Scenes.ocean);
         locations[1][6].setScene(Scenes.ocean);
@@ -135,8 +136,8 @@ public class GameControl {
         locations[1][9].setScene(Scenes.ocean);
         locations[1][10].setScene(Scenes.ocean);
         locations[1][11].setScene(Scenes.ocean);
-        locations[1][12].setScene(Scenes.ocean);
-        locations[1][13].setScene(Scenes.ocean);
+        locations[1][12].setScene(Scenes.beach);
+        locations[1][13].setScene(Scenes.beach);
         locations[1][14].setScene(Scenes.ocean);
         locations[1][15].setScene(Scenes.ocean);
         locations[1][16].setScene(Scenes.ocean);
@@ -146,7 +147,7 @@ public class GameControl {
 
         locations[2][0].setScene(Scenes.ocean);
         locations[2][1].setScene(Scenes.ocean);
-        locations[2][2].setScene(Scenes.ocean);
+        locations[2][2].setScene(Scenes.beach);
         locations[2][3].setScene(Scenes.ocean);
         locations[2][4].setScene(Scenes.ocean);
         locations[2][5].setScene(Scenes.ocean);

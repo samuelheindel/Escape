@@ -5,25 +5,28 @@
  */
 package byui.cit260.escape.control;
 
+import exceptions.VolcanoControlException;
+
 /**
  *
  * @author Kale
  */
 public class VolcanoControl {
-    public double VolcanoControl(int countDown, int turn ){
-    if (countDown > 240){ 
-	return -1;  
-    }
-    if (countDown < 0){
-	return -1;
-    }
-    if (turn <= 0){
-	return -1;
-    }
-    
-    double currentCountDown=countDown-turn;
-	
-    return currentCountDown;
 
-}
+    public double VolcanoControl(int countDown, int turn) throws VolcanoControlException {
+        if (countDown > 240) {
+            throw new VolcanoControlException("Countdown timer is to high");
+        }
+        if (countDown < 0) {
+            throw new VolcanoControlException("Countdown timer is less than 0");
+        }
+        if (turn <= 0) {
+            throw new VolcanoControlException("Turn is less than or equal to 0");
+        }
+
+        double currentCountDown = countDown - turn;
+
+        return currentCountDown;
+
+    }
 }
