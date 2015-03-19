@@ -27,7 +27,6 @@ public enum Scenes implements Serializable {
     cliff("dont fall off me","CF"),
     pigs("For meat", "PI"),
     barbarian("Beware they might be canibles","BB"),
-    crewember("Some can be trusted other cant","CM"),
     start("this is where you will start","ST"),
     ferns("used to make rope","FR"),
     fruit("good to eat","FT"),

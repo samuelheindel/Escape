@@ -11,60 +11,52 @@ import java.util.Scanner;
  *
  * @author Kale
  */
-public class MoveView extends View{
+public class MoveView extends View {
 
     public MoveView() {
         super("\n"
-            +"\n--------------------------------------------"
-            +"\n    Move Menu                               "
-            +"\n--------------------------------------------"
-            +"\nN - Move North                              "
-            +"\nE - Move East                               "
-            +"\nS - Move South                              "
-            +"\nW - Move West                               "
-            +"\nX - Exit                                    "
-            +"\n--------------------------------------------");
+                + "\n--------------------------------------------"
+                + "\n    Move Menu                               "
+                + "\n--------------------------------------------"
+                + "\nY - Move Yourself                           "
+                + "\nC - Move Crew Memeber                       "
+                + "\nE - Exit                                    "
+                + "\n--------------------------------------------");
     }
-   
 
     @Override
     public void doAction(Object value) {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
-            case 'N':
-                this.moveNorth();
+            case 'Y':
+                this.movePlayer();
+                break;
+            case 'C':
+                this.moveCrew();
                 break;
             case 'E':
-                this.moveEast();
-                break;
-            case 'S':
-                this.moveSouth();
-                break;
-            case 'W':
-                this.moveWest();
-                break;
-            case 'X':
+                this.goBackToMenu();
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
-    
-       }
-    private void moveNorth(){
-        MoveNorthView NorthView = new MoveNorthView();
-        NorthView.display();
-       
+
     }
-    private void moveEast(){
-        System.out.println("*** moveEast funtion called ***");
+
+    private void movePlayer() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
-    private void moveSouth(){
-        System.out.println("*** moveSouth funtion called ***");
+
+    private void moveCrew() {
+        SelectActorView actorMenu = new SelectActorView();
+        actorMenu.display();
     }
-    private void moveWest(){
-        System.out.println("*** moveWest funtion called ***");
+
+    private void goBackToMenu() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
-   
 
 }
