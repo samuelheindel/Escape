@@ -5,14 +5,18 @@
  */
 package byui.cit260.escape.view;
 
+import exceptions.MapControlExceptions;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author samuel
  */
-public class SelectActorView extends View{
+public class SelectActorView extends View {
 
     public SelectActorView() {
-         super("\n"
+        super("\n"
                 + "\n--------------------------------------------"
                 + "\n   Select Crew member                       "
                 + "\n--------------------------------------------"
@@ -23,7 +27,7 @@ public class SelectActorView extends View{
                 + "\nE - Exit                                    "
                 + "\n--------------------------------------------");
     }
-    
+
     @Override
     public void doAction(Object value) {
         String action = (String) value;
@@ -39,7 +43,13 @@ public class SelectActorView extends View{
                 this.actorNed();
                 break;
             case 'C':
+        {
+            try {
                 this.actorJack();
+            } catch (MapControlExceptions ex) {
+                Logger.getLogger(SelectActorView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'E':
                 return;
@@ -61,8 +71,9 @@ public class SelectActorView extends View{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void actorJack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void actorJack() throws MapControlExceptions {
+        MoveActorJackView MoveJack = new MoveActorJackView();
+        MoveJack.displayMoveActor();
     }
 
 }

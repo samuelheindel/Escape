@@ -53,7 +53,9 @@ public class MoveActorJackView {
             }
             break; // out of the (exit) the repetition
         }
-        int cord = MapControl.moveActorToLocation(Actor.Jack, x; // call function
+        Point coordinates = new Point(x, y);
+        
+        int cord = MapControl.moveActorToLocation(Actor.Jack, coordinates); // call function
         return cord; //return raftcom to input variable in display
     }
 }
