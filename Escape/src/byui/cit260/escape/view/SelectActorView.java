@@ -9,10 +9,10 @@ package byui.cit260.escape.view;
  *
  * @author samuel
  */
-public class SelectActorView {
+public class SelectActorView extends View{
 
     public SelectActorView() {
-        super("\n"
+         super("\n"
                 + "\n--------------------------------------------"
                 + "\n   Select Crew member                       "
                 + "\n--------------------------------------------"

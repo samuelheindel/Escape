@@ -9,7 +9,10 @@ import byui.cit260.escape.control.GameControl;
 import byui.cit260.escape.view.GameMenuView;
 import byui.cit260.escape.view.HelpMenuView;
 import escape.Escape;
+import exceptions.MapControlExceptions;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static jdk.nashorn.internal.runtime.GlobalFunctions.escape;
 
 /**
@@ -37,7 +40,13 @@ public class MainMenuView extends View {
         char choice = action.charAt(0);
         switch (choice) {
             case 'N':
+        {
+            try {
                 this.startNewGame();
+            } catch (MapControlExceptions ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'L':
                 this.startExistingGame();
@@ -55,7 +64,7 @@ public class MainMenuView extends View {
         }
     }
 
-    private void startNewGame() {
+    private void startNewGame() throws MapControlExceptions {
         GameControl.createNewGame(Escape.getPlayer());
 
         GameMenuView gameMenu = new GameMenuView();
