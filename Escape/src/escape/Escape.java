@@ -15,21 +15,20 @@ import byui.cit260.escape.view.StartProgramView;
  */
 public class Escape {
 
-    
     private static Game currentGame = null;
-    private static Player player =  null;
-   
-    
-    
-  
+    private static Player player = null;
+
     public static void main(String[] args) {
         // create StartProgramView and start the program
         StartProgramView startProgramView = new StartProgramView("");
-        startProgramView.display();
-        
-        
-                 
-         
+        try {
+            startProgramView.display();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
+
     }
 
     public static Game getCurrentGame() {
@@ -48,10 +47,4 @@ public class Escape {
         Escape.player = player;
     }
 
-    
-    
-    
-    
-    
-  
 }

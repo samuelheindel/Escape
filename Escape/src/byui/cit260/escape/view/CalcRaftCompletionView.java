@@ -13,18 +13,20 @@ import java.util.Scanner;
  * @author samuel
  */
 public class CalcRaftCompletionView {
+
     public void displayCalcRaftCompletion() {
         double input = this.getInput(); // get user selection
         System.out.println("Raft " + input + "% completed");
     }
+
     private static double getInput() {
         boolean valid = false; // indicates if the if valid
-        double people = -1;
-        double logsneeded = -1;
-        double logsininventory = -1;
-        double ropeneeded = -1;
-        double ropeininventory = -1; // variables
-        double storageneeded = -1;
+        double people = Double.parseDouble("-1");
+        double logsneeded = Double.parseDouble("-1");
+        double logsininventory = Double.parseDouble("-1");
+        double ropeneeded = Double.parseDouble("-1");
+        double ropeininventory = Double.parseDouble("-1"); // variables
+        double storageneeded = Double.parseDouble("-1");
         double storageininventory = -1;
         double raftcom = -1;
         Scanner input = new Scanner(System.in);// to get input from user
@@ -40,9 +42,27 @@ public class CalcRaftCompletionView {
             } else {
                 System.out.println("Valid number of people.");
             }
-            logsneeded = people * 10;
-            ropeneeded = people * 60;
-            storageneeded = people * 2;
+            try {
+                logsneeded = Double.parseDouble("10");
+            } catch (NumberFormatException nf) {
+
+                System.out.println("\nYou must enter a vailid number."
+                        + "Try again.");
+            }
+            try {
+                ropeneeded = Double.parseDouble("60");
+            } catch (NumberFormatException nf) {
+
+                System.out.println("\nYou must enter a vailid number."
+                        + "Try again.");
+            }
+            try {
+                storageneeded = Double.parseDouble("2");
+            } catch (NumberFormatException nf) {
+
+                System.out.println("\nYou must enter a vailid number."
+                        + "Try again.");
+            }
 
             System.out.println("How many logs do you have in your inventory?");
             logsininventory = input.nextDouble(); // logs variable
