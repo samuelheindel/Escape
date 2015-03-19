@@ -7,6 +7,7 @@ package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.MapControl;
 import byui.cit260.escape.model.Actor;
+import byui.cit260.escape.model.Scene;
 import exceptions.MapControlExceptions;
 import java.awt.Point;
 import java.util.Scanner;
@@ -28,11 +29,11 @@ public class MoveActorView {
     
     public void displayMoveActor(Actor actor) throws MapControlExceptions {
         this.setActor(actor);
-        int input = this.getInput(); // get user selection
-        System.out.println("this location contains " + input);
+        Scene scene = this.getInput(); // get user selection
+        System.out.println(scene.getDescription());
     }
 
-    private int getInput() throws MapControlExceptions {
+    private Scene getInput() throws MapControlExceptions {
         boolean valid = false; // indicates if the if valid
         int x = -1;
         int y = -1;
@@ -65,7 +66,7 @@ public class MoveActorView {
         }
         Point coordinates = new Point(x, y);
         
-        int cord = MapControl.moveActorToLocation(this.getActor(), coordinates); // call function
-        return cord; //return raftcom to input variable in display
+        Scene scene = MapControl.moveActorToLocation(this.getActor(), coordinates); // call function
+        return scene; //return raftcom to input variable in display
     }
 }

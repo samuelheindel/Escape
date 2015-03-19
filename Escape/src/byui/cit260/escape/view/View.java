@@ -49,7 +49,7 @@ public abstract class View implements ViewInterface {
 
         while (!valid) { // while a valid name has not been retrieved
             //Prompt o players name
-            System.out.println("\t\nEnter your selection below");
+            System.out.println("\t\nPlease enter your input below.");
 
             // get the name from the key and trim off the blanks
             selection = keyboard.nextLine();
@@ -57,7 +57,7 @@ public abstract class View implements ViewInterface {
 
             // if the name is invalid (less than two characters in length)
             if (selection.length() < 1) {
-                System.out.println("\n Invalid selection");
+                System.out.println("\n The value can not be blank");
                 continue; // and repeat again
 
             }

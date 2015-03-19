@@ -38,10 +38,10 @@ public class SelectActorView extends View {
                 this.crew();
                 break;
             case 'A':
-                this.actorJeb();
+                this.moveActor(Actor.Jeb);
                 break;
             case 'B':
-                this.actorNed();
+                this.moveActor(Actor.Ned);
                 break;
             case 'C':
                 this.moveActor(Actor.Jack);
@@ -58,14 +58,6 @@ public class SelectActorView extends View {
 
     }
 
-    private void actorJeb() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void actorNed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private void moveActor(Actor actor) {
         MoveActorView MoveActor = new MoveActorView();
         try {
@@ -75,5 +67,3 @@ public class SelectActorView extends View {
         }
     }
 }
-
-

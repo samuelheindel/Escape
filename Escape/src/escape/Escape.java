@@ -24,8 +24,8 @@ public class Escape {
   
     public static void main(String[] args) {
         // create StartProgramView and start the program
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+        StartProgramView startProgramView = new StartProgramView("");
+        startProgramView.display();
         
         
                  
