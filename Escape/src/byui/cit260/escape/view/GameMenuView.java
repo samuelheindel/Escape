@@ -8,6 +8,7 @@ package byui.cit260.escape.view;
 import byui.cit260.escape.control.GameControl;
 import byui.cit260.escape.model.Inventory;
 import escape.Escape;
+import exceptions.InventoryControlException;
 import java.util.Scanner;
 
 /**
@@ -28,6 +29,7 @@ public class GameMenuView extends View {
                 + "\nS - Save Game                               "
                 + "\nC - Check Game Status                       "
                 + "\nR - Check raft completion                   "
+                + "\nZ - calculate the raft size                 "
                 + "\nE - Exit                                    "
                 + "\n--------------------------------------------");
     }
@@ -56,8 +58,11 @@ public class GameMenuView extends View {
                 this.checkGameStatus();
             case 'R':
                 this.checkRaftStatus();
+            case 'Z':
+                this.calcRaftSize();
             case 'E':
-                return;
+                this.goBackToMenu();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
@@ -103,12 +108,30 @@ public class GameMenuView extends View {
 
     private void checkRaftStatus() {
         CalcRaftCompletionView CalcRaftCompletion = new CalcRaftCompletionView();
-        CalcRaftCompletion.displayCalcRaftCompletion();
+        try {
+            CalcRaftCompletion.displayCalcRaftCompletion();
+        } catch (InventoryControlException ie) {
+            System.out.println(ie.getMessage());
+        }
+    }
+
+    private void calcRaftSize() {
+        CalcRaftSizeView CalcRaftSize = new CalcRaftSizeView();
+        try {
+            CalcRaftSize.displayCalcRaftSize();
+        } catch (InventoryControlException ie) {
+            System.out.println(ie.getMessage());
+        }
     }
 
     private void displayMoveView() {
         MoveView MoveMenu = new MoveView();
         MoveMenu.display();
+    }
+
+    private void goBackToMenu() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
 }

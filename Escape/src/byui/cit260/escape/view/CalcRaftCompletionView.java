@@ -6,6 +6,7 @@
 package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.InventoryControl;
+import exceptions.InventoryControlException;
 import java.util.Scanner;
 
 /**
@@ -14,12 +15,12 @@ import java.util.Scanner;
  */
 public class CalcRaftCompletionView {
 
-    public void displayCalcRaftCompletion() {
+    public void displayCalcRaftCompletion() throws InventoryControlException {
         double input = this.getInput(); // get user selection
         System.out.println("Raft " + input + "% completed");
     }
 
-    private static double getInput() {
+    private static double getInput() throws InventoryControlException {
         boolean valid = false; // indicates if the if valid
         double people = Double.parseDouble("-1");
         double logsneeded = Double.parseDouble("-1");

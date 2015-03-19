@@ -5,6 +5,7 @@
  */
 package byui.cit260.escape.control;
 
+import exceptions.InventoryControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void testCalcRaftCompletion() {
+    public void testCalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -40,7 +41,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void tes2tCalcRaftCompletion() {
+    public void tes2tCalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 9;
         double logsininventory = 10;
@@ -59,7 +60,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test3CalcRaftCompletion() {
+    public void test3CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 101;
@@ -78,7 +79,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test4CalcRaftCompletion() {
+    public void test4CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = -1;
@@ -97,7 +98,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test5CalcRaftCompletion() {
+    public void test5CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 101;
         double logsininventory = 10;
@@ -116,7 +117,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test6CalcRaftCompletion() {
+    public void test6CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -135,7 +136,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test7CalcRaftCompletion() {
+    public void test7CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -154,7 +155,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test8CalcRaftCompletion() {
+    public void test8CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -173,7 +174,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test9CalcRaftCompletion() {
+    public void test9CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -192,7 +193,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test10CalcRaftCompletion() {
+    public void test10CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -211,7 +212,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test11CalcRaftCompletion() {
+    public void test11CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -230,7 +231,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test12CalcRaftCompletion() {
+    public void test12CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -249,7 +250,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test13CalcRaftCompletion() {
+    public void test13CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 10;
@@ -268,7 +269,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test14CalcRaftCompletion() {
+    public void test14CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 10;
         double logsininventory = 0;
@@ -287,7 +288,7 @@ public class InventoryControlTest {
      * Test of calcRaftCompletion method, of class InventoryControl.
      */
     @Test
-    public void test15CalcRaftCompletion() {
+    public void test15CalcRaftCompletion() throws InventoryControlException {
         System.out.println("calcRaftCompletion");
         double logsneeded = 100;
         double logsininventory = 100;
@@ -306,7 +307,7 @@ public class InventoryControlTest {
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
-    public void testCalRaftSize() {
+    public void testCalRaftSize() throws InventoryControlException {
         System.out.println("calRaftSize");
         double people = 1;
         double crates = 4;
@@ -321,7 +322,7 @@ public class InventoryControlTest {
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
-    public void test2CalRaftSize() {
+    public void test2CalRaftSize() throws InventoryControlException {
         System.out.println("calRaftSize");
         double people = -1;
         double crates = 4;
@@ -336,7 +337,7 @@ public class InventoryControlTest {
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
-    public void test3CalRaftSize() {
+    public void test3CalRaftSize() throws InventoryControlException {
         System.out.println("calRaftSize");
         double people = 10;
         double crates = 1;
@@ -351,7 +352,7 @@ public class InventoryControlTest {
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
-    public void test4CalRaftSize() {
+    public void test4CalRaftSize() throws InventoryControlException {
         System.out.println("calRaftSize");
         double people = 9;
         double crates = 0;
@@ -366,7 +367,7 @@ public class InventoryControlTest {
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
-    public void test5CalRaftSize() {
+    public void test5CalRaftSize() throws InventoryControlException {
         System.out.println("calRaftSize");
         double people = 1;
         double crates = 30;
@@ -381,7 +382,7 @@ public class InventoryControlTest {
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
-    public void test6CalRaftSize() {
+    public void test6CalRaftSize() throws InventoryControlException {
         System.out.println("calRaftSize");
         double people = 1;
         double crates = 1;
@@ -396,7 +397,7 @@ public class InventoryControlTest {
      * Test of calRaftSize method, of class InventoryControl.
      */
     @Test
-    public void test7CalRaftSize() {
+    public void test7CalRaftSize() throws InventoryControlException {
         System.out.println("calRaftSize");
         double people = 9.0;
         double crates = 29.0;

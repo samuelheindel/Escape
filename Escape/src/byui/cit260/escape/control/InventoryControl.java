@@ -5,37 +5,39 @@
  */
 package byui.cit260.escape.control;
 
+import exceptions.InventoryControlException;
+
 /**
  *
  * @author Kale
  */
 public class InventoryControl {
 
-    public static double calcRaftCompletion(double logsneeded, double logsininventory, double ropeneeded, double ropeininventory, double storageneeded, double storageininventory) {
+    public static double calcRaftCompletion(double logsneeded, double logsininventory, double ropeneeded, double ropeininventory, double storageneeded, double storageininventory) throws InventoryControlException {
 
         if (logsneeded < 10 || logsneeded > 100) {
 
-            return -1;
+            throw new InventoryControlException("to few logs");
         }
         if (logsininventory < 0 || logsininventory > 100) {
 
-            return -1;
+            throw new InventoryControlException("to many logs");
         }
         if (ropeneeded < 60 || ropeneeded > 600) {
 
-            return -1;
+           throw new InventoryControlException("to little rope");
         }
         if (ropeininventory < 0 || ropeininventory > 600) {
 
-            return -1;
+           throw new InventoryControlException("to much rope");
         }
         if (storageneeded < 2 || storageneeded > 29) {
 
-            return -1;
+            throw new InventoryControlException("to much storage");
         }
         if (storageininventory < 0 || storageininventory > 29) {
 
-            return -1;
+           throw new InventoryControlException("to little sroage");
         }
 
         double needforcom = logsneeded + ropeneeded + storageneeded;
@@ -45,13 +47,13 @@ public class InventoryControl {
         return persentcom;
     }
 
-    public double calRaftSize(double people, double crates) {
+    public static double calRaftSize(double people, double crates) throws InventoryControlException {
 
         if (people < 1 || people > 9) {
-            return -1;
+            throw new InventoryControlException("to few people or to many people");
         }
         if (crates < 1 || crates > 29) {
-            return -1;
+                throw new InventoryControlException("to few crates or to many crates");
         }
 
         double pspace = (6 * 10) * people;
