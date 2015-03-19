@@ -15,14 +15,24 @@ import java.util.Scanner;
  *
  * @author samuel
  */
-public class MoveActorJackView {
+public class MoveActorView {
+    private Actor actor;
 
-    public void displayMoveActor() throws MapControlExceptions {
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+    
+    public void displayMoveActor(Actor actor) throws MapControlExceptions {
+        this.setActor(actor);
         int input = this.getInput(); // get user selection
         System.out.println("this location contains " + input);
     }
 
-    private static int getInput() throws MapControlExceptions {
+    private int getInput() throws MapControlExceptions {
         boolean valid = false; // indicates if the if valid
         int x = -1;
         int y = -1;
@@ -55,7 +65,7 @@ public class MoveActorJackView {
         }
         Point coordinates = new Point(x, y);
         
-        int cord = MapControl.moveActorToLocation(Actor.Jack, coordinates); // call function
+        int cord = MapControl.moveActorToLocation(this.getActor(), coordinates); // call function
         return cord; //return raftcom to input variable in display
     }
 }

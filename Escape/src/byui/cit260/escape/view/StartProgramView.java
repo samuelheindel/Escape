@@ -23,7 +23,7 @@ import java.util.Scanner;
 //DISPLAY the main menu
 //END
 
-public class StartProgramView {
+public class StartProgramView extends View{
     public StartProgramView(){
         
     }
@@ -123,6 +123,11 @@ public class StartProgramView {
         }
                 
         return input; // return the name
+    }
+
+    @Override
+    public void doAction(Object value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
