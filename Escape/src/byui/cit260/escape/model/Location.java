@@ -17,17 +17,17 @@ public class Location implements Serializable {
     private int row;
     private int column;
     private boolean visited;
-    private Scenes scene;
+    private Scene scene;
     private ArrayList<Actor> actors;
 
     public Location() {
     }
 
-    public Scenes getScene() {
+    public Scene getScene() {
         return scene;
     }
 
-    public void setScene(Scenes scene) {
+    public void setScene(Scene scene) {
         this.scene = scene;
     }
 

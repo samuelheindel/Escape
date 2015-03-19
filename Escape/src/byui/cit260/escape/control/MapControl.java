@@ -6,7 +6,9 @@
 package byui.cit260.escape.control;
 
 import byui.cit260.escape.model.Actor;
+import byui.cit260.escape.model.Location;
 import byui.cit260.escape.model.Map;
+import byui.cit260.escape.model.Scene;
 import escape.Escape;
 import exceptions.MapControlExceptions;
 import java.awt.Point;
@@ -17,7 +19,7 @@ import java.awt.Point;
  */
 public class MapControl {
 
-    public static int moveActorToLocation(Actor actor, Point coordinates) throws MapControlExceptions {
+    public static Scene moveActorToLocation(Actor actor, Point coordinates) throws MapControlExceptions {
 
         Map map = Escape.getCurrentGame().getMap();
         int newRow = coordinates.x - 1;
@@ -31,7 +33,9 @@ public class MapControl {
                     + " the bounds of the map.");
 
         }
-        return 0;
+        Location[][] locations = Escape.getCurrentGame().getMap().getLocations();
+        Scene scene = locations[newRow][newColumn].getScene();
+        return scene;
     }
 
     public static void moveActorsToStartingLocation(Map map) throws MapControlExceptions {

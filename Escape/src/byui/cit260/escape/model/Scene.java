@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
  *
  * @author Kale
  */
-public enum Scenes implements Serializable {
+public enum Scene implements Serializable {
 
     ocean("the wide blue sea", "OC"),
     beach("Sandy place around the island", "BE"),
@@ -39,7 +39,7 @@ public enum Scenes implements Serializable {
     private String description;
     private String symbol;
 
-    Scenes(String description, String symbol) {
+    Scene(String description, String symbol) {
         this.description = description;
         this.symbol = symbol;
     }
