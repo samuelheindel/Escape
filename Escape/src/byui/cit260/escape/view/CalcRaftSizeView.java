@@ -36,11 +36,11 @@ public class CalcRaftSizeView {
                 System.out.println("Valid number of people.");
             }
 
-            System.out.println("How many storage crates do you have in your inventory?");
+            System.out.println("How many storage crates will you need? at least 2 per person.");
             storagecrates = input.nextDouble(); // storage variable
             if (storagecrates > 29) {
                 throw new InventoryControlException("to many storage crates");
-            } else if (storagecrates < 0) {
+            } else if (storagecrates < 1) {
                 throw new InventoryControlException("to few storage crates");
             } else {
                 System.out.println("Valid number of srorage crates.");
