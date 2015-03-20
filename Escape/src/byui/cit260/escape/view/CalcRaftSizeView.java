@@ -17,7 +17,7 @@ public class CalcRaftSizeView {
 
     public void displayCalcRaftSize() throws InventoryControlException {
         double input = this.getInput(); // get user selection
-        System.out.println("Your raft needs to be" + input + "Square feet");
+        System.out.println("Your raft needs to be " + input + " Square feet");
     }
 
     private static double getInput() throws InventoryControlException {
@@ -29,24 +29,19 @@ public class CalcRaftSizeView {
             System.out.println("How many people will be on yoour raft?");
             people = input.nextDouble(); // people variable
             if (people > 9) {
-                System.out.println("invalid number of people");
-                continue;
+                throw new InventoryControlException("to many people");
             } else if (people < 1) {
-                System.out.println("invalid number of people");
-                continue;
+                throw new InventoryControlException("to few people");
             } else {
                 System.out.println("Valid number of people.");
             }
 
-
             System.out.println("How many storage crates do you have in your inventory?");
             storagecrates = input.nextDouble(); // storage variable
             if (storagecrates > 29) {
-                System.out.println("invalid number of srorage crates.");
-                continue;
+                throw new InventoryControlException("to many storage crates");
             } else if (storagecrates < 0) {
-                System.out.println("invalid number of srorage crates.");
-                continue;
+                throw new InventoryControlException("to few storage crates");
             } else {
                 System.out.println("Valid number of srorage crates.");
             }

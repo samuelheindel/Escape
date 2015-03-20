@@ -121,7 +121,9 @@ public class GameMenuView extends View {
             CalcRaftSize.displayCalcRaftSize();
         } catch (InventoryControlException ie) {
             System.out.println(ie.getMessage());
-        }
+            this.calcRaftSize();
+        } 
+
     }
 
     private void displayMoveView() {
