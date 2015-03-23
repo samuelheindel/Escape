@@ -5,6 +5,7 @@
  */
 package byui.cit260.escape.control;
 
+import exceptions.VolcanoControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class VolcanoControlTest {
      * Test of VolcanoControl method, of class VolcanoControl.
      */
     @Test
-    public void testVolcanoControl() {
+    public void testVolcanoControl() throws VolcanoControlException {
         System.out.println("VolcanoControl");
         int countDown = 230;
         int turn = 1;
@@ -32,7 +33,7 @@ public class VolcanoControlTest {
     }
     
     @Test
-    public void test2VolcanoControl() {
+    public void test2VolcanoControl() throws VolcanoControlException {
         System.out.println("VolcanoControl");
         int countDown = 241;
         int turn = 1;
@@ -43,7 +44,7 @@ public class VolcanoControlTest {
     }
     
     @Test
-    public void test3VolcanoControl() {
+    public void test3VolcanoControl() throws VolcanoControlException {
         System.out.println("VolcanoControl");
         int countDown = -1;
         int turn = 1;
@@ -54,7 +55,7 @@ public class VolcanoControlTest {
     }
     
     @Test
-    public void test4VolcanoControl() {
+    public void test4VolcanoControl() throws VolcanoControlException {
         System.out.println("VolcanoControl");
         int countDown = 240;
         int turn = -1;
