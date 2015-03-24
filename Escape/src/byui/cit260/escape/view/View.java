@@ -5,6 +5,9 @@
  */
 package byui.cit260.escape.view;
 
+import escape.Escape;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     private String promptmessage;
+    
+    private static final BufferedReader keyboard = Escape.getInFile();
+    private static final PrintWriter console = Escape.getOutFile();
     
     public View (String promptMessage){
         this.promptmessage = promptMessage;
@@ -43,16 +49,19 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
         
-        Scanner keyboard = new Scanner(System.in); // Keyboard input stream
+        
         boolean valid = false; // indicates if the name has been retrieved
         String selection = null;
 
-        while (!valid) { // while a valid name has not been retrieved
+        
+        try {
+        while (!valid) { 
+            // while a valid name has not been retrieved
             //Prompt o players name
             System.out.println("\t\nPlease enter your input below.");
 
             // get the name from the key and trim off the blanks
-            selection = keyboard.nextLine();
+            selection = this.keyboard.readLine();
             selection = selection.trim();
 
             // if the name is invalid (less than two characters in length)
@@ -62,8 +71,10 @@ public abstract class View implements ViewInterface {
 
             }
             break; // out of the (exit) the repetition
-
         }
+       }catch (Exception e){
+           System.out.println("Error reading input: " + e.getMessage());
+       }
         return selection; // returns input
     }
 

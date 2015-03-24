@@ -26,8 +26,27 @@ public class Escape {
 
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
 
     public static void main(String[] args) {
+        
+        //open character stream files for end user input and output
+        Escape.inFile = 
+                    new BufferedReader(new InputStreamReader(System.in));
+        
+        Escape.outFile = 
+                    new PrintWriter(System.out, true);
+        
+        try{
+        //open log file
+        String filePath = "log.txt";
+        Escape.logFile = new PrintWriter(filePath);
+        } catch(Exception e) {
+                System.out.println("Exception: " + e.toString() + 
+                         "\nCause: " + e.getCause() + 
+                        "\nMessage: " + e.getMessage());
+        }
 
         //open charcter stream files for end user input and output
         try {
@@ -39,8 +58,13 @@ public class Escape {
             try {
                 if (Escape.inFile != null);
                     Escape.inFile.close();
+                    
                 if (Escape.outFile != null)
                     Escape.outFile.close();
+                
+                if (Escape.logFile != null)
+                    Escape.outFile.close();
+                
             } catch (IOException ex) {
                 System.out.println("Error closing Files");
                 return;
@@ -59,6 +83,14 @@ public class Escape {
 
     }
 
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        Escape.logFile = logFile;
+    }
+    
     public static PrintWriter getOutFile() {
         return outFile;
     }
