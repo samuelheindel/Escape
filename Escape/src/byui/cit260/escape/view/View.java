@@ -18,8 +18,8 @@ public abstract class View implements ViewInterface {
 
     private String promptmessage;
     
-    private static final BufferedReader keyboard = Escape.getInFile();
-    private static final PrintWriter console = Escape.getOutFile();
+    protected static final BufferedReader keyboard = Escape.getInFile();
+    protected static final PrintWriter console = Escape.getOutFile();
     
     public View (String promptMessage){
         this.promptmessage = promptMessage;

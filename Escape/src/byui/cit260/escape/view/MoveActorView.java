@@ -10,14 +10,25 @@ import byui.cit260.escape.model.Actor;
 import byui.cit260.escape.model.Scene;
 import exceptions.MapControlExceptions;
 import java.awt.Point;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author samuel
  */
-public class MoveActorView {
+public class MoveActorView extends View {
+
     private Actor actor;
+    int x = -1;
+    int y = -1;
+    Point coordinates = new Point(x, y);
+
+    public MoveActorView(String promptMessage) {
+        super("where would you like to move this person");
+    }
 
     public Actor getActor() {
         return actor;
@@ -26,33 +37,38 @@ public class MoveActorView {
     public void setActor(Actor actor) {
         this.actor = actor;
     }
-    
+
     public void displayMoveActor(Actor actor) throws MapControlExceptions {
         this.setActor(actor);
-        Scene scene = this.getInput(); // get user selection
-        System.out.println(scene.getDescription());
+
     }
 
-    private Scene getInput() throws MapControlExceptions {
+    @Override
+    public String getInput() {
         boolean valid = false; // indicates if the if valid
-        int x = -1;
-        int y = -1;
-        Scanner input = new Scanner(System.in);// to get input from user
         while (!valid) { // start while loop
             System.out.println("Enter a row");
-            x = input.nextInt(); // people variable
+            try {
+                this.x = Integer.parseInt(this.keyboard.readLine()); // people variable
+            } catch (IOException ex) {
+                Logger.getLogger(MoveActorView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (x > 20) {
                 System.out.println("invalid row number");
                 continue;
             } else if (x < 0) {
                 System.out.println(
-                "invalid row number");
+                        "invalid row number");
                 continue;
             } else {
                 System.out.println("Enter a column number");
             }
 
-            y = input.nextInt(); // logs variable
+            try {
+                this.y = Integer.parseInt(this.keyboard.readLine()); // logs variable
+            } catch (IOException ex) {
+                Logger.getLogger(MoveActorView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (y > 20) {
                 System.out.println("invalid column number");
                 continue;
@@ -64,9 +80,18 @@ public class MoveActorView {
             }
             break; // out of the (exit) the repetition
         }
-        Point coordinates = new Point(x, y);
-        
-        Scene scene = MapControl.moveActorToLocation(this.getActor(), coordinates); // call function
-        return scene; //return raftcom to input variable in display
+
+        return ""; //return raftcom to input variable in display
+    }
+
+    @Override
+    public void doAction(Object value) {
+        try {
+            Scene scene = MapControl.moveActorToLocation(this.getActor(), coordinates); // call function
+            System.out.println(scene.getDescription());
+        } catch (MapControlExceptions me) {
+            System.out.println(me.getMessage());
+        }
+
     }
 }

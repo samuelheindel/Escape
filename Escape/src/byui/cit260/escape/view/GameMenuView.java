@@ -107,23 +107,13 @@ public class GameMenuView extends View {
     }
 
     private void checkRaftStatus() {
-        CalcRaftCompletionView CalcRaftCompletion = new CalcRaftCompletionView();
-        try {
-            CalcRaftCompletion.displayCalcRaftCompletion();
-        } catch (InventoryControlException ie) {
-            System.out.println(ie.getMessage());
-        }
+        CalcRaftCompletionView calcraftcompletion = new CalcRaftCompletionView("");
+        calcraftcompletion.display();
     }
 
     private void calcRaftSize() {
-        CalcRaftSizeView CalcRaftSize = new CalcRaftSizeView();
-        try {
-            CalcRaftSize.displayCalcRaftSize();
-        } catch (InventoryControlException ie) {
-            System.out.println(ie.getMessage());
-            this.calcRaftSize();
-        } 
-
+        CalcRaftSizeView calcraftsize = new CalcRaftSizeView("");
+        calcraftsize.display();
     }
 
     private void displayMoveView() {

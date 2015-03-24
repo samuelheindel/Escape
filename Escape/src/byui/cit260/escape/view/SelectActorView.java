@@ -59,11 +59,8 @@ public class SelectActorView extends View {
     }
 
     private void moveActor(Actor actor) {
-        MoveActorView MoveActor = new MoveActorView();
-        try {
-            MoveActor.displayMoveActor(actor);
-        } catch (MapControlExceptions me) {
-            System.out.println(me.getMessage());
-        }
+        MoveActorView moveactor = new MoveActorView("");
+        moveactor.display();
+
     }
 }

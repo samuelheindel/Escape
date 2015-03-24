@@ -7,33 +7,40 @@ package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.InventoryControl;
 import exceptions.InventoryControlException;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author samuel
  */
-public class CalcRaftCompletionView {
+public class CalcRaftCompletionView extends View {
 
-    public void displayCalcRaftCompletion() throws InventoryControlException {
-        double input = this.getInput(); // get user selection
-        System.out.println("Raft " + input + "% completed");
+    double people = Double.parseDouble("-1");
+    double logsneeded = Double.parseDouble("-1");
+    double logsininventory = Double.parseDouble("-1");
+    double ropeneeded = Double.parseDouble("-1");
+    double ropeininventory = Double.parseDouble("-1"); // variables
+    double storageneeded = Double.parseDouble("-1");
+    double storageininventory = -1;
+    double raftcom = -1;
+
+    public CalcRaftCompletionView(String promptMessage) {
+        super("We will calculate our raft completion");
     }
 
-    private static double getInput() throws InventoryControlException {
+    @Override
+    public String getInput() {
         boolean valid = false; // indicates if the if valid
-        double people = Double.parseDouble("-1");
-        double logsneeded = Double.parseDouble("-1");
-        double logsininventory = Double.parseDouble("-1");
-        double ropeneeded = Double.parseDouble("-1");
-        double ropeininventory = Double.parseDouble("-1"); // variables
-        double storageneeded = Double.parseDouble("-1");
-        double storageininventory = -1;
-        double raftcom = -1;
-        Scanner input = new Scanner(System.in);// to get input from user
         while (!valid) { // start while loop
             System.out.println("How many people will be on yoour raft?");
-            people = input.nextDouble(); // people variable
+            try {
+                this.people = Double.parseDouble(this.keyboard.readLine()); // people variable
+            } catch (IOException ex) {
+                Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (people > 9) {
                 System.out.println("invalid number of people");
                 continue;
@@ -66,7 +73,11 @@ public class CalcRaftCompletionView {
             }
 
             System.out.println("How many logs do you have in your inventory?");
-            logsininventory = input.nextDouble(); // logs variable
+            try {
+                this.logsininventory = Double.parseDouble(this.keyboard.readLine()); // logs variable
+            } catch (IOException ex) {
+                Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (logsininventory > 100) {
                 System.out.println("invalid number of logs.");
                 continue;
@@ -77,7 +88,11 @@ public class CalcRaftCompletionView {
                 System.out.println("Valid number of logs.");
             }
             System.out.println("How much rope do you have in your inventory?");
-            ropeininventory = input.nextDouble(); // rope variable
+            try {
+                this.ropeininventory = Double.parseDouble(this.keyboard.readLine()); // rope variable
+            } catch (IOException ex) {
+                Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (ropeininventory > 600) {
                 System.out.println("invalid amount of rope.");
                 continue;
@@ -88,7 +103,11 @@ public class CalcRaftCompletionView {
                 System.out.println("Valid amount of rope.");
             }
             System.out.println("How many storage crates do you have in your inventory?");
-            storageininventory = input.nextDouble(); // storage variable
+            try {
+                this.storageininventory = Double.parseDouble(this.keyboard.readLine()); // storage variable
+            } catch (IOException ex) {
+                Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (storageininventory > 29) {
                 System.out.println("invalid number of srorage crates.");
                 continue;
@@ -100,7 +119,18 @@ public class CalcRaftCompletionView {
             }
             break; // out of the (exit) the repetition
         }
-        raftcom = InventoryControl.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory); // call function
-        return raftcom; //return raftcom to input variable in display
+
+        return "";
+    }
+
+    @Override
+    public void doAction(Object value) {
+        try {
+            double raftcom = InventoryControl.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory); // call function
+            System.out.println("Raft " + raftcom + "% completed");
+        } catch (InventoryControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+
     }
 }

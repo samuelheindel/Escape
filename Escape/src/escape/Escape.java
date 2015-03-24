@@ -31,29 +31,24 @@ public class Escape {
 
     public static void main(String[] args) {
         
-        //open character stream files for end user input and output
-        Escape.inFile = 
-                    new BufferedReader(new InputStreamReader(System.in));
         
-        Escape.outFile = 
-                    new PrintWriter(System.out, true);
         
         try{
-        //open log file
-        String filePath = "log.txt";
-        Escape.logFile = new PrintWriter(filePath);
-        } catch(Exception e) {
-                System.out.println("Exception: " + e.toString() + 
-                         "\nCause: " + e.getCause() + 
-                        "\nMessage: " + e.getMessage());
-        }
-
-        //open charcter stream files for end user input and output
-        try {
             Escape.inFile
                     = new BufferedReader(new InputStreamReader(System.in));
             Escape.outFile = new PrintWriter(System.out, true);
-        } catch (Exception e) {
+            
+            //open log file
+            String filePath = "log.txt";
+            Escape.logFile = new PrintWriter(filePath);
+
+             StartProgramView startProgramView = new StartProgramView("");
+             startProgramView.display();
+        } catch(Throwable e) {
+                System.out.println("Exception: " + e.toString() + 
+                         "\nCause: " + e.getCause() + 
+                        "\nMessage: " + e.getMessage());
+                e.printStackTrace();
         } finally {
             try {
                 if (Escape.inFile != null);
@@ -69,16 +64,6 @@ public class Escape {
                 System.out.println("Error closing Files");
                 return;
             }
-
-        }
-        // create StartProgramView and start the program
-        StartProgramView startProgramView = new StartProgramView("");
-        try {
-            startProgramView.display();
-        } catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            startProgramView.display();
         }
 
     }
