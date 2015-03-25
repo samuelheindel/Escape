@@ -36,7 +36,7 @@ public class GatherView extends View {
             case 'E':
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
         }
 
     }

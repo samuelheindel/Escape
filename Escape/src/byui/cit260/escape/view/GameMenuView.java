@@ -24,6 +24,7 @@ public class GameMenuView extends View {
                 + "\n--------------------------------------------"
                 + "\nI - See inventory                           "
                 + "\nA - Equip tool from bag                     "
+                + "\nL - Show players in locations               "
                 + "\nV - View Map                                "
                 + "\nM - Move                                    "
                 + "\nS - Save Game                               "
@@ -45,6 +46,9 @@ public class GameMenuView extends View {
             case 'A':
                 this.Bag();
                 break;
+            case 'L':
+                this.playerLocationView();
+                break;
             case 'V':
                 this.displayMap();
                 break;
@@ -64,7 +68,7 @@ public class GameMenuView extends View {
                 this.goBackToMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
     }
 
@@ -72,15 +76,15 @@ public class GameMenuView extends View {
         //get a sorted list of inventory items for the current game
         Inventory[] inventory = GameControl.getSortedInventoryList();
 
-        System.out.println("\n         List of Inventory Items");
-        System.out.println("\t" + "           Description" + "\t"
+        this.console.println("\n         List of Inventory Items");
+        this.console.println("\t" + "           Description" + "\t"
                 + "Required" + "\t"
                 + "In Stock");
 
         //for each inventory item
         for (Inventory inventoryItem : inventory) {
             //Display the description,the required amount and amount in stock
-            System.out.println(inventoryItem.getDescription() + "\t" + "\t" + "\t"
+            this.console.println(inventoryItem.getDescription() + "\t" + "\t" + "\t"
                     + inventoryItem.getQuantityneeded() + "\t   "
                     + inventoryItem.getQuantity());
 
@@ -93,14 +97,17 @@ public class GameMenuView extends View {
     }
 
     private void displayMap() {
-        MapView Map = new MapView();
-        Map.displayMap();
+        MapView Map = new MapView("");
+        Map.display();
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame funtion called ***");
+        this.console.println("*** saveGame funtion called ***");
     }
 
+    private void playerLocationView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private void checkGameStatus() {
         HelpMenuView HelpMenu = new HelpMenuView();
         HelpMenu.display();
@@ -122,7 +129,7 @@ public class GameMenuView extends View {
     }
 
     private void goBackToMenu() {
-        GameMenuView gameMenu = new GameMenuView();
+        MainMenuView gameMenu = new MainMenuView();
         gameMenu.display();
     }
 

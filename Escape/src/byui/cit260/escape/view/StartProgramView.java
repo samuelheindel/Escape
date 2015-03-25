@@ -46,10 +46,10 @@ public class StartProgramView extends View {
     }
 
     private void displayWelcomeMessage(String name) {
-        System.out.println("\n\n================================================");
-        System.out.println("\tWelcome to Jaba Island Captain " + name);
-        System.out.println("\tWe hope you can survive!");
-        System.out.println("\n\n================================================");
+        this.console.println("\n\n================================================");
+        this.console.println("\tWelcome to Jaba Island Captain " + name);
+        this.console.println("\tWe hope you can survive!");
+        this.console.println("\n\n================================================");
     }
 
     @Override

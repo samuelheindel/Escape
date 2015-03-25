@@ -5,6 +5,7 @@
  */
 package byui.cit260.escape.model;
 
+import byui.cit260.escape.view.ErrorView;
 import java.io.Serializable;
 
 /**
@@ -22,7 +23,7 @@ public class Map implements Serializable {
 
     public Map(int rowCount, int colCount) {
         if (rowCount < 1 || colCount < 1) {
-            System.out.println("The number of rows and columns must be greater than zero");
+            ErrorView.display(this.getClass().getName(),"The number of rows and columns must be greater than zero");
             return;
         }
         this.rowCount = rowCount;

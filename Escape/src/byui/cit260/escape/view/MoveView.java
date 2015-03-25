@@ -39,7 +39,7 @@ public class MoveView extends View {
                 this.goBackToMenu();
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
         }
 
     }

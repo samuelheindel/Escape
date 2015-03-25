@@ -56,12 +56,12 @@ public class HelpMenuView extends View{
                 this.goBackToMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
         }
     
        }
     private void displayGameGoal(){
-        System.out.println("*                                                                                      *"
+        this.console.println("*                                                                                      *"
             + "\n* The goal of this game is to gather resources such as,               *"
             + "\n* food, and plant material. You are to build a raft and stock it      *"
             + "\n* with everything necisatry to survive at sea.                        *"
@@ -69,18 +69,18 @@ public class HelpMenuView extends View{
             + "\n* before time runs out, or GAME OVER!.                                *");
     }
     private void displayHowToMove(){
-        System.out.println("*"
+        this.console.println("*"
                 + "\n*Use the MOVE command followed by a direction and distance.       *"
                 + "\n*EXAMPLE: MOVE NORTH 3                                            *");
     }
     private void displayBag(){
-        System.out.println("*"
+        this.console.println("*"
                 + "\n*To display your bag items use the OPEN BAG command.              *"
                 + "\n*Only tools are stored in the bag.                                *"
                 + "\n*Tools are used for gathering, hunting, crafting, and fighting.   *");
     }
     private void displayInteract(){
-        System.out.println("*"
+        this.console.println("*"
                 + "\n*Once a tool is equiped you can interact with an item.            *"
                 + "\n*Depending on the item and tool                                   *"
                 + "\n*you can use the EQUIP GATHER, ATACK, SLAY, or CRAFT commands           *"
@@ -88,12 +88,12 @@ public class HelpMenuView extends View{
                 + "\n*EXAMPLE: GATHER FRUIT                                            *");
     }
     private void displayViewLocation(){
-        System.out.println("*"
+        this.console.println("*"
                 + "\n*Use the DISPLAY LOCATION command to show your position           *"
                 + "\n*on the map                                                       *");
     }
     private void displayObserveSurroundings(){
-        System.out.println("*"
+        this.console.println("*"
                 + "\n*Use the OBSERVE SURROUNDINGS command to reveal the               *"
                 + "\n*objects in your location                                         *");
     }

@@ -47,21 +47,21 @@ public class MoveActorView extends View {
     public String getInput() {
         boolean valid = false; // indicates if the if valid
         while (!valid) { // start while loop
-            System.out.println("Enter a row");
+            this.console.println("Enter a row");
             try {
                 this.x = Integer.parseInt(this.keyboard.readLine()); // people variable
             } catch (IOException ex) {
                 Logger.getLogger(MoveActorView.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (x > 20) {
-                System.out.println("invalid row number");
+                ErrorView.display(this.getClass().getName(),"invalid row number");
                 continue;
             } else if (x < 0) {
-                System.out.println(
+                this.console.println(
                         "invalid row number");
                 continue;
             } else {
-                System.out.println("Enter a column number");
+                this.console.println("Enter a column number");
             }
 
             try {
@@ -70,13 +70,13 @@ public class MoveActorView extends View {
                 Logger.getLogger(MoveActorView.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (y > 20) {
-                System.out.println("invalid column number");
+                ErrorView.display(this.getClass().getName(),"invalid column number");
                 continue;
             } else if (y < 0) {
-                System.out.println("invalid column number");
+                ErrorView.display(this.getClass().getName(),"invalid column number");
                 continue;
             } else {
-                System.out.println("valid location");
+                this.console.println("valid location");
             }
             break; // out of the (exit) the repetition
         }
@@ -88,9 +88,9 @@ public class MoveActorView extends View {
     public void doAction(Object value) {
         try {
             Scene scene = MapControl.moveActorToLocation(this.getActor(), coordinates); // call function
-            System.out.println(scene.getDescription());
+            this.console.println(scene.getDescription());
         } catch (MapControlExceptions me) {
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         }
 
     }

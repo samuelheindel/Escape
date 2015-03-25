@@ -23,15 +23,15 @@ public class MainMenuView extends View {
 
     public MainMenuView() {
         super("\n"
-            +"\n--------------------------------------------"
-            +"\n   |Main Menu|                             "
-            +"\n--------------------------------------------"
-            +"\nN - Start Game                              "
-            +"\nL - Load Game                               "
-            +"\nH - Get help on how to play the game        "
-            +"\nS - Save game                               "
-            +"\nE - Exit                                    "
-            +"\n--------------------------------------------");
+                + "\n--------------------------------------------"
+                + "\n   |Main Menu|                             "
+                + "\n--------------------------------------------"
+                + "\nN - Start Game                              "
+                + "\nL - Load Game                               "
+                + "\nH - Get help on how to play the game        "
+                + "\nS - Save game                               "
+                + "\nE - Exit                                    "
+                + "\n--------------------------------------------");
     }
 
     @Override
@@ -39,15 +39,14 @@ public class MainMenuView extends View {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
-            case 'N':
-        {
-            try {
-                this.startNewGame();
-            } catch (MapControlExceptions ex) {
-                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            case 'N': {
+                try {
+                    this.startNewGame();
+                } catch (MapControlExceptions ex) {
+                    Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case 'L':
                 this.startExistingGame();
                 break;
@@ -60,7 +59,7 @@ public class MainMenuView extends View {
             case 'E':
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
     }
 
@@ -72,11 +71,34 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame ***");
+        System.out.println("\n\nEnter the file path for the file where the game"
+                + "is saved");
+        String filePath = this.getInput();
+        
+        try{
+            // Start a saved game
+            GameControl.getSavedGame(filePath);
+            
+        }catch (Exception ex) {
+        ErrorView.display("MainMenuView", ex.getMessage());
+    }
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame funtion called ***");
+         System.out.println("\n\nEnter the file path for the file where the game"
+                + "is to be saved");
+        String filePath = this.getInput();
+        
+        try{
+            // save the game to the file
+            GameControl.saveGame(Escape.getCurrentGame(), filePath);
+            
+        }catch (Exception ex) {
+        ErrorView.display("MainMenuView", ex.getMessage());
+    }
     }
 
     private void displayHelpMenu() {

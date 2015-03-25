@@ -35,87 +35,87 @@ public class CalcRaftCompletionView extends View {
     public String getInput() {
         boolean valid = false; // indicates if the if valid
         while (!valid) { // start while loop
-            System.out.println("How many people will be on yoour raft?");
+            this.console.println("How many people will be on yoour raft?");
             try {
                 this.people = Double.parseDouble(this.keyboard.readLine()); // people variable
             } catch (IOException ex) {
                 Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (people > 9) {
-                System.out.println("invalid number of people");
+                ErrorView.display(this.getClass().getName(),"invalid number of people");
                 continue;
             } else if (people < 1) {
-                System.out.println("invalid number of people");
+                ErrorView.display(this.getClass().getName(),"invalid number of people");
                 continue;
             } else {
-                System.out.println("Valid number of people.");
+                this.console.println("Valid number of people.");
             }
             try {
                 logsneeded = Double.parseDouble("10");
             } catch (NumberFormatException nf) {
 
-                System.out.println("\nYou must enter a vailid number."
+                ErrorView.display(this.getClass().getName(),"\nYou must enter a vailid number."
                         + "Try again.");
             }
             try {
                 ropeneeded = Double.parseDouble("60");
             } catch (NumberFormatException nf) {
 
-                System.out.println("\nYou must enter a vailid number."
+                ErrorView.display(this.getClass().getName(),"\nYou must enter a vailid number."
                         + "Try again.");
             }
             try {
                 storageneeded = Double.parseDouble("2");
             } catch (NumberFormatException nf) {
 
-                System.out.println("\nYou must enter a vailid number."
+                ErrorView.display(this.getClass().getName(),"\nYou must enter a vailid number."
                         + "Try again.");
             }
 
-            System.out.println("How many logs do you have in your inventory?");
+            this.console.println("How many logs do you have in your inventory?");
             try {
                 this.logsininventory = Double.parseDouble(this.keyboard.readLine()); // logs variable
             } catch (IOException ex) {
                 Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (logsininventory > 100) {
-                System.out.println("invalid number of logs.");
+                ErrorView.display(this.getClass().getName(),"invalid number of logs.");
                 continue;
             } else if (logsininventory < 0) {
-                System.out.println("invalid number of logs.");
+                ErrorView.display(this.getClass().getName(),"invalid number of logs.");
                 continue;
             } else {
-                System.out.println("Valid number of logs.");
+                this.console.println("Valid number of logs.");
             }
-            System.out.println("How much rope do you have in your inventory?");
+            this.console.println("How much rope do you have in your inventory?");
             try {
                 this.ropeininventory = Double.parseDouble(this.keyboard.readLine()); // rope variable
             } catch (IOException ex) {
                 Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (ropeininventory > 600) {
-                System.out.println("invalid amount of rope.");
+                ErrorView.display(this.getClass().getName(),"invalid amount of rope.");
                 continue;
             } else if (ropeininventory < 0) {
-                System.out.println("invalid amount of rope.");
+                ErrorView.display(this.getClass().getName(),"invalid amount of rope.");
                 continue;
             } else {
-                System.out.println("Valid amount of rope.");
+                this.console.println("Valid amount of rope.");
             }
-            System.out.println("How many storage crates do you have in your inventory?");
+            this.console.println("How many storage crates do you have in your inventory?");
             try {
                 this.storageininventory = Double.parseDouble(this.keyboard.readLine()); // storage variable
             } catch (IOException ex) {
                 Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
             }
             if (storageininventory > 29) {
-                System.out.println("invalid number of srorage crates.");
+                ErrorView.display(this.getClass().getName(),"invalid number of srorage crates.");
                 continue;
             } else if (storageininventory < 0) {
-                System.out.println("invalid number of srorage crates.");
+                ErrorView.display(this.getClass().getName(),"invalid number of srorage crates.");
                 continue;
             } else {
-                System.out.println("Valid number of srorage crates.");
+                this.console.println("Valid number of srorage crates.");
             }
             break; // out of the (exit) the repetition
         }
@@ -127,9 +127,9 @@ public class CalcRaftCompletionView extends View {
     public void doAction(Object value) {
         try {
             double raftcom = InventoryControl.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory); // call function
-            System.out.println("Raft " + raftcom + "% completed");
+            this.console.println("Raft " + raftcom + "% completed");
         } catch (InventoryControlException ex) {
-            System.out.println(ex.getMessage());
+            this.console.println(ex.getMessage());
         }
 
     }

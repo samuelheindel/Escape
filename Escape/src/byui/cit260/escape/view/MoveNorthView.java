@@ -34,13 +34,13 @@ public class MoveNorthView extends View{
             case 'E':
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
         }
     
 }
 
     private void Spaces() {
-            System.out.println("You have called spaces function");
+            this.console.println("You have called spaces function");
     }
     
 }

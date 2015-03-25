@@ -39,7 +39,7 @@ public abstract class View implements ViewInterface {
     public void display() {
         String value;
         do {
-            System.out.println(this.promptmessage);// display the main menu
+            this.console.println(this.promptmessage);// display the main menu
             value = this.getInput(); //get the user selection
             this.doAction(value);// do action based on selection
 
@@ -58,7 +58,7 @@ public abstract class View implements ViewInterface {
         while (!valid) { 
             // while a valid name has not been retrieved
             //Prompt o players name
-            System.out.println("\t\nPlease enter your input below.");
+           this.console.println("\t\nPlease enter your input below.");
 
             // get the name from the key and trim off the blanks
             selection = this.keyboard.readLine();
@@ -66,14 +66,16 @@ public abstract class View implements ViewInterface {
 
             // if the name is invalid (less than two characters in length)
             if (selection.length() < 1) {
-                System.out.println("\n The value can not be blank");
+                 ErrorView.display(this.getClass().getName(),
+                         "\n The value can not be blank");
                 continue; // and repeat again
 
             }
             break; // out of the (exit) the repetition
         }
        }catch (Exception e){
-           System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
        }
         return selection; // returns input
     }

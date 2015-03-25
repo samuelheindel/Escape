@@ -54,7 +54,7 @@ public class BagView extends View {
                 this.goBackToMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
         }
 
     }
@@ -63,14 +63,14 @@ public class BagView extends View {
         //get a sorted list of inventory items for the current game
         Tools[] tools = ToolsControl.getSortedToolsList();
 
-        System.out.println("\n         Tool Specs");
-        System.out.println("\t"+"\t"+"Damage" + "\t"
+        this.console.println("\n         Tool Specs");
+        this.console.println("\t"+"\t"+"Damage" + "\t"
                 + "Gather");
 
         //for each inventory item
         for (Tools Tool : tools) {
             //Display the description,the required amount and amount in stock
-            System.out.println(Tool.getDescription() + "\t" + "\t"
+            this.console.println(Tool.getDescription() + "\t" + "\t"
                     + Tool.getDamage() + "\t   "
                     + Tool.getGather());
 
