@@ -13,7 +13,7 @@ import escape.Escape;
  *
  * @author samuel
  */
-public class MapView extends View{
+public class MapView extends View {
 
     public MapView(String promptMessage) {
         super("This is the Map");

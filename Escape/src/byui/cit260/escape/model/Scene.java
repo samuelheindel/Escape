@@ -5,12 +5,7 @@
  */
 package byui.cit260.escape.model;
 
-import byui.cit260.escape.control.MapControl;
-import escape.Escape;
-import java.awt.image.BufferedImage;
 import java.io.Serializable;
-import java.util.Objects;
-import javax.swing.ImageIcon;
 
 /**
  *

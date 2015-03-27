@@ -9,6 +9,11 @@ import byui.cit260.escape.control.GameControl;
 import byui.cit260.escape.model.Actor;
 import byui.cit260.escape.model.Inventory;
 import java.awt.Point;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,7 +28,8 @@ public class GameMenuView extends View {
                 + "\n--------------------------------------------"
                 + "\nI - See inventory                           "
                 + "\nA - Equip tool from bag                     "
-                + "\nL - Show players in locations               "
+                + "\nL - Show players in locations in file       "
+                + "\nJ - Show players in locations               "
                 + "\nV - View Map                                "
                 + "\nM - Move                                    "
                 + "\nS - Save Game                               "
@@ -46,7 +52,10 @@ public class GameMenuView extends View {
                 this.Bag();
                 break;
             case 'L':
-                this.playerLocationView();
+                this.playerLocationView1(this.out);
+                break;
+            case 'J':
+                this.playerLocationView(this.console);
                 break;
             case 'V':
                 this.displayMap();
@@ -97,22 +106,43 @@ public class GameMenuView extends View {
 
     private void displayMap() {
         MapView Map = new MapView("");
-        Map.display();
+        Map.displayMap();
     }
 
     private void saveGame() {
         this.console.println("*** saveGame funtion called ***");
     }
 
-    private void playerLocationView() {
-//        Actor[] actor = Actor.values();
-//        this.console.println("\n Actor Locations");
-//        this.console.println("\t" + "Actors" + "\t Coordinates");
-//        for (int i = 0; i < actor.length; i++) {
-//            String name = actor.getName();
-//            Point location = actor.getCoordinates();
-//            this.console.print(name + "\t" + location);
-//        }
+    private void playerLocationView(PrintWriter console) {
+        Actor[] actor = Actor.values();
+        this.console.println("\n Actor Locations");
+        this.console.println("Actors" + "\t" + "\t" + "Coordinates");
+        for (int i = 0; i < actor.length; i++) {
+            String name = actor[i].getName();
+            Point location = actor[i].getCoordinates();
+            this.console.print("\n" + name + "\t" + "\t  (" + location.getX() + "," + location.getY() + ")");
+        }
+
+    }
+
+    private void playerLocationView1(PrintWriter out) {
+        try {
+            System.out.println("\n\nEnter the file path for the file where the actor location list"
+                    + "is to be saved");
+            String filePath = this.getInput();
+            out = new PrintWriter(filePath);
+
+            Actor[] actor = Actor.values();
+            out.println("\n Actor Locations");
+            out.println("Actors" + "\t" + "\t" + "Coordinates");
+            for (int i = 0; i < actor.length; i++) {
+                String name = actor[i].getName();
+                Point location = actor[i].getCoordinates();
+                out.print("\n" + name + "\t" + "\t  (" + location.getX() + "," + location.getY() + ")");
+            }
+        } catch (Exception ex) {
+            ErrorView.display("GameMenuView", "Error writing to file" + ex.getMessage());
+        }
     }
 
     private void checkGameStatus() {

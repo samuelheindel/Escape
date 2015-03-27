@@ -17,11 +17,12 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     private String promptmessage;
-    
+
     protected static final BufferedReader keyboard = Escape.getInFile();
     protected static final PrintWriter console = Escape.getOutFile();
-    
-    public View (String promptMessage){
+    protected static final PrintWriter out = Escape.getLogFile();
+
+    public View(String promptMessage) {
         this.promptmessage = promptMessage;
     }
 
@@ -32,8 +33,6 @@ public abstract class View implements ViewInterface {
     public void setPromptmessage(String promptmessage) {
         this.promptmessage = promptmessage;
     }
-    
-    
 
     @Override
     public void display() {
@@ -48,35 +47,33 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        
-        
+
         boolean valid = false; // indicates if the name has been retrieved
         String selection = null;
 
-        
         try {
-        while (!valid) { 
+            while (!valid) {
             // while a valid name has not been retrieved
-            //Prompt o players name
-           this.console.println("\t\nPlease enter your input below.");
+                //Prompt o players name
+                this.console.println("\t\nPlease enter your input below.");
 
-            // get the name from the key and trim off the blanks
-            selection = this.keyboard.readLine();
-            selection = selection.trim();
+                // get the name from the key and trim off the blanks
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
 
-            // if the name is invalid (less than two characters in length)
-            if (selection.length() < 1) {
-                 ErrorView.display(this.getClass().getName(),
-                         "\n The value can not be blank");
-                continue; // and repeat again
+                // if the name is invalid (less than two characters in length)
+                if (selection.length() < 1) {
+                    ErrorView.display(this.getClass().getName(),
+                            "\n The value can not be blank");
+                    continue; // and repeat again
 
+                }
+                break; // out of the (exit) the repetition
             }
-            break; // out of the (exit) the repetition
-        }
-       }catch (Exception e){
+        } catch (Exception e) {
             ErrorView.display(this.getClass().getName(),
                     "Error reading input: " + e.getMessage());
-       }
+        }
         return selection; // returns input
     }
 

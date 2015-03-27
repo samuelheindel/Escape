@@ -7,6 +7,7 @@ package byui.cit260.escape.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Location implements Serializable {
     private int column;
     private boolean visited;
     private Scene scene;
-    private ArrayList<Actor> actors;
+    private Actor actors;
 
     public Location() {
     }
@@ -31,11 +32,11 @@ public class Location implements Serializable {
         this.scene = scene;
     }
 
-    public ArrayList<Actor> getActors() {
+    public Actor getActors() {
         return actors;
     }
 
-    public void setActors(ArrayList<Actor> actors) {
+    public void setActors(Actor actors) {
         this.actors = actors;
     }
 
@@ -64,16 +65,13 @@ public class Location implements Serializable {
     }
 
     @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
-    }
-
-    @Override
     public int hashCode() {
         int hash = 3;
-        hash = 41 * hash + this.row;
-        hash = 41 * hash + this.column;
-        hash = 41 * hash + (this.visited ? 1 : 0);
+        hash = 29 * hash + this.row;
+        hash = 29 * hash + this.column;
+        hash = 29 * hash + (this.visited ? 1 : 0);
+        hash = 29 * hash + Objects.hashCode(this.scene);
+        hash = 29 * hash + Objects.hashCode(this.actors);
         return hash;
     }
 
@@ -95,7 +93,20 @@ public class Location implements Serializable {
         if (this.visited != other.visited) {
             return false;
         }
+        if (this.scene != other.scene) {
+            return false;
+        }
+        if (this.actors != other.actors) {
+            return false;
+        }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", scene=" + scene + ", actors=" + actors + '}';
+    }
+
+
 
 }
