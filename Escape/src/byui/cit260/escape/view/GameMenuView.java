@@ -6,10 +6,9 @@
 package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.GameControl;
+import byui.cit260.escape.model.Actor;
 import byui.cit260.escape.model.Inventory;
-import escape.Escape;
-import exceptions.InventoryControlException;
-import java.util.Scanner;
+import java.awt.Point;
 
 /**
  *
@@ -106,8 +105,16 @@ public class GameMenuView extends View {
     }
 
     private void playerLocationView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        Actor[] actor = Actor.values();
+//        this.console.println("\n Actor Locations");
+//        this.console.println("\t" + "Actors" + "\t Coordinates");
+//        for (int i = 0; i < actor.length; i++) {
+//            String name = actor.getName();
+//            Point location = actor.getCoordinates();
+//            this.console.print(name + "\t" + location);
+//        }
     }
+
     private void checkGameStatus() {
         HelpMenuView HelpMenu = new HelpMenuView();
         HelpMenu.display();

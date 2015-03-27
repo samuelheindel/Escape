@@ -6,6 +6,8 @@
 package byui.cit260.escape.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -19,11 +21,20 @@ public class Game implements Serializable {
     private int noPeople;
     private Inventory[] inventory;
     private Tools[] tools;
+    private ActorLocation[] actorlocation;
     private Volcano volcano;
     private Raft raft;
     private Map map;
 
     public Game() {
+    }
+
+    public ActorLocation[] getActorlocation() {
+        return actorlocation;
+    }
+
+    public void setActorlocation(ActorLocation[] actorlocation) {
+        this.actorlocation = actorlocation;
     }
 
     public Inventory[] getInventory() {
@@ -100,14 +111,22 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "turn=" + turn + ", noPeople=" + noPeople + '}';
+        return "Game{" + "game=" + game + ", player=" + player + ", turn=" + turn + ", noPeople=" + noPeople + ", inventory=" + inventory + ", tools=" + tools + ", actorlocation=" + actorlocation + ", volcano=" + volcano + ", raft=" + raft + ", map=" + map + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.turn) ^ (Double.doubleToLongBits(this.turn) >>> 32));
-        hash = 83 * hash + this.noPeople;
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.game);
+        hash = 97 * hash + Objects.hashCode(this.player);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.turn) ^ (Double.doubleToLongBits(this.turn) >>> 32));
+        hash = 97 * hash + this.noPeople;
+        hash = 97 * hash + Arrays.deepHashCode(this.inventory);
+        hash = 97 * hash + Arrays.deepHashCode(this.tools);
+        hash = 97 * hash + Arrays.deepHashCode(this.actorlocation);
+        hash = 97 * hash + Objects.hashCode(this.volcano);
+        hash = 97 * hash + Objects.hashCode(this.raft);
+        hash = 97 * hash + Objects.hashCode(this.map);
         return hash;
     }
 
@@ -120,13 +139,39 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
+        if (!Objects.equals(this.game, other.game)) {
+            return false;
+        }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
         if (Double.doubleToLongBits(this.turn) != Double.doubleToLongBits(other.turn)) {
             return false;
         }
         if (this.noPeople != other.noPeople) {
             return false;
         }
+        if (!Arrays.deepEquals(this.inventory, other.inventory)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.tools, other.tools)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.actorlocation, other.actorlocation)) {
+            return false;
+        }
+        if (!Objects.equals(this.volcano, other.volcano)) {
+            return false;
+        }
+        if (!Objects.equals(this.raft, other.raft)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
         return true;
     }
+
+
 
 }

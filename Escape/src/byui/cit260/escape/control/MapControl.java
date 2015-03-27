@@ -31,10 +31,14 @@ public class MapControl {
                     + coordinates.x + ", " + coordinates.y
                     + " because the location is outside"
                     + " the bounds of the map.");
+            
 
         }
         Location[][] locations = Escape.getCurrentGame().getMap().getLocations();
         Scene scene = locations[newRow][newColumn].getScene();
+        Point actorlocation = actor.getCoordinates();
+        actorlocation.x = coordinates.x;
+        actorlocation.y = coordinates.y;
         return scene;
     }
 
@@ -46,8 +50,7 @@ public class MapControl {
             Point coordinates = actor.getCoordinates();
             MapControl.moveActorToLocation(actor, coordinates);
 
-        }
-
+        }  
     }
 
 }

@@ -25,6 +25,7 @@ public class SelectActorView extends View {
                 + "\nA - Jeb                                     "
                 + "\nB - Ned                                     "
                 + "\nC - Jack                                    "
+                + "\nT - Toby                                    "
                 + "\nE - Exit                                    "
                 + "\n--------------------------------------------");
     }
@@ -46,10 +47,13 @@ public class SelectActorView extends View {
             case 'C':
                 this.moveActor(Actor.Jack);
                 break;
+            case 'T':
+                this.moveActor(Actor.Toby);
+                break;
             case 'E':
                 return;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
 
     }
