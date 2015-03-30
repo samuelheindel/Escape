@@ -5,12 +5,10 @@
  */
 package byui.cit260.escape.view;
 
-import byui.cit260.escape.control.GameControl;
 import byui.cit260.escape.control.InventoryControl;
 import byui.cit260.escape.model.Inventory;
 import exceptions.InventoryControlException;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,7 +16,7 @@ import java.util.logging.Logger;
  *
  * @author samuel
  */
-public class CalcRaftCompletionView extends View {
+public class CalcLaunchView extends View {
 
     Inventory[] inventoryValues = escape.Escape.getCurrentGame().getInventory();
     double people = Double.parseDouble("-1");
@@ -29,9 +27,13 @@ public class CalcRaftCompletionView extends View {
     double storageneeded = Double.parseDouble("-1");
     double storageininventory = inventoryValues[2].getQuantity();
     double raftcom = -1;
+    double meat = inventoryValues[5].getQuantity();
+    double meatneeded = Double.parseDouble("-1");
+    double fruit = inventoryValues[4].getQuantity();
+    double fruitneeded = Double.parseDouble("-1");
 
-    public CalcRaftCompletionView(String promptMessage) {
-        super("We will calculate our raft completion");
+    public CalcLaunchView(String promptMessage) {
+        super("We need to do some calculations");
     }
 
     @Override
@@ -75,6 +77,20 @@ public class CalcRaftCompletionView extends View {
                         + "Try again.");
             }
 
+            try {
+                meatneeded = people * Double.parseDouble("3");
+            } catch (NumberFormatException nf) {
+
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a vailid number."
+                        + "Try again.");
+            }
+            try {
+                fruitneeded = people * Double.parseDouble("4");
+            } catch (NumberFormatException nf) {
+
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a vailid number."
+                        + "Try again.");
+            }
             break; // out of the (exit) the repetition
         }
 
@@ -85,10 +101,21 @@ public class CalcRaftCompletionView extends View {
     public void doAction(Object value) {
         try {
             double raftcom = InventoryControl.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory); // call function
-            this.console.println("Raft " + raftcom + "% completed");
+            double storagecom = InventoryControl.calStorageNeeded(people, meatneeded, meat, fruitneeded, fruit);
+            double completion = (raftcom / 50) + (storagecom / 50);
+            this.console.println("you launched the raft " + completion + " completed");
+                           if (completion < 100){
+            this.console.println("You launched your raft to soon, It was either incompete or you had"
+                    + "\n too few supllies. You died at sea");
+        }
+        else if (completion > 99){
+            this.console.println("You Succeded in launching a complete well stocked raft!"
+                    + "\n Congradulations You win! Good luck at sea. ");
+        }
         } catch (InventoryControlException ex) {
             this.console.println(ex.getMessage());
         }
+ 
 
     }
 }

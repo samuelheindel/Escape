@@ -5,6 +5,7 @@
  */
 package byui.cit260.escape.control;
 
+import byui.cit260.escape.model.Inventory;
 import exceptions.InventoryControlException;
 
 /**
@@ -25,11 +26,11 @@ public class InventoryControl {
         }
         if (ropeneeded < 60 || ropeneeded > 600) {
 
-           throw new InventoryControlException("to little rope");
+            throw new InventoryControlException("to little rope");
         }
         if (ropeininventory < 0 || ropeininventory > 600) {
 
-           throw new InventoryControlException("to much rope");
+            throw new InventoryControlException("to much rope");
         }
         if (storageneeded < 2 || storageneeded > 29) {
 
@@ -37,7 +38,7 @@ public class InventoryControl {
         }
         if (storageininventory < 0 || storageininventory > 29) {
 
-           throw new InventoryControlException("to little sroage");
+            throw new InventoryControlException("to little sroage");
         }
 
         double needforcom = logsneeded + ropeneeded + storageneeded;
@@ -53,12 +54,37 @@ public class InventoryControl {
             throw new InventoryControlException("to few people or to many people");
         }
         if (crates < 1 || crates > 29) {
-                throw new InventoryControlException("to few crates or to many crates");
+            throw new InventoryControlException("to few crates or to many crates");
         }
 
         double pspace = (6 * 10) * people;
         double raftsize = pspace + (crates * 2);
         return raftsize;
+    }
+
+    public static double calStorageNeeded(double people, double meatneeded, double meat, double fruitneeded, double fruit) throws InventoryControlException {
+
+        Inventory[] inventoryValues = escape.Escape.getCurrentGame().getInventory();
+
+        if (people < 1 || people > 9) {
+            throw new InventoryControlException("to few people or to many people");
+        }
+        if (meatneeded < 1 || meatneeded > 15) {
+            throw new InventoryControlException("to few people or to many people");
+        }
+        if (meat < 0 || meat > 15) {
+            throw new InventoryControlException("to few people or to many people");
+        }
+        if (fruitneeded < 1 || fruitneeded > 20) {
+            throw new InventoryControlException("to few people or to many people");
+        }
+        if (fruit < 0 || fruit > 20) {
+            throw new InventoryControlException("to few crates or to many crates");
+        }
+        double storageneeded = meatneeded + fruitneeded;
+        double completioninven = fruit + meat;
+        double completion = (completioninven / storageneeded) * 100;
+        return completion;
     }
 
 }

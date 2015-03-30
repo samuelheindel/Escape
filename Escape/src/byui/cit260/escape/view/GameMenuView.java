@@ -36,6 +36,7 @@ public class GameMenuView extends View {
                 + "\nC - Check Game Status                       "
                 + "\nR - Check raft completion                   "
                 + "\nZ - calculate the raft size                 "
+                + "\nF - Launch your raft                        "
                 + "\nE - Exit                                    "
                 + "\n--------------------------------------------");
     }
@@ -72,6 +73,8 @@ public class GameMenuView extends View {
                 this.checkRaftStatus();
             case 'Z':
                 this.calcRaftSize();
+            case 'F':
+                this.calcLaunch();
             case 'E':
                 this.goBackToMenu();
                 break;
@@ -139,6 +142,7 @@ public class GameMenuView extends View {
                 String name = actor[i].getName();
                 Point location = actor[i].getCoordinates();
                 out.print("\n" + name + "\t" + "\t  (" + location.getX() + "," + location.getY() + ")");
+                out.flush();
             }
         } catch (Exception ex) {
             ErrorView.display("GameMenuView", "Error writing to file" + ex.getMessage());
@@ -168,6 +172,13 @@ public class GameMenuView extends View {
     private void goBackToMenu() {
         MainMenuView gameMenu = new MainMenuView();
         gameMenu.display();
+    }
+
+    private void calcLaunch() {
+        CalcLaunchView gamecom = new CalcLaunchView("");
+        gamecom.display();
+        
+
     }
 
 }

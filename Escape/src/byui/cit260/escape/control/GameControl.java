@@ -54,7 +54,7 @@ public class GameControl {
         MapControl.moveActorsToStartingLocation(map);
     }
 
-    private static Inventory[] createInventoryList() {
+    public static Inventory[] createInventoryList() {
         Inventory[] inventory
                 = new Inventory[6];
 
