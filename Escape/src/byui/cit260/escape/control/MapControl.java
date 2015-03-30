@@ -8,6 +8,7 @@ package byui.cit260.escape.control;
 import byui.cit260.escape.model.Actor;
 import byui.cit260.escape.model.Location;
 import byui.cit260.escape.model.Map;
+import byui.cit260.escape.model.Player;
 import byui.cit260.escape.model.Scene;
 import escape.Escape;
 import exceptions.MapControlExceptions;
@@ -31,7 +32,6 @@ public class MapControl {
                     + coordinates.x + ", " + coordinates.y
                     + " because the location is outside"
                     + " the bounds of the map.");
-            
 
         }
         Location[][] locations = Escape.getCurrentGame().getMap().getLocations();
@@ -42,6 +42,32 @@ public class MapControl {
         return scene;
     }
 
+    public static Scene movePlayerLocation(Player player, Point coordinates) throws MapControlExceptions {
+
+        Map map = Escape.getCurrentGame().getMap();
+        int newRow = coordinates.x - 1;
+        int newColumn = coordinates.y - 1;
+
+        if (newRow < 0 || newRow >= map.getRowCount()
+                || newColumn < 0 || newColumn >= map.getColCount()) {
+            throw new MapControlExceptions("Can not move actor to the location"
+                    + coordinates.x + ", " + coordinates.y
+                    + " because the location is outside"
+                    + " the bounds of the map.");
+
+        }
+        Location[][] locations = Escape.getCurrentGame().getMap().getLocations();
+        Scene scene = locations[newRow][newColumn].getScene();
+        return scene;
+    }
+
+    public static Void movePlayerToStartingLocation(Map map) throws MapControlExceptions {
+       Player player = Escape.getCurrentGame().getPlayer();
+       Point coordinates = player.getLocation();
+       MapControl.movePlayerLocation(player, coordinates);
+        return null;
+    }
+
     public static void moveActorsToStartingLocation(Map map) throws MapControlExceptions {
         //for every actor 
         Actor[] actors = Actor.values();
@@ -50,7 +76,7 @@ public class MapControl {
             Point coordinates = actor.getCoordinates();
             MapControl.moveActorToLocation(actor, coordinates);
 
-        }  
+        }
     }
 
 }

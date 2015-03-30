@@ -35,7 +35,7 @@ public class MainMenuView extends View {
     }
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
@@ -57,10 +57,11 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
+        return false;
     }
 
     private void startNewGame() throws MapControlExceptions {

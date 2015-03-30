@@ -10,5 +10,5 @@ package byui.cit260.escape.control;
  * @author Kale
  */
 public class GatherControl {
-    
+
 }

@@ -67,7 +67,7 @@ public class CalcRaftSizeView extends View {
     }
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
 
         try {
             double raftsize = InventoryControl.calRaftSize(this.people, this.storagecrates); // call function
@@ -75,5 +75,6 @@ public class CalcRaftSizeView extends View {
         } catch (InventoryControlException ex) {
             this.console.println(ex.getMessage());
         }
+        return true;
     }
 }

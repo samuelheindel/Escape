@@ -5,6 +5,7 @@
  */
 package byui.cit260.escape.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,15 +13,23 @@ import java.util.Objects;
  *
  * @author Kale
  */
-public class Player implements Serializable{
-    
+public class Player implements Serializable {
+
     private String name;
     private Double days;
-    private Player[] player;
+    private Point location;
+
     public Player() {
     }
-    
-    
+
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = new Point(2, 15);
+    }
+
     public String getName() {
         return name;
     }
@@ -67,8 +76,5 @@ public class Player implements Serializable{
         }
         return true;
     }
-    
-    
-    
-    
+
 }

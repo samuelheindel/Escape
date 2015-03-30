@@ -31,7 +31,7 @@ public class SelectActorView extends View {
     }
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
@@ -51,10 +51,11 @@ public class SelectActorView extends View {
                 this.moveActor(Actor.Toby);
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
+        return false;
 
     }
 
@@ -64,6 +65,7 @@ public class SelectActorView extends View {
 
     private void moveActor(Actor actor) {
         MoveActorView moveactor = new MoveActorView("");
+        moveactor.setActor(actor);
         moveactor.display();
 
     }

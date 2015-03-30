@@ -26,7 +26,7 @@ public class GatherView extends View {
     }
 
  @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
@@ -34,10 +34,11 @@ public class GatherView extends View {
                 this.gatherResource();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
         }
+        return false;
 
     }
 

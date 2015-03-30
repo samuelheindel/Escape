@@ -24,7 +24,7 @@ public class MoveNorthView extends View{
     }
     
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         String action = (String)value;
         char choice = action.charAt(0);
         switch (choice){
@@ -32,10 +32,11 @@ public class MoveNorthView extends View{
                 this.Spaces();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
         }
+        return false;
     
 }
 

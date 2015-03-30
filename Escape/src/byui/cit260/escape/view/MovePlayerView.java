@@ -6,12 +6,12 @@
 package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.MapControl;
-import byui.cit260.escape.model.Actor;
+import byui.cit260.escape.model.Player;
 import byui.cit260.escape.model.Scene;
+import escape.Escape;
 import exceptions.MapControlExceptions;
 import java.awt.Point;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,28 +19,19 @@ import java.util.logging.Logger;
  *
  * @author samuel
  */
-public class MoveActorView extends View {
+public class MovePlayerView extends View {
 
-    private Actor actor;
+    Player player = escape.Escape.getPlayer();
     int x = -1;
     int y = -1;
     Point coordinates = new Point(x, y);
 
-    public MoveActorView(String promptMessage) {
-        super("where would you like to move this person?");
+    public MovePlayerView(String promptMessage) {
+        super("Where would you like to move?");
     }
 
-    public Actor getActor() {
-        return actor;
-    }
-
-    public void setActor(Actor actor) {
-        this.actor = actor;
-    }
-
-    public void displayMoveActor(Actor actor) throws MapControlExceptions {
-        this.setActor(actor);
-
+    public void displayMovePlayer(Player player) throws MapControlExceptions {
+        Escape.setPlayer(player);
     }
 
     @Override
@@ -87,12 +78,11 @@ public class MoveActorView extends View {
     @Override
     public boolean doAction(Object value) {
         try {
-            Scene scene = MapControl.moveActorToLocation(this.getActor(), coordinates); // call function
+            Scene scene = MapControl.movePlayerLocation(player, coordinates); // call function
             this.console.println(scene.getDescription());
         } catch (MapControlExceptions me) {
             this.console.println(me.getMessage());
         }
         return true;
-
     }
 }

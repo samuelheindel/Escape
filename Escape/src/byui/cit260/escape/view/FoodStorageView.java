@@ -71,7 +71,7 @@ public class FoodStorageView extends View {
     }
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
 
         try {
             double storageneeded = InventoryControl.calStorageNeeded(people, meatneeded, meat, fruitneeded, fruit); // call function
@@ -79,5 +79,6 @@ public class FoodStorageView extends View {
         } catch (InventoryControlException ex) {
             this.console.println(ex.getMessage());
         }
+        return true;
     }
 }

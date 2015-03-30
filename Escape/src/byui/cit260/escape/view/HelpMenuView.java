@@ -24,13 +24,13 @@ public class HelpMenuView extends View{
             +"\nA -  Interact (Harvest certain resources, use items, etc.)                    "
             +"\nL - View your location.                                                       "
             +"\nO -  Observe surroundings                                                     "
-            +"\nQ - Quit or Go Back to Main Menu                                              "
+            +"\nE - Quit or Go Back to Main Menu                                              "
             +"\n------------------------------------------------------------------------------");
     }
   
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
@@ -52,12 +52,13 @@ public class HelpMenuView extends View{
             case 'O':
                 this.displayObserveSurroundings();
                 break;
-            case 'Q':
+            case 'E':
                 this.goBackToMenu();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
         }
+        return false;
     
        }
     private void displayGameGoal(){

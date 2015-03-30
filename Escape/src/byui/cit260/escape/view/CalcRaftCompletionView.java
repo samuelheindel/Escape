@@ -82,13 +82,14 @@ public class CalcRaftCompletionView extends View {
     }
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         try {
             double raftcom = InventoryControl.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory); // call function
             this.console.println("Raft " + raftcom + "% completed");
         } catch (InventoryControlException ex) {
             this.console.println(ex.getMessage());
         }
+        return true;
 
     }
 }

@@ -32,17 +32,18 @@ public class GameMenuView extends View {
                 + "\nJ - Show players in locations               "
                 + "\nV - View Map                                "
                 + "\nM - Move                                    "
-                + "\nS - Save Game                               "
                 + "\nC - Check Game Status                       "
                 + "\nR - Check raft completion                   "
                 + "\nZ - calculate the raft size                 "
+                + "\nG - calculate the storage you need          "
                 + "\nF - Launch your raft                        "
+                + "\nS - Save Game                               "
                 + "\nE - Exit                                    "
                 + "\n--------------------------------------------");
     }
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
@@ -73,6 +74,8 @@ public class GameMenuView extends View {
                 this.checkRaftStatus();
             case 'Z':
                 this.calcRaftSize();
+            case 'G':
+                this.CalcStorageNeeded();
             case 'F':
                 this.calcLaunch();
             case 'E':
@@ -81,6 +84,7 @@ public class GameMenuView extends View {
             default:
                 ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
+        return false;
     }
 
     private void viewInventory() {
@@ -177,8 +181,12 @@ public class GameMenuView extends View {
     private void calcLaunch() {
         CalcLaunchView gamecom = new CalcLaunchView("");
         gamecom.display();
-        
 
+    }
+
+    private void CalcStorageNeeded() {
+        FoodStorageView foodneeded = new FoodStorageView("");
+        foodneeded.display();
     }
 
 }

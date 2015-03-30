@@ -53,11 +53,12 @@ public class StartProgramView extends View {
     }
 
     @Override
-    public void doAction(Object name) {
+    public boolean doAction(Object name) {
         this.displayWelcomeMessage((String) name);
         //Disolay main menu
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
+        return true;
     }
 
 }

@@ -98,24 +98,23 @@ public class CalcLaunchView extends View {
     }
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         try {
             double raftcom = InventoryControl.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory); // call function
             double storagecom = InventoryControl.calStorageNeeded(people, meatneeded, meat, fruitneeded, fruit);
             double completion = (raftcom / 50) + (storagecom / 50);
             this.console.println("you launched the raft " + completion + " completed");
-                           if (completion < 100){
-            this.console.println("You launched your raft to soon, It was either incompete or you had"
-                    + "\n too few supllies. You died at sea");
-        }
-        else if (completion > 99){
-            this.console.println("You Succeded in launching a complete well stocked raft!"
-                    + "\n Congradulations You win! Good luck at sea. ");
-        }
+            if (completion < 100) {
+                this.console.println("You launched your raft to soon, It was either incompete or you had"
+                        + "\n too few supllies. You died at sea");
+            } else if (completion > 99) {
+                this.console.println("You Succeded in launching a complete well stocked raft!"
+                        + "\n Congradulations You win! Good luck at sea. ");
+            }
         } catch (InventoryControlException ex) {
             this.console.println(ex.getMessage());
         }
- 
+        return true;
 
     }
 }

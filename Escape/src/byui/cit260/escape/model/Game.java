@@ -21,7 +21,7 @@ public class Game implements Serializable {
     private int noPeople;
     private Inventory[] inventory;
     private Tools[] tools;
-    private ActorLocation[] actorlocation;
+
     private Volcano volcano;
     private Raft raft;
     private Map map;
@@ -29,13 +29,7 @@ public class Game implements Serializable {
     public Game() {
     }
 
-    public ActorLocation[] getActorlocation() {
-        return actorlocation;
-    }
 
-    public void setActorlocation(ActorLocation[] actorlocation) {
-        this.actorlocation = actorlocation;
-    }
 
     public Inventory[] getInventory() {
         return inventory;
@@ -111,7 +105,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "game=" + game + ", player=" + player + ", turn=" + turn + ", noPeople=" + noPeople + ", inventory=" + inventory + ", tools=" + tools + ", actorlocation=" + actorlocation + ", volcano=" + volcano + ", raft=" + raft + ", map=" + map + '}';
+        return "Game{" + "game=" + game + ", player=" + player + ", turn=" + turn + ", noPeople=" + noPeople + ", inventory=" + inventory + ", tools=" + tools + ", actorlocation=" + ", volcano=" + volcano + ", raft=" + raft + ", map=" + map + '}';
     }
 
     @Override
@@ -123,7 +117,6 @@ public class Game implements Serializable {
         hash = 97 * hash + this.noPeople;
         hash = 97 * hash + Arrays.deepHashCode(this.inventory);
         hash = 97 * hash + Arrays.deepHashCode(this.tools);
-        hash = 97 * hash + Arrays.deepHashCode(this.actorlocation);
         hash = 97 * hash + Objects.hashCode(this.volcano);
         hash = 97 * hash + Objects.hashCode(this.raft);
         hash = 97 * hash + Objects.hashCode(this.map);
@@ -157,9 +150,7 @@ public class Game implements Serializable {
         if (!Arrays.deepEquals(this.tools, other.tools)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.actorlocation, other.actorlocation)) {
-            return false;
-        }
+
         if (!Objects.equals(this.volcano, other.volcano)) {
             return false;
         }

@@ -25,7 +25,7 @@ public class MoveView extends View {
     }
 
     @Override
-    public void doAction(Object value) {
+    public boolean doAction(Object value) {
         String action = (String) value;
         char choice = action.charAt(0);
         switch (choice) {
@@ -37,16 +37,17 @@ public class MoveView extends View {
                 break;
             case 'E':
                 this.goBackToMenu();
-                return;
+                return true;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
+        return false;
 
     }
 
     private void movePlayer() {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        MovePlayerView moveplayer = new MovePlayerView("");
+        moveplayer.display();
     }
 
     private void moveCrew() {

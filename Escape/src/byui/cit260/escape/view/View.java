@@ -36,13 +36,14 @@ public abstract class View implements ViewInterface {
 
     @Override
     public void display() {
+        boolean done = false;
         String value;
         do {
             this.console.println(this.promptmessage);// display the main menu
             value = this.getInput(); //get the user selection
-            this.doAction(value);// do action based on selection
-
-        } while (!value.equals("E")); // an selection is not "exit"
+            done = this.doAction(value);// do action based on selection
+            
+        } while (!done); // an selection is not "exit"
     }
 
     @Override
