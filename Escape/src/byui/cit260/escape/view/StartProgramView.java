@@ -31,7 +31,7 @@ public class StartProgramView extends View {
                 + "\n* Your ship was thrown on the rocks and destroyed along with all of your provisions.   *"
                 + "\n* There is an island next to the rocks that you were able to swim to.                  *"
                 + "\n* Your crew is lost.                                                                   *"
-                + "*                                                                                      *"
+                + "\n*                                                                                      *"
                 + "\n* You have been stranded on a Jaba Island.                                             *"
                 + "\n* You are alone and have nothing.                                                      *"
                 + "\n* The island you notice an active volcano that is going to erupt at any moment.        *"
@@ -39,11 +39,13 @@ public class StartProgramView extends View {
                 + "\n* It is imperative that you escape from the island.                                    *"
                 + "\n* The island has many resources that are available to gather.                          *"
                 + "\n* The resources will be used to create a way for you to escape the island.             *"
-                + "*                                                                                      *"
+                + "\n*                                                                                      *"
                 + "\n* Beware your days are numbered!                                                       *"
                 + "\n\n####################################################################################"
                 + "\n\nWhat is your Name Captain?");
     }
+
+ 
 
     private void displayWelcomeMessage(String name) {
         this.console.println("\n\n================================================");

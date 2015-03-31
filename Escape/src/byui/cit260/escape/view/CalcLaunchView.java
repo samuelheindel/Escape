@@ -40,7 +40,7 @@ public class CalcLaunchView extends View {
     public String getInput() {
         boolean valid = false; // indicates if the if valid
         while (!valid) { // start while loop
-            this.console.println("How many people will be on yoour raft?");
+            this.console.println("How many people will be on your raft?");
             try {
                 this.people = Double.parseDouble(this.keyboard.readLine()); // people variable
             } catch (IOException ex) {
@@ -106,10 +106,15 @@ public class CalcLaunchView extends View {
             this.console.println("you launched the raft " + completion + " completed");
             if (completion < 100) {
                 this.console.println("You launched your raft to soon, It was either incompete or you had"
-                        + "\n too few supllies. You died at sea");
+                        + "\n too few supllies. You died at sea."
+                        + "\n GAME OVER!");
+                StartProgramView startProgramView = new StartProgramView("");
+                startProgramView.display();
             } else if (completion > 99) {
                 this.console.println("You Succeded in launching a complete well stocked raft!"
                         + "\n Congradulations You win! Good luck at sea. ");
+                StartProgramView startProgramView = new StartProgramView("");
+                startProgramView.display();
             }
         } catch (InventoryControlException ex) {
             this.console.println(ex.getMessage());
