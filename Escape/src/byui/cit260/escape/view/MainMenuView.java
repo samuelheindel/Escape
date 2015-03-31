@@ -57,6 +57,7 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
             case 'E':
+                this.exitMenu();
                 return true;
             default:
                 ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
@@ -75,35 +76,40 @@ public class MainMenuView extends View {
         System.out.println("\n\nEnter the file path for the file where the game"
                 + "is saved");
         String filePath = this.getInput();
-        
-        try{
+
+        try {
             // Start a saved game
             GameControl.getSavedGame(filePath);
-            
-        }catch (Exception ex) {
-        ErrorView.display("MainMenuView", ex.getMessage());
-    }
+
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
         // display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
     private void saveGame() {
-         System.out.println("\n\nEnter the file path for the file where the game"
+        System.out.println("\n\nEnter the file path for the file where the game"
                 + "is to be saved");
         String filePath = this.getInput();
-        
-        try{
+
+        try {
             // save the game to the file
             GameControl.saveGame(Escape.getCurrentGame(), filePath);
-            
-        }catch (Exception ex) {
-        ErrorView.display("MainMenuView", ex.getMessage());
-    }
+
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayHelpMenu() {
         HelpMenuView HelpMenu = new HelpMenuView();
         HelpMenu.display();
+    }
+
+    private void exitMenu() {
+        StartProgramView startProgramView = new StartProgramView("");
+        startProgramView.display();
     }
 }
