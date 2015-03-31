@@ -36,6 +36,7 @@ public class GameControl {
         Escape.setCurrentGame(game);// save in esacpe
 
         game.setPlayer(player); // save player in game
+        
 
         // create the inventory list and save in the game
         Inventory[] inventoryList = GameControl.createInventoryList();
@@ -52,7 +53,7 @@ public class GameControl {
 
         //move actors to starting position in the map
         MapControl.moveActorsToStartingLocation(map);
-        
+        MapControl.movePlayerToStartingLocation(map);        
     }
 
     public static Inventory[] createInventoryList() {

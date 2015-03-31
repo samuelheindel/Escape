@@ -6,8 +6,13 @@
 package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.GameControl;
+import byui.cit260.escape.control.GatherControl;
 import byui.cit260.escape.model.Actor;
 import byui.cit260.escape.model.Inventory;
+import byui.cit260.escape.model.Location;
+import byui.cit260.escape.model.Player;
+import byui.cit260.escape.model.Scene;
+import escape.Escape;
 import java.awt.Point;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -28,6 +33,7 @@ public class GameMenuView extends View {
                 + "\n--------------------------------------------"
                 + "\nI - See inventory                           "
                 + "\nA - Equip tool from bag                     "
+                + "\nW - Show current Location                   "
                 + "\nL - Show players in locations in file       "
                 + "\nJ - Show players in locations               "
                 + "\nV - View Map                                "
@@ -52,6 +58,9 @@ public class GameMenuView extends View {
                 break;
             case 'A':
                 this.Bag();
+                break;
+            case 'W':
+                this.currentLocation(this.out);
                 break;
             case 'L':
                 this.playerLocationView1(this.out);
@@ -151,6 +160,11 @@ public class GameMenuView extends View {
         } catch (Exception ex) {
             ErrorView.display("GameMenuView", "Error writing to file" + ex.getMessage());
         }
+    }
+
+    private void currentLocation(PrintWriter console) {
+        Point player = Escape.getPlayer().getCoordinates();
+        this.console.println("\n This is the point you are located on the map" + player);
     }
 
     private void checkGameStatus() {

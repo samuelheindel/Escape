@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class MovePlayerView extends View {
 
-    Player player = escape.Escape.getPlayer();
+    Player player = escape.Escape.getCurrentGame().getPlayer();
     int x = -1;
     int y = -1;
     Point coordinates = new Point(x, y);

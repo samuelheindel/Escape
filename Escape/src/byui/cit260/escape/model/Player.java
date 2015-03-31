@@ -17,17 +17,18 @@ public class Player implements Serializable {
 
     private String name;
     private Double days;
-    private Point location;
+    private Point coordinates = Point(2, 15);
+
 
     public Player() {
     }
 
-    public Point getLocation() {
-        return location;
+    public Point getCoordinates() {
+        return coordinates;
     }
 
-    public void setLocation(Point location) {
-        this.location = new Point(2, 15);
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
     }
 
     public String getName() {
@@ -75,6 +76,10 @@ public class Player implements Serializable {
             return false;
         }
         return true;
+    }
+
+    private Point Point(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

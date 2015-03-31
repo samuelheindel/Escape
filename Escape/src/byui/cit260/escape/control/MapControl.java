@@ -42,7 +42,18 @@ public class MapControl {
         return scene;
     }
 
-    public static Scene movePlayerLocation(Player player, Point coordinates) throws MapControlExceptions {
+    public static void moveActorsToStartingLocation(Map map) throws MapControlExceptions {
+        //for every actor 
+        Actor[] actors = Actor.values();
+
+        for (Actor actor : actors) {
+            Point coordinates = actor.getCoordinates();
+            MapControl.moveActorToLocation(actor, coordinates);
+
+        }
+    }
+
+    public static Scene movePlayerToLocation(Player player, Point coordinates) throws MapControlExceptions {
 
         Map map = Escape.getCurrentGame().getMap();
         int newRow = coordinates.x - 1;
@@ -58,25 +69,19 @@ public class MapControl {
         }
         Location[][] locations = Escape.getCurrentGame().getMap().getLocations();
         Scene scene = locations[newRow][newColumn].getScene();
+        Point playerlocation = player.getCoordinates();
+        playerlocation.x = coordinates.x;
+        playerlocation.y = coordinates.y;
         return scene;
     }
 
-    public static Void movePlayerToStartingLocation(Map map) throws MapControlExceptions {
-       Player player = Escape.getCurrentGame().getPlayer();
-       Point coordinates = player.getLocation();
-       MapControl.movePlayerLocation(player, coordinates);
-        return null;
-    }
-
-    public static void moveActorsToStartingLocation(Map map) throws MapControlExceptions {
+    public static void movePlayerToStartingLocation(Map map) throws MapControlExceptions {
         //for every actor 
-        Actor[] actors = Actor.values();
+        Player player = Escape.getPlayer();
+        Point startlocation = Escape.getCurrentGame().getPlayer().getCoordinates();
+        MapControl.movePlayerToLocation(player, startlocation);
+       
 
-        for (Actor actor : actors) {
-            Point coordinates = actor.getCoordinates();
-            MapControl.moveActorToLocation(actor, coordinates);
-
-        }
     }
-
 }
+
