@@ -17,10 +17,11 @@ public class Player implements Serializable {
 
     private String name;
     private Double days;
-    private Point coordinates = Point(2, 15);
-
+    private Point coordinates;
 
     public Player() {
+        this.coordinates = new Point(2, 15);
+        this.name = null;
     }
 
     public Point getCoordinates() {

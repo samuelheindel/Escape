@@ -17,6 +17,7 @@ import byui.cit260.escape.model.Volcano;
 import escape.Escape;
 import exceptions.GameControlException;
 import exceptions.MapControlExceptions;
+import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -51,9 +52,11 @@ public class GameControl {
         Map map = GameControl.createMap();// create and initialize new map
         game.setMap(map);//save map in game
 
-        //move actors to starting position in the map
+        //move actors and player to starting position in the map
+        Point point = Escape.getPlayer().getCoordinates();
+        
         MapControl.moveActorsToStartingLocation(map);
-        MapControl.movePlayerToStartingLocation(map);        
+        MapControl.movePlayerToLocation(player, point);
     }
 
     public static Inventory[] createInventoryList() {

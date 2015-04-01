@@ -18,8 +18,8 @@ import java.util.logging.Logger;
  */
 public class CalcRaftSizeView extends View {
 
-    double people = Double.parseDouble("-1");
-    double storagecrates = Double.parseDouble("-1");
+    double people = Double.parseDouble("4");
+    double storagecrates = Double.parseDouble("8");
 
     public CalcRaftSizeView(String promptMessage) {
         super("We will calculate your raft size");
@@ -27,42 +27,7 @@ public class CalcRaftSizeView extends View {
 
     @Override
     public String getInput() {
-        boolean valid = false; // indicates if the if valid
 
-        while (!valid) { // start while loop
-            this.console.println("How many people will be on yoour raft?");
-            try {
-                this.people = Double.parseDouble(this.keyboard.readLine()); // people variable
-            } catch (IOException ex) {
-                Logger.getLogger(CalcRaftSizeView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            if (people > 9) {
-                ErrorView.display(this.getClass().getName(),"to many people");
-                continue;
-            } else if (people < 1) {
-                ErrorView.display(this.getClass().getName(),"to few people");
-                continue;
-            } else {
-                this.console.println("Valid number of people.");
-            }
-
-            this.console.println("How many storage crates will you need? at least 2 per person.");
-            try {
-                this.storagecrates = Double.parseDouble(this.keyboard.readLine()); // storage variable
-            } catch (IOException ex) {
-                Logger.getLogger(CalcRaftSizeView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            if (storagecrates > 29) {
-                ErrorView.display(this.getClass().getName(),"to many storage crates");
-                continue;
-            } else if (storagecrates < 1) {
-                ErrorView.display(this.getClass().getName(),"to few storage crates");
-                continue;
-            } else {
-                this.console.println("Valid number of srorage crates.");
-            }
-            break; // out of the (exit) the repetition
-        }
         return "";
     }
 

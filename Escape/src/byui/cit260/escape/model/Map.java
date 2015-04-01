@@ -17,8 +17,10 @@ public class Map implements Serializable {
     private int rowCount;
     private int colCount;
     private Location[][] locations;
+    private Player player;
 
     public Map() {
+        player = escape.Escape.getPlayer();
     }
 
     public Map(int rowCount, int colCount) {

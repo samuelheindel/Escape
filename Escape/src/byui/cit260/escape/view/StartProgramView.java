@@ -57,6 +57,9 @@ public class StartProgramView extends View {
     @Override
     public boolean doAction(Object name) {
         this.displayWelcomeMessage((String) name);
+        Player player = new Player();
+        player.setName((String) name);
+        escape.Escape.setPlayer(player);
         //Disolay main menu
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();

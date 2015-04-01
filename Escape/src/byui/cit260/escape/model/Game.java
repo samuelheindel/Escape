@@ -21,7 +21,6 @@ public class Game implements Serializable {
     private int noPeople;
     private Inventory[] inventory;
     private Tools[] tools;
-
     private Volcano volcano;
     private Raft raft;
     private Map map;
@@ -78,6 +77,7 @@ public class Game implements Serializable {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
 
     public Volcano getVolcano() {
         return volcano;

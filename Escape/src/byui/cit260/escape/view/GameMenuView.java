@@ -79,14 +79,19 @@ public class GameMenuView extends View {
                 break;
             case 'C':
                 this.checkGameStatus();
+                break;
             case 'R':
                 this.checkRaftStatus();
+                break;
             case 'Z':
                 this.calcRaftSize();
+                break;
             case 'G':
                 this.CalcStorageNeeded();
+                break;
             case 'F':
                 this.calcLaunch();
+                break;
             case 'E':
                 this.goBackToMenu();
                 break;
@@ -163,8 +168,9 @@ public class GameMenuView extends View {
     }
 
     private void currentLocation(PrintWriter console) {
-        Point player = Escape.getPlayer().getCoordinates();
-        this.console.println("\n This is the point you are located on the map" + player);
+        Player player = Escape.getCurrentGame().getPlayer();
+        Point location = player.getCoordinates();
+        this.console.println("\n This is the point you are located on the map " + location.x + ", " + location.y);
     }
 
     private void checkGameStatus() {

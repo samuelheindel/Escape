@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
  *
  * @author samuel
@@ -20,7 +19,7 @@ import java.util.logging.Logger;
 public class FoodStorageView extends View {
 
     Inventory[] inventoryValues = escape.Escape.getCurrentGame().getInventory();
-    double people = Double.parseDouble("-1");
+    double people = Double.parseDouble("4");
     double meat = inventoryValues[5].getQuantity();
     double meatneeded = Double.parseDouble("-1");
     double fruit = inventoryValues[4].getQuantity();
@@ -35,21 +34,6 @@ public class FoodStorageView extends View {
         boolean valid = false; // indicates if the if valid
 
         while (!valid) { // start while loop
-             this.console.println("How many people will be on yoour raft?");
-            try {
-                this.people = Double.parseDouble(this.keyboard.readLine()); // people variable
-            } catch (IOException ex) {
-                Logger.getLogger(CalcRaftCompletionView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            if (people > 9) {
-                ErrorView.display(this.getClass().getName(), "to many people");
-                continue;
-            } else if (people < 1) {
-                ErrorView.display(this.getClass().getName(), "to few people");
-                continue;
-            } else {
-                this.console.println("Valid number of people.");
-            }
             try {
                 meatneeded = people * Double.parseDouble("3");
             } catch (NumberFormatException nf) {
@@ -75,7 +59,8 @@ public class FoodStorageView extends View {
 
         try {
             double storageneeded = InventoryControl.calStorageNeeded(people, meatneeded, meat, fruitneeded, fruit); // call function
-            this.console.println("Your food storage is " + storageneeded + "% complete ");
+            this.console.println("You need 8 full storage crates"
+                    + "Your food storage is " + storageneeded + "% complete ");
         } catch (InventoryControlException ex) {
             this.console.println(ex.getMessage());
         }

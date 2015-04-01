@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class MovePlayerView extends View {
 
-    Player player = escape.Escape.getCurrentGame().getPlayer();
+    Player player = escape.Escape.getPlayer();
     int x = -1;
     int y = -1;
     Point coordinates = new Point(x, y);
@@ -78,7 +78,7 @@ public class MovePlayerView extends View {
     @Override
     public boolean doAction(Object value) {
         try {
-            Scene scene = MapControl.movePlayerLocation(player, coordinates); // call function
+            Scene scene = MapControl.movePlayerToLocation(player, coordinates); // call function
             this.console.println(scene.getDescription());
         } catch (MapControlExceptions me) {
             this.console.println(me.getMessage());

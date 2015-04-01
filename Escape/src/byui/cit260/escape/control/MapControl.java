@@ -72,16 +72,11 @@ public class MapControl {
         Point playerlocation = player.getCoordinates();
         playerlocation.x = coordinates.x;
         playerlocation.y = coordinates.y;
+//        get old location
+//                remove player from old location
+//                        get new loation 
+//                                assigne player to new location. 
         return scene;
-    }
-
-    public static void movePlayerToStartingLocation(Map map) throws MapControlExceptions {
-        //for every actor 
-        Player player = Escape.getPlayer();
-        Point startlocation = Escape.getCurrentGame().getPlayer().getCoordinates();
-        MapControl.movePlayerToLocation(player, startlocation);
-       
-
     }
 }
 
