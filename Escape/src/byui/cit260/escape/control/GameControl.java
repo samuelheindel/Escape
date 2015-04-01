@@ -37,7 +37,6 @@ public class GameControl {
         Escape.setCurrentGame(game);// save in esacpe
 
         game.setPlayer(player); // save player in game
-        
 
         // create the inventory list and save in the game
         Inventory[] inventoryList = GameControl.createInventoryList();
@@ -54,47 +53,53 @@ public class GameControl {
 
         //move actors and player to starting position in the map
         Point point = Escape.getPlayer().getCoordinates();
-        
+
         MapControl.moveActorsToStartingLocation(map);
         MapControl.movePlayerToLocation(player, point);
     }
 
     public static Inventory[] createInventoryList() {
         Inventory[] inventory
-                = new Inventory[6];
+                = new Inventory[7];
 
         Inventory logs = new Inventory();
         logs.setDescription("Logs");
         logs.setQuantity(0);
-        logs.setQuantityneeded(0);
+        logs.setQuantityneeded(240);
         inventory[Item.logs.ordinal()] = logs;
 
         Inventory rope = new Inventory();
         rope.setDescription("Rope");
         rope.setQuantity(0);
-        rope.setQuantityneeded(0);
+        rope.setQuantityneeded(400);
         inventory[Item.rope.ordinal()] = rope;
 
         Inventory storage = new Inventory();
-        storage.setDescription("Storage crates");
-        storage.setQuantity(0);
-        storage.setQuantityneeded(0);
+        storage.setDescription("Storage");
+        storage.setQuantity(8);
+        storage.setQuantityneeded(8);
         inventory[Item.storage.ordinal()] = storage;
 
         Inventory meat = new Inventory();
         meat.setDescription("Meat");
         meat.setQuantity(0);
-        meat.setQuantityneeded(0);
+        meat.setQuantityneeded(12);
         inventory[Item.meat.ordinal()] = meat;
 
         Inventory fruit = new Inventory();
         fruit.setDescription("Fruit");
         fruit.setQuantity(0);
-        fruit.setQuantityneeded(0);
+        fruit.setQuantityneeded(16);
         inventory[Item.fruit.ordinal()] = fruit;
 
+        Inventory water = new Inventory();
+        water.setDescription("Water");
+        water.setQuantity(0);
+        water.setQuantityneeded(20);
+        inventory[Item.water.ordinal()] = water;
+
         Inventory bag = new Inventory();
-        bag.setDescription("bag");
+        bag.setDescription("Bag");
         bag.setQuantity(1);
         bag.setQuantityneeded(1);
         inventory[Item.bag.ordinal()] = bag;

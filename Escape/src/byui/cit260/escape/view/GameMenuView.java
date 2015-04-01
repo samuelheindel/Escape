@@ -106,8 +106,8 @@ public class GameMenuView extends View {
         Inventory[] inventory = GameControl.getSortedInventoryList();
 
         this.console.println("\n         List of Inventory Items");
-        this.console.println("\t" + "           Description" + "\t"
-                + "Required" + "\t"
+        this.console.println("Description" + "\t"
+                + "      Required" + "\t"
                 + "In Stock");
 
         //for each inventory item

@@ -16,4 +16,5 @@ public enum Item {
     meat,
     fruit,
     bag,
+    water,
 }

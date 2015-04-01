@@ -15,8 +15,8 @@ import java.util.Objects;
 public class Inventory implements Serializable {
 
     private String inventorytype;
-    private int quantity;
-    private int quantityneeded;
+    private double quantity;
+    private double quantityneeded;
     private String description;
 
     public Inventory() {
@@ -30,21 +30,22 @@ public class Inventory implements Serializable {
         this.inventorytype = inventorytype;
     }
 
-    public int getQuantity() {
+    public double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
 
-    public int getQuantityneeded() {
+    public double getQuantityneeded() {
         return quantityneeded;
     }
 
-    public void setQuantityneeded(int quantityneeded) {
+    public void setQuantityneeded(double quantityneeded) {
         this.quantityneeded = quantityneeded;
     }
+
 
     public String getDescription() {
         return description;
@@ -61,13 +62,15 @@ public class Inventory implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.inventorytype);
-        hash = 97 * hash + this.quantity;
-        hash = 97 * hash + this.quantityneeded;
-        hash = 97 * hash + Objects.hashCode(this.description);
+        int hash = 3;
+        hash = 23 * hash + Objects.hashCode(this.inventorytype);
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.quantity) ^ (Double.doubleToLongBits(this.quantity) >>> 32));
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.quantityneeded) ^ (Double.doubleToLongBits(this.quantityneeded) >>> 32));
+        hash = 23 * hash + Objects.hashCode(this.description);
         return hash;
     }
+
+
 
     @Override
     public boolean equals(Object obj) {

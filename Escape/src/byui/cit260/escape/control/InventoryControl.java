@@ -69,16 +69,16 @@ public class InventoryControl {
         if (people < 1 || people > 9) {
             throw new InventoryControlException("to few people or to many people");
         }
-        if (meatneeded < 1 || meatneeded > 15) {
+        if (meatneeded < 1 || meatneeded > 12) {
             throw new InventoryControlException("to few people or to many people");
         }
-        if (meat < 0 || meat > 15) {
+        if (meat < 0 || meat >= 12) {
             throw new InventoryControlException("to few people or to many people");
         }
-        if (fruitneeded < 1 || fruitneeded > 20) {
+        if (fruitneeded < 1 || fruitneeded > 16) {
             throw new InventoryControlException("to few people or to many people");
         }
-        if (fruit < 0 || fruit > 20) {
+        if (fruit < 0 || fruit > 16) {
             throw new InventoryControlException("to few crates or to many crates");
         }
         double storageneeded = meatneeded + fruitneeded;

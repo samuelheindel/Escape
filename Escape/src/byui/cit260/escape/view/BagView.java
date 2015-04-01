@@ -26,6 +26,7 @@ public class BagView extends View {
                 + "\nT - To equip Hatchet                                                          "
                 + "\nK - To equip Knife                                                            "
                 + "\nB - To equip Bow                                                              "
+                + "\nB - To equip Water Jug                                                              "
                 + "\nE - Exit Action menu                                                          "
                 + "\n------------------------------------------------------------------------------");
     }
@@ -50,11 +51,14 @@ public class BagView extends View {
             case 'B':
                 this.displayBow();
                 break;
+            case 'J':
+                this.displayWater();
+                break;
             case 'E':
                 this.goBackToMenu();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
         return false;
 
@@ -65,7 +69,7 @@ public class BagView extends View {
         Tools[] tools = ToolsControl.getSortedToolsList();
 
         this.console.println("\n         Tool Specs");
-        this.console.println("\t"+"\t"+"Damage" + "\t"
+        this.console.println("\t" + "\t" + "Damage" + "\t"
                 + "Gather");
 
         //for each inventory item
@@ -99,6 +103,11 @@ public class BagView extends View {
     }
 
     private void goBackToMenu() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
+
+    private void displayWater() {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }

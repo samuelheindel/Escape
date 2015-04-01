@@ -7,6 +7,7 @@ package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.ActionControl;
 import byui.cit260.escape.control.GameControl;
+import byui.cit260.escape.control.GatherControl;
 import escape.Escape;
 
 /**
@@ -15,18 +16,17 @@ import escape.Escape;
  */
 public class SlayView extends View {
 
-
     public SlayView() {
         super("\n"
-            +"\n--------------------------------------------"
-            +"\n   |Slay Beast|                             "
-            +"\n--------------------------------------------"
-            +"\nS - Slay Beast                              "                             
-            +"\nE - Exit                                    "
-            +"\n--------------------------------------------");
+                + "\n--------------------------------------------"
+                + "\n   |Slay Beast|                             "
+                + "\n--------------------------------------------"
+                + "\nS - Slay Pig                              "
+                + "\nE - Exit                                    "
+                + "\n--------------------------------------------");
     }
 
- @Override
+    @Override
     public boolean doAction(Object value) {
         String action = (String) value;
         char choice = action.charAt(0);
@@ -37,15 +37,15 @@ public class SlayView extends View {
             case 'E':
                 return true;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
         return false;
     }
+    String value = "S";
 
     private void slayBeast() {
-        ActionControl.SlayBeast();//calls function
+        Double amount = GatherControl.gatherRe(value);
+        this.console.println("you added " + amount + " pound of meat to your inventory");
     }
-    
-    
 
 }

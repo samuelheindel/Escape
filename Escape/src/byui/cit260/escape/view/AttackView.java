@@ -6,6 +6,7 @@
 package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.ActionControl;
+import byui.cit260.escape.control.GatherControl;
 
 /**
  *
@@ -19,7 +20,6 @@ public class AttackView extends View {
                 + "\n   Choose who to attack                     "
                 + "\n--------------------------------------------"
                 + "\nS - Attack savage                           "
-                + "\nC - Attack crew member                      "
                 + "\nE - Exit                                    "
                 + "\n--------------------------------------------");
     }
@@ -32,24 +32,19 @@ public class AttackView extends View {
             case 'S':
                 this.attackSavage();
                 break;
-            case 'C':
-                this.attackCrew();
-                break;
             case 'E':
                 this.goBackToMenu();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection *** Try again");
         }
         return false;
     }
+    String value = "A";
 
     private void attackSavage() {
-        ActionControl.AttackSavage(); // call function
-    }
-
-    private void attackCrew() {
-        ActionControl.AttackCrew(); // call function
+        Double amount = GatherControl.gatherRe(value);
+        this.console.println("you added " + amount + " pound of meat to your inventory");
     }
 
     private void goBackToMenu() {
