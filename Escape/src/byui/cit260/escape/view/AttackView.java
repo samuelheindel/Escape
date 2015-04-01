@@ -7,6 +7,7 @@ package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.ActionControl;
 import byui.cit260.escape.control.GatherControl;
+import exceptions.VolcanoControlException;
 
 /**
  *
@@ -43,8 +44,12 @@ public class AttackView extends View {
     String value = "A";
 
     private void attackSavage() {
+        try{
         Double amount = GatherControl.gatherRe(value);
         this.console.println("you added " + amount + " pound of meat to your inventory");
+        }catch (VolcanoControlException vc){
+            this.console.println("VolcanoControl, error in countdown" + vc.getMessage());
+        }
     }
 
     private void goBackToMenu() {

@@ -9,6 +9,7 @@ import byui.cit260.escape.control.MapControl;
 import byui.cit260.escape.model.Actor;
 import byui.cit260.escape.model.Scene;
 import exceptions.MapControlExceptions;
+import exceptions.VolcanoControlException;
 import java.awt.Point;
 import java.io.IOException;
 import java.util.Scanner;
@@ -91,6 +92,8 @@ public class MoveActorView extends View {
             this.console.println(scene.getDescription());
         } catch (MapControlExceptions me) {
             this.console.println(me.getMessage());
+        } catch (VolcanoControlException ex) {
+            Logger.getLogger(MoveActorView.class.getName()).log(Level.SEVERE, null, ex);
         }
         return true;
 

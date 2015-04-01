@@ -9,6 +9,7 @@ import byui.cit260.escape.model.Inventory;
 import byui.cit260.escape.model.Location;
 import byui.cit260.escape.model.Player;
 import escape.Escape;
+import exceptions.VolcanoControlException;
 import java.awt.Point;
 
 /**
@@ -17,7 +18,7 @@ import java.awt.Point;
  */
 public class GatherControl {
 
-    public static double gatherRe(String ch) {
+    public static double gatherRe(String ch) throws VolcanoControlException {
         // Get the Player
         Player player = Escape.getCurrentGame().getPlayer();
         // Get the Player location
@@ -34,6 +35,7 @@ public class GatherControl {
                 if (InventoryList[0].getQuantity() < 240) {
                     newamount = InventoryList[0].getQuantity() + sceneAmount;
                     InventoryList[0].setQuantity(newamount);
+                    VolcanoControl.VolcanoControlSubtract();
                 }
             }
         } else if (sceneSymbol == "PI") {
@@ -41,6 +43,7 @@ public class GatherControl {
                 if (InventoryList[3].getQuantity() < 12) {
                     newamount = InventoryList[3].getQuantity() + sceneAmount;
                     InventoryList[3].setQuantity(newamount);
+                    VolcanoControl.VolcanoControlSubtract();
                 }
             }
         } else if (sceneSymbol == "FR") {
@@ -48,6 +51,7 @@ public class GatherControl {
                 if (InventoryList[1].getQuantity() < 400) {
                     newamount = InventoryList[1].getQuantity() + sceneAmount;
                     InventoryList[1].setQuantity(newamount);
+                    VolcanoControl.VolcanoControlSubtract();
                 }
             }
         } else if (sceneSymbol == "FT") {
@@ -55,6 +59,7 @@ public class GatherControl {
                 if (InventoryList[4].getQuantity() < 16) {
                     newamount = InventoryList[4].getQuantity() + sceneAmount;
                     InventoryList[4].setQuantity(newamount);
+                    VolcanoControl.VolcanoControlSubtract();
                 }
             }
         } else if (sceneSymbol == "RI") {
@@ -62,6 +67,7 @@ public class GatherControl {
                 if (InventoryList[5].getQuantity() < 20) {
                     newamount = InventoryList[5].getQuantity() + sceneAmount;
                     InventoryList[5].setQuantity(newamount);
+                    VolcanoControl.VolcanoControlSubtract();
                 }
             }
         } else if (sceneSymbol == "BB") {
@@ -69,6 +75,7 @@ public class GatherControl {
                 if (InventoryList[3].getQuantity() < 12) {
                     newamount = InventoryList[3].getQuantity() + sceneAmount;
                     InventoryList[3].setQuantity(newamount);
+                    VolcanoControl.VolcanoControlSubtract();
                 }
             }
         } else {

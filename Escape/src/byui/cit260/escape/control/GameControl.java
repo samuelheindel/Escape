@@ -17,6 +17,7 @@ import byui.cit260.escape.model.Volcano;
 import escape.Escape;
 import exceptions.GameControlException;
 import exceptions.MapControlExceptions;
+import exceptions.VolcanoControlException;
 import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,7 +32,7 @@ import java.io.ObjectOutputStream;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) throws MapControlExceptions {
+    public static void createNewGame(Player player) throws MapControlExceptions, VolcanoControlException {
 
         Game game = new Game(); // creates ne game
         Escape.setCurrentGame(game);// save in esacpe

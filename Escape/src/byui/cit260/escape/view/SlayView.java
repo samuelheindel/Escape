@@ -9,6 +9,7 @@ import byui.cit260.escape.control.ActionControl;
 import byui.cit260.escape.control.GameControl;
 import byui.cit260.escape.control.GatherControl;
 import escape.Escape;
+import exceptions.VolcanoControlException;
 
 /**
  *
@@ -44,8 +45,12 @@ public class SlayView extends View {
     String value = "S";
 
     private void slayBeast() {
+        try{
         Double amount = GatherControl.gatherRe(value);
         this.console.println("you added " + amount + " pound of meat to your inventory");
+        }catch (VolcanoControlException vc) {
+            this.console.println("VolcanoControl, error in countdown" + vc.getMessage());
+        }
     }
 
 }

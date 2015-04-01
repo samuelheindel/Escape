@@ -92,7 +92,12 @@ public class CalcLaunchView extends View {
             if (completion < 100) {
                 this.console.println("You launched your raft to soon, It was either incompete or you had"
                         + "\n too few supllies. You died at sea."
-                        + "\n GAME OVER!");
+                        + "\n   ________                        ________                     \n" +
+" /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \n" +
+"/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\n" +
+"\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\n" +
+" \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \n" +
+"        \\/     \\/      \\/     \\/          \\/          \\/       ");
                 StartProgramView startProgramView = new StartProgramView("");
                 startProgramView.display();
             } else if (completion > 99) {

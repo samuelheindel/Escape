@@ -10,6 +10,7 @@ import byui.cit260.escape.model.Player;
 import byui.cit260.escape.model.Scene;
 import escape.Escape;
 import exceptions.MapControlExceptions;
+import exceptions.VolcanoControlException;
 import java.awt.Point;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -82,6 +83,8 @@ public class MovePlayerView extends View {
             this.console.println(scene.getDescription());
         } catch (MapControlExceptions me) {
             this.console.println(me.getMessage());
+        } catch (VolcanoControlException ex) {
+            Logger.getLogger(MovePlayerView.class.getName()).log(Level.SEVERE, null, ex);
         }
         return true;
     }

@@ -12,6 +12,7 @@ import byui.cit260.escape.model.Player;
 import byui.cit260.escape.model.Scene;
 import escape.Escape;
 import exceptions.MapControlExceptions;
+import exceptions.VolcanoControlException;
 import java.awt.Point;
 
 /**
@@ -20,7 +21,7 @@ import java.awt.Point;
  */
 public class MapControl {
 
-    public static Scene moveActorToLocation(Actor actor, Point coordinates) throws MapControlExceptions {
+    public static Scene moveActorToLocation(Actor actor, Point coordinates) throws MapControlExceptions, VolcanoControlException {
 
         Map map = Escape.getCurrentGame().getMap();
         int newRow = coordinates.x;
@@ -39,10 +40,11 @@ public class MapControl {
         Point actorlocation = actor.getCoordinates();
         actorlocation.x = coordinates.x;
         actorlocation.y = coordinates.y;
+        VolcanoControl.VolcanoControlSubtract();
         return scene;
     }
 
-    public static void moveActorsToStartingLocation(Map map) throws MapControlExceptions {
+    public static void moveActorsToStartingLocation(Map map) throws MapControlExceptions, VolcanoControlException {
         //for every actor 
         Actor[] actors = Actor.values();
 
@@ -53,7 +55,7 @@ public class MapControl {
         }
     }
 
-    public static Scene movePlayerToLocation(Player player, Point coordinates) throws MapControlExceptions {
+    public static Scene movePlayerToLocation(Player player, Point coordinates) throws MapControlExceptions, VolcanoControlException {
 
         Map map = Escape.getCurrentGame().getMap();
         int newRow = coordinates.x;
@@ -72,6 +74,7 @@ public class MapControl {
         Point playerlocation = player.getCoordinates();
         playerlocation.x = coordinates.x;
         playerlocation.y = coordinates.y;
+        VolcanoControl.VolcanoControlSubtract();
 //        get old location
 //                remove player from old location
 //                        get new loation 
@@ -79,4 +82,3 @@ public class MapControl {
         return scene;
     }
 }
-

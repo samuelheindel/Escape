@@ -42,6 +42,7 @@ public class GameMenuView extends View {
                 + "\nR - Check raft completion                   "
                 + "\nZ - calculate the raft size                 "
                 + "\nG - calculate the storage you need          "
+                + "\nT - How much time do you have left          "
                 + "\nF - Launch your raft                        "
                 + "\nS - Save Game                               "
                 + "\nE - Exit                                    "
@@ -88,6 +89,9 @@ public class GameMenuView extends View {
                 break;
             case 'G':
                 this.CalcStorageNeeded();
+                break;
+            case 'T':
+                this.TimeLeft();
                 break;
             case 'F':
                 this.calcLaunch();
@@ -207,6 +211,11 @@ public class GameMenuView extends View {
     private void CalcStorageNeeded() {
         FoodStorageView foodneeded = new FoodStorageView("");
         foodneeded.display();
+    }
+
+    private void TimeLeft() {
+        double time = Escape.getCurrentGame().getPlayer().getDays();
+        this.console.println("You have " + time + " days until eruption");
     }
 
 }

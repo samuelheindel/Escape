@@ -22,6 +22,7 @@ public class Player implements Serializable {
     public Player() {
         this.coordinates = new Point(2, 15);
         this.name = null;
+        this.days = 24.00;
     }
 
     public Point getCoordinates() {
@@ -50,14 +51,15 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", days=" + days + '}';
+        return "Player{" + "name=" + name + ", days=" + days + ", coordinates=" + coordinates + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + Objects.hashCode(this.days);
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + Objects.hashCode(this.days);
+        hash = 59 * hash + Objects.hashCode(this.coordinates);
         return hash;
     }
 
@@ -76,11 +78,13 @@ public class Player implements Serializable {
         if (!Objects.equals(this.days, other.days)) {
             return false;
         }
+        if (!Objects.equals(this.coordinates, other.coordinates)) {
+            return false;
+        }
         return true;
     }
 
-    private Point Point(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+ 
     }
 
-}
+  
