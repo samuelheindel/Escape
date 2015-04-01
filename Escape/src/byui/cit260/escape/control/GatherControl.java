@@ -11,4 +11,10 @@ package byui.cit260.escape.control;
  */
 public class GatherControl {
 
+    // Get the Player
+    // Get the Player location
+    // Get the Scene
+    // 
+        
+        
 }
