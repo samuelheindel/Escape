@@ -18,5 +18,10 @@ import java.awt.Point;
  */
 public class GatherControl {
 
-
+    // Get the Player
+    // Get the Player location
+    // Get the Scene
+    // 
+        
+        
 }
