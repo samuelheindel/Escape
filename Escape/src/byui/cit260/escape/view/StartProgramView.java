@@ -25,16 +25,17 @@ public class StartProgramView extends View {
 
     public StartProgramView(String promptMessage) {
         super("\n\n####################################################################################"
-                + "*                                                                                      *"
+                + "*                                                                                        *"
                 + "\n* You are a captain of your own ship and have a crew under your command.               *"
                 + "\n* While sailing the 7 seas you were caught in a massive storm.                         *"
                 + "\n* Your ship was thrown on the rocks and destroyed along with all of your provisions.   *"
                 + "\n* There is an island next to the rocks that you were able to swim to.                  *"
-                + "\n* Your crew is lost.                                                                   *"
+                + "\n* Your crew hs been satered accros the Island.                                         *"
+                + "\n*With the help of a conch shell you have found you can comunicate with them wherever   *"
+                + "\n*they are on the island and give them instruction.                                     *"
                 + "\n*                                                                                      *"
-                + "\n* You have been stranded on a Jaba Island.                                             *"
-                + "\n* You are alone and have nothing.                                                      *"
-                + "\n* The island you notice an active volcano that is going to erupt at any moment.        *"
+                + "\n* You are been stranded on a Java Island.                                              *"
+                + "\n* On the island you notice an active volcano that is going to erupt at any moment.        *"
                 + "\n* The island is small enough that the volcano will destroy everything.                 *"
                 + "\n* It is imperative that you escape from the island.                                    *"
                 + "\n* The island has many resources that are available to gather.                          *"
@@ -45,13 +46,21 @@ public class StartProgramView extends View {
                 + "\n\nWhat is your Name Captain?");
     }
 
- 
-
     private void displayWelcomeMessage(String name) {
-        this.console.println("\n\n================================================");
+        this.console.println("\n\n====================================================================================");
         this.console.println("\tWelcome to Jaba Island Captain " + name);
         this.console.println("\tWe hope you can survive!");
-        this.console.println("\n\n================================================");
+        this.console.println("\n\tYou will gather resouces and your crew will build the raft"
+                + "\n\tyou need to move your crew to the raft location so that "
+                + "\n\tthey can begin to build."
+                + "\n"
+                + "\n"
+                + "\n\tOn the beach you find a poorly drawn map covered in symbols."
+                + "\n\tYou will need to discern what they mean by visiting their locations"
+                + "\n\tTo the north on beach you see a good place to build your raft"
+                + "\n\tYou notce on the map it is labled RT. "
+                + "\n\tPerhaps this is where you need to send your crew members.");
+        this.console.println("\n\n====================================================================================");
     }
 
     @Override

@@ -68,7 +68,7 @@ public class GatherView extends View {
                 this.console.println("you added " + amount + " gallon of water to your inventory");
             } else {
                 this.console.println("You were not able to gather anything in this location"
-                        + "or this part of your inventory is full");
+                        + " or this part of your inventory is full");
             }
         } catch (VolcanoControlException vc) {
             this.console.println("VolcanoControl, error in countdown" + vc.getMessage());

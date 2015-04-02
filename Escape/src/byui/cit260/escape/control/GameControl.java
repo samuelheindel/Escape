@@ -57,6 +57,7 @@ public class GameControl {
 
         MapControl.moveActorsToStartingLocation(map);
         MapControl.movePlayerToLocation(player, point);
+        MapControl.movePlayerToLocation(player, point);
     }
 
     public static Inventory[] createInventoryList() {

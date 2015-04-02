@@ -20,9 +20,9 @@ public class Player implements Serializable {
     private Point coordinates;
 
     public Player() {
-        this.coordinates = new Point(2, 15);
+        this.coordinates = new Point(15, 2);
         this.name = null;
-        this.days = 24.00;
+        this.days = 1.00;
     }
 
     public Point getCoordinates() {
