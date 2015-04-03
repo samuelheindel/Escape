@@ -83,27 +83,25 @@ public class GameMenuView extends View {
             case 'C':
                 this.checkGameStatus();
                 break;
-            case 'R':
-        {
-            try {
-                this.checkRaftStatus();
-            } catch (InventoryControlException ex) {
-                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            case 'R': {
+                try {
+                    this.checkRaftStatus();
+                } catch (InventoryControlException ex) {
+                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case 'Z':
                 this.calcRaftSize();
                 break;
-            case 'G':
-        {
-            try {
-                this.CalcStorageNeeded();
-            } catch (InventoryControlException ex) {
-                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            case 'G': {
+                try {
+                    this.CalcStorageNeeded();
+                } catch (InventoryControlException ex) {
+                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case 'T':
                 this.TimeLeft();
                 break;
@@ -225,7 +223,7 @@ public class GameMenuView extends View {
     private void CalcStorageNeeded() throws InventoryControlException {
         double storagecom = InventoryControl.calStorageNeeded();
         this.console.println("You need 8 full storage crates "
-                    + "Your food storage is " + storagecom + "% complete ");
+                + "Your food storage is " + storagecom + "% complete ");
     }
 
     private void TimeLeft() {
