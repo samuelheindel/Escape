@@ -6,6 +6,7 @@
 package byui.cit260.escape.control;
 
 import byui.cit260.escape.model.Inventory;
+import byui.cit260.escape.view.ErrorView;
 import exceptions.InventoryControlException;
 
 /**
@@ -14,13 +15,23 @@ import exceptions.InventoryControlException;
  */
 public class InventoryControl {
 
-    public static double calcRaftCompletion(double logsneeded, double logsininventory, double ropeneeded, double ropeininventory, double storageneeded, double storageininventory) throws InventoryControlException {
+    public static double calcRaftCompletion() throws InventoryControlException {
 
-        if (logsneeded < 10 || logsneeded > 100) {
+        Inventory[] inventoryValues = escape.Escape.getCurrentGame().getInventory();
+        double people = Double.parseDouble("4");
+        double logsneeded = inventoryValues[0].getQuantityneeded();
+        double logsininventory = inventoryValues[0].getQuantity();
+        double ropeneeded = inventoryValues[1].getQuantityneeded();
+        double ropeininventory = inventoryValues[1].getQuantity();
+        double storageneeded = inventoryValues[2].getQuantityneeded();
+        double storageininventory = inventoryValues[2].getQuantity();
+        double raftcom = -1;
+
+        if (logsneeded < 10 || logsneeded > 250) {
 
             throw new InventoryControlException("to few logs");
         }
-        if (logsininventory < 0 || logsininventory > 100) {
+        if (logsininventory < 0 || logsininventory > 250) {
 
             throw new InventoryControlException("to many logs");
         }
@@ -41,10 +52,11 @@ public class InventoryControl {
             throw new InventoryControlException("to little sroage");
         }
 
-        double needforcom = logsneeded + ropeneeded + storageneeded;
-
-        double raftcom = needforcom - (needforcom - (logsininventory + ropeininventory + storageininventory));
-        double persentcom = (raftcom / needforcom) * 100;
+        double logs = logsininventory / logsneeded;
+        double rope = ropeininventory / ropeneeded;
+        double storage = storageininventory / storageneeded;
+        double addthem = logs + rope + storage;
+        double persentcom = (addthem /3) * 100;
         return persentcom;
     }
 
@@ -62,29 +74,18 @@ public class InventoryControl {
         return raftsize;
     }
 
-    public static double calStorageNeeded(double people, double meatneeded, double meat, double fruitneeded, double fruit) throws InventoryControlException {
-
+    public static double calStorageNeeded() throws InventoryControlException {
         Inventory[] inventoryValues = escape.Escape.getCurrentGame().getInventory();
+        double people = Double.parseDouble("4");
+        double meat = inventoryValues[5].getQuantity();
+        double meatneeded = inventoryValues[5].getQuantityneeded();
+        double fruit = inventoryValues[4].getQuantity();
+        double fruitneeded = inventoryValues[4].getQuantityneeded();
 
-        if (people < 1 || people > 9) {
-            throw new InventoryControlException("to few people or to many people");
-        }
-        if (meatneeded < 1 || meatneeded > 12) {
-            throw new InventoryControlException("to few people or to many people");
-        }
-        if (meat < 0 || meat >= 12) {
-            throw new InventoryControlException("to few people or to many people");
-        }
-        if (fruitneeded < 1 || fruitneeded > 16) {
-            throw new InventoryControlException("to few people or to many people");
-        }
-        if (fruit < 0 || fruit > 16) {
-            throw new InventoryControlException("to few crates or to many crates");
-        }
-        double storageneeded = meatneeded + fruitneeded;
-        double completioninven = fruit + meat;
-        double completion = (completioninven / storageneeded) * 100;
-        return completion;
+        double percommeat = meat / meatneeded;
+        double percomfruit = fruit / fruitneeded;
+        double combined = ((percomfruit + percommeat) / 2) * 100;
+        return combined;
     }
 
 }

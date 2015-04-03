@@ -7,12 +7,14 @@ package byui.cit260.escape.view;
 
 import byui.cit260.escape.control.GameControl;
 import byui.cit260.escape.control.GatherControl;
+import byui.cit260.escape.control.InventoryControl;
 import byui.cit260.escape.model.Actor;
 import byui.cit260.escape.model.Inventory;
 import byui.cit260.escape.model.Location;
 import byui.cit260.escape.model.Player;
 import byui.cit260.escape.model.Scene;
 import escape.Escape;
+import exceptions.InventoryControlException;
 import java.awt.Point;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -82,13 +84,25 @@ public class GameMenuView extends View {
                 this.checkGameStatus();
                 break;
             case 'R':
+        {
+            try {
                 this.checkRaftStatus();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'Z':
                 this.calcRaftSize();
                 break;
             case 'G':
+        {
+            try {
                 this.CalcStorageNeeded();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'T':
                 this.TimeLeft();
@@ -182,9 +196,9 @@ public class GameMenuView extends View {
         HelpMenu.display();
     }
 
-    private void checkRaftStatus() {
-        CalcRaftCompletionView calcraftcompletion = new CalcRaftCompletionView("");
-        calcraftcompletion.display();
+    private void checkRaftStatus() throws InventoryControlException {
+        double raftcom = InventoryControl.calcRaftCompletion();
+        this.console.println("Raft " + raftcom + "% completed");
     }
 
     private void calcRaftSize() {
@@ -208,9 +222,10 @@ public class GameMenuView extends View {
 
     }
 
-    private void CalcStorageNeeded() {
-        FoodStorageView foodneeded = new FoodStorageView("");
-        foodneeded.display();
+    private void CalcStorageNeeded() throws InventoryControlException {
+        double storagecom = InventoryControl.calStorageNeeded();
+        this.console.println("You need 8 full storage crates "
+                    + "Your food storage is " + storagecom + "% complete ");
     }
 
     private void TimeLeft() {

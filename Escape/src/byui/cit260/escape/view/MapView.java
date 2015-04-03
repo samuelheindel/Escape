@@ -44,20 +44,23 @@ public class MapView extends View {
                 Location location = locations[i][j];
                 String symbol = location.getScene().getSymbol();
                 if (location == plocation) {
-                    this.console.print("YOU" + " | ");
+                    this.console.print("%YOU%" + " | ");
                 } else if (location == Alocation1) {
                     this.console.print("JEB" + " | ");
+                } else if (location == Alocation1 & location == Alocation2 & location == Alocation3 & location == Alocation4) {
+                    this.console.print("CREW" + " | ");
                 } else if (location == Alocation2) {
                     this.console.print("JACK" + " | ");
                 } else if (location == Alocation3) {
                     this.console.print("NED" + " | ");
                 } else if (location == Alocation4) {
                     this.console.print("TOBY" + " | ");
+
                 } else if (symbol == "OC") {
                     this.console.print("~~" + " | ");
-                } else  {
+                } else {
                     this.console.print(symbol + " | ");
-                } 
+                }
             }
             this.console.println("\n--------------------------------------------------------------------------------------------------");
         }

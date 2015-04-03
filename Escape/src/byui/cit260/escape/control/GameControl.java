@@ -62,7 +62,7 @@ public class GameControl {
 
     public static Inventory[] createInventoryList() {
         Inventory[] inventory
-                = new Inventory[7];
+                = new Inventory[6];
 
         Inventory logs = new Inventory();
         logs.setDescription("Logs");
@@ -99,12 +99,6 @@ public class GameControl {
         water.setQuantity(0);
         water.setQuantityneeded(20);
         inventory[Item.water.ordinal()] = water;
-
-        Inventory bag = new Inventory();
-        bag.setDescription("Bag");
-        bag.setQuantity(1);
-        bag.setQuantityneeded(1);
-        inventory[Item.bag.ordinal()] = bag;
         return inventory;
 
     }

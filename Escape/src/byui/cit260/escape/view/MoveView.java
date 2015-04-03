@@ -20,6 +20,7 @@ public class MoveView extends View {
                 + "\n--------------------------------------------"
                 + "\nY - Move Yourself                           "
                 + "\nC - Move Crew Memeber                       "
+                + "\nV - View Map                           "
                 + "\nE - Exit                                    "
                 + "\n--------------------------------------------");
     }
@@ -34,6 +35,9 @@ public class MoveView extends View {
                 break;
             case 'C':
                 this.moveCrew();
+                break;
+            case 'V':
+                this.viewMap();
                 break;
             case 'E':
                 this.goBackToMenu();
@@ -58,6 +62,11 @@ public class MoveView extends View {
     private void goBackToMenu() {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
+    }
+
+    private void viewMap() {
+        MapView Map = new MapView("");
+        Map.displayMap();
     }
 
 }

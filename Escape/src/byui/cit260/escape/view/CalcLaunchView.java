@@ -35,99 +35,83 @@ public class CalcLaunchView extends View {
     double fruitneeded = Double.parseDouble("-1");
 
     public CalcLaunchView(String promptMessage) {
-        super("We need to do some calculations");
-    }
-
-    @Override
-    public String getInput() {
-        boolean valid = false; // indicates if the if valid
-        while (!valid) { // start while loop
-            try {
-                logsneeded = people * Double.parseDouble("10");
-            } catch (NumberFormatException nf) {
-
-                ErrorView.display(this.getClass().getName(), "\nYou must enter a vailid number."
-                        + "Try again.");
-            }
-            try {
-                ropeneeded = people * Double.parseDouble("60");
-            } catch (NumberFormatException nf) {
-
-                ErrorView.display(this.getClass().getName(), "\nYou must enter a vailid number."
-                        + "Try again.");
-            }
-            try {
-                storageneeded = people * Double.parseDouble("2");
-            } catch (NumberFormatException nf) {
-
-                ErrorView.display(this.getClass().getName(), "\nYou must enter a vailid number."
-                        + "Try again.");
-            }
-
-            try {
-                meatneeded = people * Double.parseDouble("3");
-            } catch (NumberFormatException nf) {
-
-                ErrorView.display(this.getClass().getName(), "\nYou must enter a vailid number."
-                        + "Try again.");
-            }
-            try {
-                fruitneeded = people * Double.parseDouble("4");
-            } catch (NumberFormatException nf) {
-
-                ErrorView.display(this.getClass().getName(), "\nYou must enter a vailid number."
-                        + "Try again.");
-            }
-            break; // out of the (exit) the repetition
-        }
-
-        return "";
+        super("We need to do some calculations"
+                + "enter S to exicute");
     }
 
     @Override
     public boolean doAction(Object value) {
         try {
-            double raftcom = InventoryControl.calcRaftCompletion(logsneeded, logsininventory, ropeneeded, ropeininventory, storageneeded, storageininventory); // call function
-            double storagecom = InventoryControl.calStorageNeeded(people, meatneeded, meat, fruitneeded, fruit);
-            double completion = (raftcom / 50) + (storagecom / 50);
+            double raftcom = InventoryControl.calcRaftCompletion(); // call function
+            double storagecom = InventoryControl.calStorageNeeded();
+            double completion = (raftcom + storagecom) / 2;
             Actor[] actor = Actor.values();
             Point coord1 = actor[4].getCoordinates();
             Point coord2 = actor[5].getCoordinates();
             Point coord3 = actor[6].getCoordinates();
             Point coord4 = actor[7].getCoordinates();
+            Point rtcoor = new Point(14, 3);
 
-            this.console.println("you launched the raft " + completion + " completed");
-            if (coord1 != new Point(14, 3)) {
-                if (coord2 != new Point(14, 3)) {
-                    if (coord3 != new Point(14, 3)) {
-                        if (coord4 != new Point(14, 3)) {
-                            this.console.println("Your Crew members need to be in the raft location in order to build the raft!"
-                                    + "\nYou can not launch until they move to that location!");
-
-                            if (completion < 100) {
-                                this.console.println("You launched your raft to soon, It was either incompete or you had"
-                                        + "\n too few supllies. You died at sea."
-                                        + "\n   ________                        ________                     \n"
-                                        + " /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \n"
-                                        + "/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\n"
-                                        + "\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\n"
-                                        + " \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \n"
-                                        + "        \\/     \\/      \\/     \\/          \\/          \\/       ");
-                                StartProgramView startProgramView = new StartProgramView("");
-                                startProgramView.display();
-                            } else if (completion > 99) {
-                                this.console.println("You Succeded in launching a complete well stocked raft!"
-                                        + "\n Congradulations You win! Good luck at sea. ");
-                                StartProgramView startProgramView = new StartProgramView("");
-                                startProgramView.display();
-                            }
-                        }
-                    }
-                }
+            if (coord1.x != rtcoor.x & coord1.y != rtcoor.y & coord2.x != rtcoor.x & coord2.y != rtcoor.y & coord3.x != rtcoor.x & coord3.y != rtcoor.y & coord4.x != rtcoor.x & coord4.y != rtcoor.y) {
+                this.console.println("Your Crew members need to be in the raft location in order to build the raft!"
+                        + "\nYou can not launch until they move to that location!");
+            } else if (completion < 90) {
+                this.console.println("You launched your raft to soon, It was either incompete or you had"
+                        + "\n too few supllies. You died at sea."
+                        + "\n   ________                        ________                     \n"
+                        + " /  _____/_____    _____   ____   \\_____  \\___  __ ___________ \n"
+                        + "/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\\n"
+                        + "\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\n"
+                        + " \\______  (____  /__|_|  /\\___  > \\_______  /\\_/  \\___  >__|   \n"
+                        + "        \\/     \\/      \\/     \\/          \\/          \\/       ");
+                StartProgramView startProgramView = new StartProgramView("");
+                startProgramView.display();
+            } else if (completion >= 90) {
+                this.console.println("                                                                                \n"
+                        + "                                                                                \n"
+                        + "                                                                                \n"
+                        + "        MMM.        .MMM.       MMMMMMMMMMMMM.      .MMMM           . MMM       \n"
+                        + "        MMM.        .MMM        MMMMMMMMMMMMM       .MMMM             MMM       \n"
+                        + "        MMM.        .MMM        MMMMMMMMMMMMM.      .MMMM             MMM       \n"
+                        + "        MMM.        .MMM    .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "        MMM.        .MMM    .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "        ,..MMM.  .MMM,..    .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "           MMM    MMM       .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "           .  MMMM  .       .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "              MMMM.         .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "              MMMM.         .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "              MMMM.         .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "              MMMM.         .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "              MMMM.         .MMM            .MMMM   .MMMM             MMM       \n"
+                        + "              MMMM.             MMMMMMMMMMMMM           .MMMMMMMMMMMMM          \n"
+                        + "              MMMM.             MMMMMMMMMMMMM           .MMMMMMMMMMMMM          \n"
+                        + "                                 .............           ............,          \n"
+                        + "                                                                                \n"
+                        + "       .... .,..   .....            ,....           ........          ..        \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMMMMM.          MMM       \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMMMMM.          MMM       \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMMMMM.          MMM       \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMMMMM   ..      MMM       \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMM.  MMMM.      MMM       \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMM.  MMMM ..    MMM       \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMM.      MMM    MMM       \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMM.      MMN..  MMM       \n"
+                        + "       MMM  .MMMM  .MMMM            .MMM            .MMM.        .MMMMMMM       \n"
+                        + "       MMN ..MMMM...MMMM            .MMM            .MMM.        .MMMMMMM       \n"
+                        + "         .MMM.  .MMM                .MMM            .MMM.        .MMMMMMM       \n"
+                        + "          MMM.   MMM                 MMM             MMM          MMMMMMM       \n"
+                        + "                                                                                \n"
+                        + "                                                                               "
+                        + "\nYou Succeded in launching a complete well stocked raft!"
+                        + "\n Congradulations You win! Good luck at sea. ");
+                StartProgramView startProgramView = new StartProgramView("");
+                startProgramView.display();
             }
+
         } catch (InventoryControlException ex) {
             this.console.println(ex.getMessage());
         }
+
         return true;
 
     }
