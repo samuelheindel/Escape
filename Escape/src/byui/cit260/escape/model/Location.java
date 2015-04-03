@@ -22,6 +22,7 @@ public class Location implements Serializable {
     private Actor actors;
 
     public Location() {
+        visited = false;
     }
 
     public Scene getScene() {

@@ -36,7 +36,7 @@ public class MapView extends View {
         Location Alocation3 = locations[acoor3.x][acoor3.y];
         Location Alocation4 = locations[acoor4.x][acoor4.y];
         this.console.println("Jaba Island Map");
-        this.console.println("\n     1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ,  8 ,  9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 "
+        this.console.println("\n     0 ,  1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ,  8 ,  9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 "
                 + "\n--------------------------------------------------------------------------------------------------");
         for (int i = 0; i < map.getRowCount(); i++) {
             this.console.print(i + " | ");
@@ -53,11 +53,11 @@ public class MapView extends View {
                     this.console.print("NED" + " | ");
                 } else if (location == Alocation4) {
                     this.console.print("TOBY" + " | ");
-                } else if (location.isVisited()) {
+                } else if (symbol == "OC") {
+                    this.console.print("~~" + " | ");
+                } else  {
                     this.console.print(symbol + " | ");
-                } else {
-                    this.console.print("??" + " | ");
-                }
+                } 
             }
             this.console.println("\n--------------------------------------------------------------------------------------------------");
         }

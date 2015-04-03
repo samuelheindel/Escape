@@ -75,6 +75,12 @@ public class MapControl {
         playerlocation.x = coordinates.x;
         playerlocation.y = coordinates.y;
         VolcanoControl.VolcanoControlSubtract();
+        
+        Location[][] vislocation = map.getLocations();
+        Location curlocation = vislocation[coordinates.x][coordinates.y];
+        boolean changevisited = curlocation.isVisited();
+        vislocation[playerlocation.x][playerlocation.y].setVisited(true);
+
 //        get old location
 //                remove player from old location
 //                        get new loation 

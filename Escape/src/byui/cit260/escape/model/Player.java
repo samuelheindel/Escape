@@ -22,7 +22,7 @@ public class Player implements Serializable {
     public Player() {
         this.coordinates = new Point(15, 2);
         this.name = null;
-        this.days = 1.00;
+        this.days = 24.00;
     }
 
     public Point getCoordinates() {

@@ -24,8 +24,17 @@ public class Game implements Serializable {
     private Volcano volcano;
     private Raft raft;
     private Map map;
+    private Location location;
 
     public Game() {
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
 

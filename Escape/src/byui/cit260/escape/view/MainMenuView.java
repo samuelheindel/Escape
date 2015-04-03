@@ -10,6 +10,7 @@ import byui.cit260.escape.view.GameMenuView;
 import byui.cit260.escape.view.HelpMenuView;
 import escape.Escape;
 import exceptions.MapControlExceptions;
+import exceptions.VolcanoControlException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,7 +45,9 @@ public class MainMenuView extends View {
                     this.startNewGame();
                 } catch (MapControlExceptions ex) {
                     Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                } catch (VolcanoControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             }
             break;
             case 'L':
@@ -65,7 +68,7 @@ public class MainMenuView extends View {
         return false;
     }
 
-    private void startNewGame() throws MapControlExceptions {
+    private void startNewGame() throws MapControlExceptions, VolcanoControlException {
         GameControl.createNewGame(Escape.getPlayer());
 
         GameMenuView gameMenu = new GameMenuView();
