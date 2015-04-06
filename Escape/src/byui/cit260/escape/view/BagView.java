@@ -8,6 +8,7 @@ package byui.cit260.escape.view;
 import byui.cit260.escape.control.GameControl;
 import byui.cit260.escape.control.ToolsControl;
 import byui.cit260.escape.model.Tools;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -66,7 +67,7 @@ public class BagView extends View {
 
     private void toolSpecs() {
         //get a sorted list of inventory items for the current game
-        Tools[] tools = ToolsControl.getSortedToolsList();
+        ArrayList<Tools> tools = ToolsControl.getSortedToolsList();
 
         this.console.println("\n         Tool Specs");
         this.console.println("\t" + "\t" + "Damage" + "\t"

@@ -8,6 +8,7 @@ package byui.cit260.escape.control;
 import byui.cit260.escape.model.Toollist;
 import byui.cit260.escape.model.Tools;
 import escape.Escape;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,49 +16,25 @@ import escape.Escape;
  */
 public class ToolsControl {
 
-    private static Tools[] createToolsList() {
-        Tools[] tools
-                = new Tools[4];
+    private static ArrayList<Tools> createToolsList() {
 
-        Tools hammer = new Tools();
-        hammer.setDescription("Hammer");
-        hammer.setDamage(20);
-        hammer.setGather(0);
-        tools[Toollist.hammer.ordinal()] = hammer;
-
-        Tools bow = new Tools();
-        bow.setDescription("Bow");
-        bow.setDamage(25);
-        bow.setGather(0);
-        tools[Toollist.bow.ordinal()] = bow;
-
-        Tools knife = new Tools();
-        knife.setDescription("Knife");
-        knife.setDamage(10);
-        knife.setGather(20);
-        tools[Toollist.knife.ordinal()] = knife;
-
-        Tools hatchet = new Tools();
-        hatchet.setDescription("Hatchet");
-        hatchet.setDamage(20);
-        hatchet.setGather(20);
-        tools[Toollist.hatchet.ordinal()] = hatchet;
+        ArrayList<Tools> tools = new ArrayList<>();
+        Tools jug = new Tools("Jug", 0 , 10);
+        tools.add(jug);
+        tools.add(new Tools("knife", 5 , 5));
+        tools.add(new Tools("hammer", 10 , 0));
+        tools.add(new Tools("hatchet", 15 , 10));
+        tools.add(new Tools("bow", 20 , 0));
         return tools;
 
     }
 
-    public static Tools[] getSortedToolsList() {
-        Tools[] tools = ToolsControl.createToolsList();
-        Tools tempTools;
-        for (int i = 0; i < tools.length - 1; i++) {
-            for (int j = 0; j < tools.length - 1 - i; j++) {
-                if (tools[j].getDamage() < tools[i].getDamage()) {
-                    tempTools = tools[j];
-                    tools[j] = tools[j + 1];
-                    tools[j + 1] = tempTools;
-                }
-            }
+    public static ArrayList getSortedToolsList() {
+        ArrayList<Tools> tools = ToolsControl.createToolsList();
+        Tools tempTools = null;
+        for (int i = 0; i < tools.size() - 1; i++) {
         }
         return tools;
+
     }
 }

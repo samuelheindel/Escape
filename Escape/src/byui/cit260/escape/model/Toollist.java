@@ -14,5 +14,6 @@ public enum Toollist {
     hammer,
     bow,
     knife,
-    hatchet,;
+    hatchet,
+    jug,;
 }

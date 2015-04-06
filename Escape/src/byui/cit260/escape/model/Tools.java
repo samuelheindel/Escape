@@ -6,6 +6,7 @@
 package byui.cit260.escape.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -18,8 +19,10 @@ public class Tools implements Serializable {
     private int damage;
     private int gather;
 
-    public Tools() {
-
+    public Tools(String description, int damage, int gather) {
+        this.damage = damage;
+        this.description = description;
+        this.gather = gather;
     }
 
     public String getDescription() {

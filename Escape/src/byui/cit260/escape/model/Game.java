@@ -6,6 +6,7 @@
 package byui.cit260.escape.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -20,7 +21,7 @@ public class Game implements Serializable {
     private double turn;
     private int noPeople;
     private Inventory[] inventory;
-    private Tools[] tools;
+    private ArrayList<Tools> tools;
     private Volcano volcano;
     private Raft raft;
     private Map map;
@@ -47,13 +48,15 @@ public class Game implements Serializable {
         this.inventory = inventory;
     }
 
-    public Tools[] getTools() {
+    public ArrayList<Tools> getTools() {
         return tools;
     }
 
-    public void setTools(Tools[] tools) {
+    public void setTools(ArrayList<Tools> tools) {
         this.tools = tools;
     }
+
+
 
     public double getTurn() {
         return turn;
@@ -119,16 +122,17 @@ public class Game implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.game);
-        hash = 97 * hash + Objects.hashCode(this.player);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.turn) ^ (Double.doubleToLongBits(this.turn) >>> 32));
-        hash = 97 * hash + this.noPeople;
-        hash = 97 * hash + Arrays.deepHashCode(this.inventory);
-        hash = 97 * hash + Arrays.deepHashCode(this.tools);
-        hash = 97 * hash + Objects.hashCode(this.volcano);
-        hash = 97 * hash + Objects.hashCode(this.raft);
-        hash = 97 * hash + Objects.hashCode(this.map);
+        int hash = 3;
+        hash = 43 * hash + Objects.hashCode(this.game);
+        hash = 43 * hash + Objects.hashCode(this.player);
+        hash = 43 * hash + (int) (Double.doubleToLongBits(this.turn) ^ (Double.doubleToLongBits(this.turn) >>> 32));
+        hash = 43 * hash + this.noPeople;
+        hash = 43 * hash + Arrays.deepHashCode(this.inventory);
+        hash = 43 * hash + Objects.hashCode(this.tools);
+        hash = 43 * hash + Objects.hashCode(this.volcano);
+        hash = 43 * hash + Objects.hashCode(this.raft);
+        hash = 43 * hash + Objects.hashCode(this.map);
+        hash = 43 * hash + Objects.hashCode(this.location);
         return hash;
     }
 
@@ -156,10 +160,9 @@ public class Game implements Serializable {
         if (!Arrays.deepEquals(this.inventory, other.inventory)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.tools, other.tools)) {
+        if (!Objects.equals(this.tools, other.tools)) {
             return false;
         }
-
         if (!Objects.equals(this.volcano, other.volcano)) {
             return false;
         }
@@ -169,8 +172,13 @@ public class Game implements Serializable {
         if (!Objects.equals(this.map, other.map)) {
             return false;
         }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
         return true;
     }
+
+   
 
 
 
