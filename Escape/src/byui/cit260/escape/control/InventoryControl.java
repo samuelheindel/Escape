@@ -56,7 +56,7 @@ public class InventoryControl {
         double rope = ropeininventory / ropeneeded;
         double storage = storageininventory / storageneeded;
         double addthem = logs + rope + storage;
-        double persentcom = (addthem /3) * 100;
+        double persentcom = (addthem / 3) * 100;
         return persentcom;
     }
 
@@ -81,10 +81,27 @@ public class InventoryControl {
         double meatneeded = inventoryValues[5].getQuantityneeded();
         double fruit = inventoryValues[4].getQuantity();
         double fruitneeded = inventoryValues[4].getQuantityneeded();
-
         double percommeat = meat / meatneeded;
         double percomfruit = fruit / fruitneeded;
         double combined = ((percomfruit + percommeat) / 2) * 100;
+
+        if (people > 4 || people < 1) {
+            throw new InventoryControlException("to few people or to many people");
+        }
+        if (meat > 12 || meat < 0) {
+            throw new InventoryControlException("to little meat or to much meat");
+        }
+        if (meatneeded > 12 || meatneeded < 1) {
+            throw new InventoryControlException("to little meat or to much meat");
+        }
+        if (fruit > 16 || fruit < 0) {
+            throw new InventoryControlException("to little meat or to much meat");
+        }
+        if (fruitneeded > 16 || fruitneeded < 1) {
+            throw new InventoryControlException("to little meat or to much meat");
+        }
+
+
         return combined;
     }
 

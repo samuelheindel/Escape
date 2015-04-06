@@ -44,9 +44,9 @@ public class MainMenuView extends View {
                 try {
                     this.startNewGame();
                 } catch (MapControlExceptions ex) {
-                    Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                    ErrorView.display("MapControlException", ex.getMessage());
                 } catch (VolcanoControlException ex) {
-                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display("VolcanoControlException", ex.getMessage());
             }
             }
             break;

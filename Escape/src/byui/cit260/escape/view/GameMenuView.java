@@ -83,25 +83,15 @@ public class GameMenuView extends View {
             case 'C':
                 this.checkGameStatus();
                 break;
-            case 'R': {
-                try {
-                    this.checkRaftStatus();
-                } catch (InventoryControlException ex) {
-                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            break;
+            case 'R':
+                this.checkRaftStatus();
+                break;
             case 'Z':
                 this.calcRaftSize();
                 break;
-            case 'G': {
-                try {
-                    this.CalcStorageNeeded();
-                } catch (InventoryControlException ex) {
-                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            break;
+            case 'G':
+                this.CalcStorageNeeded();
+                break;
             case 'T':
                 this.TimeLeft();
                 break;
@@ -194,9 +184,14 @@ public class GameMenuView extends View {
         HelpMenu.display();
     }
 
-    private void checkRaftStatus() throws InventoryControlException {
-        double raftcom = InventoryControl.calcRaftCompletion();
-        this.console.println("Raft " + raftcom + "% completed");
+    private void checkRaftStatus() {
+        double raftcom;
+        try {
+            raftcom = InventoryControl.calcRaftCompletion();
+            this.console.println("Raft " + raftcom + "% completed");
+        } catch (InventoryControlException ex) {
+            ErrorView.display("GameMenuView", " Error In inventory control" + ex.getMessage());
+        }
     }
 
     private void calcRaftSize() {
@@ -220,10 +215,15 @@ public class GameMenuView extends View {
 
     }
 
-    private void CalcStorageNeeded() throws InventoryControlException {
-        double storagecom = InventoryControl.calStorageNeeded();
-        this.console.println("You need 8 full storage crates "
-                + "Your food storage is " + storagecom + "% complete ");
+    private void CalcStorageNeeded() {
+        double storagecom;
+        try {
+            storagecom = InventoryControl.calStorageNeeded();
+            this.console.println("You need 8 full storage crates "
+                    + "Your food storage is " + storagecom + "% complete ");
+        } catch (InventoryControlException ex) {
+            ErrorView.display("GameMenuView", " Error In inventory control" + ex.getMessage());
+        }
     }
 
     private void TimeLeft() {
