@@ -18,7 +18,7 @@ public enum Scene implements Serializable {
     jungle("This is the Jungle, thick Wild trees this area isnt good for much but is often surrounded by barbarians","JU", 0),
     volcano("This is the volcano it could erupt any time","VO", 0),
     river("This is the river a great place to get fresh water","RI", 2),
-    palmtree("Here are palmtrees they can be used to make logs, you can also get coconuts and logs from them","PT", 15),
+    palmtree("Here are palmtrees they can be used to make logs, you can also get coconuts and logs from them","PT", 10),
     cliff("the clifs are have a good view but arnt good for much dont fall off me","CF", 0),
     pigs("Here are some pigs they are good for meat", "PI", 1),
     barbarian("Watch out barbarians are here beware they might be canibles","BB", 1),

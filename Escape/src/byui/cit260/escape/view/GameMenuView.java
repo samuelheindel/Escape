@@ -150,7 +150,6 @@ public class GameMenuView extends View {
             Point location = actor[i].getCoordinates();
             this.console.print("\n" + name + "\t" + "\t  (" + location.getX() + "," + location.getY() + ")");
         }
-
     }
 
     private void playerLocationView1() {

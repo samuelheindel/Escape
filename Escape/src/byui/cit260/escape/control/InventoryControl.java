@@ -77,30 +77,29 @@ public class InventoryControl {
     public static double calStorageNeeded() throws InventoryControlException {
         Inventory[] inventoryValues = escape.Escape.getCurrentGame().getInventory();
         double people = Double.parseDouble("4");
-        double meat = inventoryValues[5].getQuantity();
-        double meatneeded = inventoryValues[5].getQuantityneeded();
+        double meat = inventoryValues[3].getQuantity();
+        double meatneeded = inventoryValues[3].getQuantityneeded();
         double fruit = inventoryValues[4].getQuantity();
         double fruitneeded = inventoryValues[4].getQuantityneeded();
-        double percommeat = meat / meatneeded;
-        double percomfruit = fruit / fruitneeded;
-        double combined = ((percomfruit + percommeat) / 2) * 100;
 
         if (people > 4 || people < 1) {
             throw new InventoryControlException("to few people or to many people");
         }
-        if (meat > 12 || meat < 0) {
+        if (meat > 13 || meat < 0) {
             throw new InventoryControlException("to little meat or to much meat");
         }
-        if (meatneeded > 12 || meatneeded < 1) {
-            throw new InventoryControlException("to little meat or to much meat");
+        if (meatneeded > 13 || meatneeded < 0) {
+            throw new InventoryControlException("to little meat needed or to much meat needed");
         }
-        if (fruit > 16 || fruit < 0) {
-            throw new InventoryControlException("to little meat or to much meat");
+        if (fruit > 17 || fruit < 0) {
+            throw new InventoryControlException("to little fruit or to much fruit");
         }
-        if (fruitneeded > 16 || fruitneeded < 1) {
-            throw new InventoryControlException("to little meat or to much meat");
+        if (fruitneeded > 17 || fruitneeded < 0) {
+            throw new InventoryControlException("to little fruit needed or to much fruit needed");
         }
-
+        double percommeat = meat / meatneeded;
+        double percomfruit = fruit / fruitneeded;
+        double combined = ((percomfruit + percommeat) / 2) * 100;
 
         return combined;
     }
